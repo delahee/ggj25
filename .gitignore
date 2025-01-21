@@ -82,5 +82,7 @@ crashlytics-build.properties
 # Jetbrains IDE files
 .idea/
 
-#FMOD
-*/FMODStudioCache.asset
+# FMOD 
+fmod_editor.log
+FMODStudioCache.asset
+
