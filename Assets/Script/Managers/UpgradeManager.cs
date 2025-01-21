@@ -52,20 +52,20 @@ public class UpgradeManager : MonoBehaviour
     //TODO populate with dev data
     void PopulateUpgrades()
     {
-        equipmentUpgrades.Add(new Upgrade("tech1"));
-        equipmentUpgrades.Add(new Upgrade("tech2"));
-        equipmentUpgrades.Add(new Upgrade("tech3"));
-        equipmentUpgrades.Add(new Upgrade("tech4"));
+        equipmentUpgrades.Add(new Upgrade("tech1", UpgradeType.Equipment));
+        equipmentUpgrades.Add(new Upgrade("tech2", UpgradeType.Equipment));
+        equipmentUpgrades.Add(new Upgrade("tech3", UpgradeType.Equipment));
+        equipmentUpgrades.Add(new Upgrade("tech4", UpgradeType.Equipment));
 
-        volcanoUpgrades.Add(new Upgrade("barrack1"));
-        volcanoUpgrades.Add(new Upgrade("barrack2"));
-        volcanoUpgrades.Add(new Upgrade("barrack3"));
-        volcanoUpgrades.Add(new Upgrade("barrack4"));
+        foreach (VolcanoBuildings vb in GameManager.Instance.Data.VolcanoBuildings) 
+        { 
+            volcanoUpgrades.Add(new Upgrade(vb.name,UpgradeType.Volcano, vb.desc, vb.effect, vb.popCost, vb.meltCost, vb.mithrilCost));
+        }
 
-        ecoUpgrades.Add(new Upgrade("eco1"));
-        ecoUpgrades.Add(new Upgrade("eco2"));
-        ecoUpgrades.Add(new Upgrade("eco3"));
-        ecoUpgrades.Add(new Upgrade("eco4"));
+        ecoUpgrades.Add(new Upgrade("eco1", UpgradeType.Economy));
+        ecoUpgrades.Add(new Upgrade("eco2", UpgradeType.Economy));
+        ecoUpgrades.Add(new Upgrade("eco3", UpgradeType.Economy));
+        ecoUpgrades.Add(new Upgrade("eco4", UpgradeType.Economy));
     }
 
     GameObject selectionGO;

@@ -1,8 +1,13 @@
-public class VolcanoBuildings
+using UnityEngine;
+
+[CreateAssetMenu]
+public class VolcanoBuildings : ScriptableObject
 {
-    public string id;
-    public string name;
+    public string buidingName;
     public string desc;
     public string effect;
-    public string model;
+    public float popCost;
+    public float meltCost;
+    public float mithrilCost;
+    public GameObject prefab;
 }
