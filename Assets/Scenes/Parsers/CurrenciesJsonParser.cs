@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
-public static class CharacterDataJsonParser
+public static class CurrenciesDataJsonParser
 {
     public static List<Currencies> ParseJson(string json)
     {
@@ -16,22 +16,23 @@ public static class CharacterDataJsonParser
             for (int i = 1; i < entries.Count; i++)
             {
                 var entry = entries[i].ToObject<List<string>>();
+                if (entry.Count < 4 || "".Equals(entry[0]) || string.Empty.Equals(entry[0]))
+                    continue;
                 if ("EOF".Equals(entry[0]))
                     break;
-                Currencies character = new Currencies
+                Currencies currency = new Currencies
                 {
                     id = entry[0],
                     name = entry[1],
-                    bubble_type = entry[2],
-                    gp_desc = entry[3]
-
+                    bubbleType = entry[2],
+                    gpDesc = entry[3]
                 };
-                currencies.Add(character);
+                currencies.Add(currency);
             }
         }
         catch (Exception ex)
         {
-            UnityEngine.Debug.LogError("Error parsing JSON: " + ex.Message);
+            UnityEngine.Debug.LogError("Error parsing Currencies JSON: " + ex.Message);
         }
 
         return currencies;

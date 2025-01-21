@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6c9bb831100846edb5f86a8938fd86c, type: 3}
-  m_Name: GoogleSheetsConfig 1
+  m_Name: GoogleSheetsConfig
   m_EditorClassIdentifier: 
   sheetId: 1_WL9GG6i1DM4xD2r3xBirPIwI_-0doylXw6mB-DPLW0
   apiKey: AIzaSyAjdr-jaIv4XqMwCk5ND4_KbuOuFptbqhM
-  range: currencies!A1:E100
+  currenciesTab: currencies!A1:E100
+  enemiesTab: enemies!A1:F100
+  heroesTab: heroes!A1:L100
+  towersTab: towers!A1:N100
+  volcanoBuildingsTab: volcano-buildings!A1:F100
