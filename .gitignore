@@ -71,3 +71,12 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# System/tool-specific ignores
+.directory
+.DS_Store
+*~
+*.blend1
+
+# Jetbrains IDE files
+.idea/
