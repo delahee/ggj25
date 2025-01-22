@@ -15,6 +15,10 @@ public class Hero : MonoBehaviour
     public float atkMaxDuration = 2.0f;
     public float atkT = 0f;
 
+    Vector3 patrolPos;
+    float patrolT = 0.0f;
+    float patrolInterval = 2.0f;
+
     private void Update()
     {
 
@@ -31,6 +35,10 @@ public class Hero : MonoBehaviour
             if (Vector3.Distance(transform.position, door.transform.position) > 10) { 
                 transform.position = Vector3.MoveTowards(transform.position, door.transform.position, speed * Time.deltaTime);
             }
+            else
+            {
+                PatrolSequence();
+            }
 
             return;
         }
@@ -44,6 +52,38 @@ public class Hero : MonoBehaviour
         else
         {
             AttackSequence();
+        }
+    }
+
+    void RequestPatrolPos()
+    {
+        var gate = GateOfHell.instance;
+        if (gate == null) return;
+
+
+        if (Vector3.Distance(transform.position, gate.transform.position) > gate.radius / 2)
+        {
+            Vector3 c = Random.insideUnitCircle * gate.radius / 2;
+            patrolPos = gate.transform.position + new Vector3(c.x, 0, c.y);
+        }
+        else
+        {
+            Vector3 c = Random.insideUnitCircle;
+            patrolPos = transform.position + new Vector3(c.x, 0, c.y);
+        }
+
+    }
+    void PatrolSequence()
+    {
+        if (Vector3.Distance(transform.position, patrolPos) > .1f) 
+            transform.position = Vector3.MoveTowards(transform.position, patrolPos, speed * Time.deltaTime);
+        else 
+            patrolT -= Time.deltaTime;
+        
+        if (patrolT <= 0)
+        {
+            patrolT = patrolInterval;
+            RequestPatrolPos();
         }
     }
 

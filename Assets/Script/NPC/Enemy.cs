@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public int speed = 3;
 
     public GateOfHell door;
-    public int hp = 10;
+    public int hp = 5;
 
     public float atkMaxDuration = 2.0f;
     public float atkT = 0f;
