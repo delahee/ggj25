@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6caeaa1394830a14f9b289597db0086e, type: 3}
   m_Name: __DATA_LISTS
   m_EditorClassIdentifier: 
+  Bubbles:
+  - {fileID: 11400000, guid: 41ca1086be84b0846b7d7e225106d01e, type: 2}
+  - {fileID: 11400000, guid: 8bd8131ffd8328b409f149121649b36a, type: 2}
+  - {fileID: 11400000, guid: c20295272713d6d42817603878afe398, type: 2}
   VolcanoBuildings:
   - {fileID: 11400000, guid: 08305c2236d652d4ba75f9953f194626, type: 2}
   - {fileID: 11400000, guid: 234c550b7691d164c9105117c114c46c, type: 2}

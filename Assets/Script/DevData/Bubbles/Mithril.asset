@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12f80e861488e5a4ba59147413c70e39, type: 3}
+  m_Name: Mithril
+  m_EditorClassIdentifier: 
+  bubbleName: Mithril
+  desc: With elven prisonners comes elven intel, with elven intel comes access to
+    new supply chains. And with elven supply chain comes the metal of the light god
+    themselves. With a perverted twist, it works like a charm
+  type: 2
+  prefab: {fileID: 6190579676073523739, guid: b935dcedc843e184d8dca0948062a1cf, type: 3}

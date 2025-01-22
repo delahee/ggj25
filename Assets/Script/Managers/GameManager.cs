@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     #region Game
 
+    public float Pops = 0;
     public DataLists Data;
 
     private async Task InitGame()
