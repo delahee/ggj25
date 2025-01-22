@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f433daf9a0a1848d89b69504ecf29ced, type: 3}
   m_Name: ZOMBIE
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  prefab: {fileID: 451110395207141086, guid: c31a06dc8128fa444b2ed2f419d97aa0, type: 3}
   id: ZOMBIE
   tier: 1
   tribe: UNDEAD

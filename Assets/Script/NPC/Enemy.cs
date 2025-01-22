@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IHit
 {
-    public int speed = 3;
-
     public Enemies data;
+    [Space]
+    public int speed = 3;
     public int hp;
 
     public float atkMaxDuration = 2.0f;
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour, IHit
         Init(data);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         GateOfHell gate = GateOfHell.instance;
         if (gate == null) return;
