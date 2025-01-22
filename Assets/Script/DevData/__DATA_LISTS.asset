@@ -16,12 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 41ca1086be84b0846b7d7e225106d01e, type: 2}
   - {fileID: 11400000, guid: 8bd8131ffd8328b409f149121649b36a, type: 2}
   - {fileID: 11400000, guid: c20295272713d6d42817603878afe398, type: 2}
-  VolcanoBuildings:
-  - {fileID: 11400000, guid: 08305c2236d652d4ba75f9953f194626, type: 2}
-  - {fileID: 11400000, guid: 234c550b7691d164c9105117c114c46c, type: 2}
-  - {fileID: 11400000, guid: bea6ea896a482d34e8d22d2aac75fdec, type: 2}
-  - {fileID: 11400000, guid: 74e5fec7b683a5e44ae28d61f38fcfd2, type: 2}
-  - {fileID: 11400000, guid: 56ea2d096f0992640a0343ebc6032f62, type: 2}
+  Sciences: []
   EconomyUpgrades:
   - {fileID: 11400000, guid: d09f429b6994b1c4cb0c2fa9306f1b0d, type: 2}
   - {fileID: 11400000, guid: 5e39331ed18c9504abd50d74ccce43d6, type: 2}

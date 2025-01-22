@@ -5,6 +5,6 @@ using UnityEngine;
 public class DataLists : ScriptableObject
 {
     public List<Bubbles> Bubbles;
-    public List<VolcanoBuildings> VolcanoBuildings;
+    public List<Science> SciencesUpgrades;
     public List<Economy> EconomyUpgrades;
 }

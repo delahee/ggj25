@@ -57,7 +57,7 @@ public class UpgradeManager : MonoBehaviour
         equipmentUpgrades.Add(new Upgrade("tech3", UpgradeType.Equipment));
         equipmentUpgrades.Add(new Upgrade("tech4", UpgradeType.Equipment));
 
-        foreach (VolcanoBuildings vb in GameManager.Instance.Data.VolcanoBuildings) 
+        foreach (Science vb in GameManager.Instance.Data.SciencesUpgrades) 
         { 
             volcanoUpgrades.Add(new Upgrade(vb.name,UpgradeType.Volcano, vb.desc, vb.effect, vb.popCost, vb.meltCost, vb.mithrilCost, vb.EffectMethodName));
         }

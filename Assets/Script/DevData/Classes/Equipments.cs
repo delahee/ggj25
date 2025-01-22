@@ -13,6 +13,8 @@ public class Equipments : ScriptableObject
     public float popCost;
     public float meltCost;
     public float mithrilCost;
+
+    public string EffectMethodName;
 }
 
 public enum EquipType
