@@ -16,7 +16,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 41ca1086be84b0846b7d7e225106d01e, type: 2}
   - {fileID: 11400000, guid: 8bd8131ffd8328b409f149121649b36a, type: 2}
   - {fileID: 11400000, guid: c20295272713d6d42817603878afe398, type: 2}
-  Sciences: []
+  SciencesUpgrades:
+  - {fileID: 11400000, guid: a9c65995e326a204eb5eb21d6f07a62b, type: 2}
+  - {fileID: 11400000, guid: f6c372e97e421c24eb8f57fd3f1939fa, type: 2}
+  - {fileID: 11400000, guid: 3c8adefa637a8a3499cabc3daee244d5, type: 2}
+  - {fileID: 11400000, guid: b2d0b81c3543f8844bdffff802ea981a, type: 2}
+  - {fileID: 11400000, guid: 99578c2447314bd41b5efafee2757627, type: 2}
+  - {fileID: 11400000, guid: ff3facc8bb0c3a74ebd0244f5cab67da, type: 2}
+  - {fileID: 11400000, guid: 30fe56e5e5542364380f165df1753fd5, type: 2}
+  - {fileID: 11400000, guid: c2c6575911c1788489045174020f78bb, type: 2}
+  - {fileID: 11400000, guid: 5e71f9ab56e692f4a89e3f358e00c2c6, type: 2}
+  - {fileID: 11400000, guid: cd466c6d0abbf1647b31356a66982694, type: 2}
+  - {fileID: 11400000, guid: 8b86acf8e9d2daa4ea29cd76ae24fa02, type: 2}
+  - {fileID: 11400000, guid: 175f3949032f51b4b99cc2b1a87ca592, type: 2}
   EconomyUpgrades:
   - {fileID: 11400000, guid: d09f429b6994b1c4cb0c2fa9306f1b0d, type: 2}
   - {fileID: 11400000, guid: 5e39331ed18c9504abd50d74ccce43d6, type: 2}
