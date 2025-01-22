@@ -13,7 +13,7 @@ public class FireBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Heroes/Hero_Pyro_Firebolt");
     }
 
     // Update is called once per frame

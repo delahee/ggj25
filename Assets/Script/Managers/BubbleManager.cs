@@ -85,13 +85,16 @@ public class BubbleManager : MonoBehaviour
             Spawns.transform.position + new Vector3(Random.Range(-500f,500f), Random.Range(-500f, 500), 0), 
             Quaternion.identity, 
             Spawns.transform);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(PopClick);
         Invoke(nameof(PopRoutine), PopRate);
     }
 
     void PopClick()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Explode");
         GameManager.Instance.Pops += PopValue;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Pops_Gain");
     }
 
     void MeltRoutine()
@@ -100,13 +103,16 @@ public class BubbleManager : MonoBehaviour
             Spawns.transform.position + new Vector3(Random.Range(-500f, 500f), Random.Range(-500f, 500), 0),
             Quaternion.identity,
             Spawns.transform);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(MeltClick);
         Invoke(nameof(MeltRoutine), MeltRate);
     }
 
     void MeltClick()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Explode");
         GameManager.Instance.Melts += MeltValue;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Melts_Gain");
     }
 
     void MithrilRoutine()
@@ -115,13 +121,16 @@ public class BubbleManager : MonoBehaviour
             Spawns.transform.position + new Vector3(Random.Range(-500f, 500f), Random.Range(-500f, 500), 0),
             Quaternion.identity,
             Spawns.transform);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(MithrilClick);
         Invoke(nameof(MithrilRoutine), MithrilRate);
     }
 
     void MithrilClick()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Explode");
         GameManager.Instance.Mithrils += MithrilValue;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Mithril_Gain");
     }
 
     void AutoRoutine()
