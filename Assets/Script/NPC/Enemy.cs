@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IHit
     public float hitT;
     public float hitDur = .1f;
 
-    bool dead = false;
+   public bool dead = false;
     SpriteRenderer renderer;
 
     public void Init(Enemies data)
@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour, IHit
         GateOfHell.instance?.OnHit(data.dmg);
     }
 
-    public void OnHit(int dmg)
+    public virtual void OnHit(int dmg)
     {
         if (dead) return;
         hp-=dmg;

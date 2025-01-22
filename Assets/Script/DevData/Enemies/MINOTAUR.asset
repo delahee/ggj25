@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f433daf9a0a1848d89b69504ecf29ced, type: 3}
   m_Name: MINOTAUR
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
   id: MIONTAUR
   tier: 2
   tribe: BEASTMEN
   EnemyName: Miontaur
   desc: Swings his huge hammer for good damage, on top of being tanky. Is however
     slow.
+  fx: Spin while attacking
   hp: 50
   speed: 3
   dmg: 10
   isElite: 1
+  proba: 0

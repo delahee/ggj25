@@ -72,8 +72,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4631179917267792489}
   m_SourcePrefab: {fileID: 100100000, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+--- !u!1 &451110395207141086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4631179917267792489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451110395207141086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25bf99561766f34dbd03f29b438e329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 0}
+  data: {fileID: 11400000, guid: 587e041cb680a9747b218f0dc52ca183, type: 2}
+  speed: 3
+  hp: 0
+  atkMaxDuration: 2
+  atkT: 0
+  hitT: 0
+  hitDur: 0.1
+  dead: 0
+  subMobChance: 0.3
+  ownPrefab: {fileID: 451110395207141086}
