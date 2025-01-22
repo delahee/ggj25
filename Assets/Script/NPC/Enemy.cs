@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Xml.Linq;
 using UnityEngine;
 
 
 
 public class Enemy : MonoBehaviour, IHit
 {
+    public GateOfHell door;
     public Enemies data;
     [Space]
     public int speed = 3;
