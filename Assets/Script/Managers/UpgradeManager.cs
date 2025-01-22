@@ -59,7 +59,7 @@ public class UpgradeManager : MonoBehaviour
 
         foreach (Science vb in GameManager.Instance.Data.SciencesUpgrades) 
         { 
-            volcanoUpgrades.Add(new Upgrade(vb.name,UpgradeType.Volcano, vb.desc, vb.effect, vb.popCost, vb.meltCost, vb.mithrilCost, vb.EffectMethodName));
+            volcanoUpgrades.Add(new Upgrade(vb.scienceName, UpgradeType.Volcano, vb.desc, vb.fx, vb.popCost, vb.meltCost, vb.mithrilCost, vb.EffectMethodName));
         }
 
         ecoUpgrades.Add(new Upgrade("eco1", UpgradeType.Economy));
