@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f433daf9a0a1848d89b69504ecf29ced, type: 3}
   m_Name: KIWIPIZZA
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
   id: KIWIPIZZA
   tier: 3
   tribe: GLUTTONY
   EnemyName: Kiwi on Pizza Guy
   desc: Horrors beyond the whole Pizza community's comprehension.
+  fx: Buffs the HP of nearby mobs by 50% (including itself, doesn't cumulate).
   hp: 70
   speed: 5
   dmg: 12
   isElite: 1
+  proba: 0

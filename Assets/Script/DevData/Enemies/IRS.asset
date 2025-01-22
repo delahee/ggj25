@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f433daf9a0a1848d89b69504ecf29ced, type: 3}
   m_Name: IRS
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
   id: IRS
   tier: 4
   tribe: GREED
   EnemyName: IRS Agent
   desc: Will actually get your money.
+  fx: Damage dealt to heroes or gate will steal pops, melts and mithril.
   hp: 100
   speed: 5
   dmg: 20
   isElite: 1
+  proba: 0

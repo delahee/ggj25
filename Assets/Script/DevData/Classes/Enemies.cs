@@ -8,6 +8,7 @@ public class Enemies : ScriptableObject
     public string tribe;
     public string EnemyName;
     public string desc;
+    public string fx;
     public int hp;
     public int speed;
     public int dmg;
