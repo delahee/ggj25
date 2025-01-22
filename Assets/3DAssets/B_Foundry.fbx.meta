@@ -3,7 +3,27 @@ guid: c3c0b112bc0004e8fa16c3a709fa3d0d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 8abf75dede57f43b2b44cce8764c89a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Test.001
+    second: {fileID: 2100000, guid: 07f6125a4f88d4427b903db39a2d68e7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Spike_foundry
+    second: {fileID: 2800000, guid: adb84e9d91d074c9e8cdc3e91c1418b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: test
+    second: {fileID: 2800000, guid: ae36f1e8c137e4d1a909ac8fefab7eb2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
