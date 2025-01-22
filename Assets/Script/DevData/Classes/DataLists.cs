@@ -6,4 +6,5 @@ public class DataLists : ScriptableObject
 {
     public List<Bubbles> Bubbles;
     public List<VolcanoBuildings> VolcanoBuildings;
+    public List<Economy> EconomyUpgrades;
 }
