@@ -6,6 +6,8 @@ public class FireBall : MonoBehaviour
 {
     public Vector3 target;
     public float elapsedTime;
+
+    public int dmg;
     
     public float speed = 0.01f;
     // Start is called before the first frame update
@@ -32,7 +34,7 @@ public class FireBall : MonoBehaviour
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy.OnHit();
+            enemy.OnHit(dmg);
             Destroy(this.gameObject);
         }
     }

@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
             GameObject enemyGo = Instantiate(enemyPrefab, transform);
             enemyGo.transform.position = new Vector3(Random.Range(-4.0f,4.0f), 1.5f, transform.position.z);
             Enemy enemy = enemyGo.GetComponent<Enemy>();
-            enemy.door = gateOfHell;
+            
         }
     }
 }
