@@ -36,36 +36,36 @@ public class UpgradeManager : MonoBehaviour
 
     #region Upgrades
 
-    int techLevel    = 0;
-    int barrackLevel = 0;
-    int ecoLevel     = 0;
+    int equipmentLevel = 0;
+    int volcanoLevel   = 0;
+    int ecoLevel       = 0;
 
     //TODO Add juice here =)
-    public int TechLevel { get => techLevel; set => techLevel = value; }
-    public int BarrackLevel { get => barrackLevel; set => barrackLevel = value; }
+    public int EquipmentLevel { get => equipmentLevel; set => equipmentLevel = value; }
+    public int VolcanoLevel { get => volcanoLevel; set => volcanoLevel = value; }
     public int EcoLevel { get => ecoLevel; set => ecoLevel = value; }
 
-    List<Upgrade> techUpgrades      = new List<Upgrade>();
-    List<Upgrade> barrackUpgrades   = new List<Upgrade>();
+    List<Upgrade> equipmentUpgrades = new List<Upgrade>();
+    List<Upgrade> volcanoUpgrades   = new List<Upgrade>();
     List<Upgrade> ecoUpgrades       = new List<Upgrade>();
 
     //TODO populate with dev data
     void PopulateUpgrades()
     {
-        techUpgrades.Add(new Upgrade("tech1"));
-        techUpgrades.Add(new Upgrade("tech2"));
-        techUpgrades.Add(new Upgrade("tech3"));
-        techUpgrades.Add(new Upgrade("tech4"));
+        equipmentUpgrades.Add(new Upgrade("tech1", UpgradeType.Equipment));
+        equipmentUpgrades.Add(new Upgrade("tech2", UpgradeType.Equipment));
+        equipmentUpgrades.Add(new Upgrade("tech3", UpgradeType.Equipment));
+        equipmentUpgrades.Add(new Upgrade("tech4", UpgradeType.Equipment));
 
-        barrackUpgrades.Add(new Upgrade("barrack1"));
-        barrackUpgrades.Add(new Upgrade("barrack2"));
-        barrackUpgrades.Add(new Upgrade("barrack3"));
-        barrackUpgrades.Add(new Upgrade("barrack4"));
+        foreach (VolcanoBuildings vb in GameManager.Instance.Data.VolcanoBuildings) 
+        { 
+            volcanoUpgrades.Add(new Upgrade(vb.name,UpgradeType.Volcano, vb.desc, vb.effect, vb.popCost, vb.meltCost, vb.mithrilCost));
+        }
 
-        ecoUpgrades.Add(new Upgrade("eco1"));
-        ecoUpgrades.Add(new Upgrade("eco2"));
-        ecoUpgrades.Add(new Upgrade("eco3"));
-        ecoUpgrades.Add(new Upgrade("eco4"));
+        ecoUpgrades.Add(new Upgrade("eco1", UpgradeType.Economy));
+        ecoUpgrades.Add(new Upgrade("eco2", UpgradeType.Economy));
+        ecoUpgrades.Add(new Upgrade("eco3", UpgradeType.Economy));
+        ecoUpgrades.Add(new Upgrade("eco4", UpgradeType.Economy));
     }
 
     GameObject selectionGO;
@@ -91,20 +91,23 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeButton(string type)
     {
+        //TODO pause game
         switch (type)
         {
-            case "tech":
-                techUpgrades.Shuffle();
-                selection.Add(techUpgrades[0]);
-                selection.Add(techUpgrades[1]);
-                selection.Add(techUpgrades[2]);
+            case "equip":
+                equipmentUpgrades.Shuffle();
+                selection.Add(equipmentUpgrades[0]);
+                selection.Add(equipmentUpgrades[1]);
+                selection.Add(equipmentUpgrades[2]);
+                EquipmentLevel++;
                 break;
 
-            case "barrack":
-                barrackUpgrades.Shuffle();
-                selection.Add(barrackUpgrades[0]);
-                selection.Add(barrackUpgrades[1]);
-                selection.Add(barrackUpgrades[2]);
+            case "volcano":
+                volcanoUpgrades.Shuffle();
+                selection.Add(volcanoUpgrades[0]);
+                selection.Add(volcanoUpgrades[1]);
+                selection.Add(volcanoUpgrades[2]);
+                VolcanoLevel++;
                 break;
             
             case "eco":
@@ -112,6 +115,7 @@ public class UpgradeManager : MonoBehaviour
                 selection.Add(ecoUpgrades[0]);
                 selection.Add(ecoUpgrades[1]);
                 selection.Add(ecoUpgrades[2]);
+                EcoLevel++;
                 break;
         }
         PopulateSelection();
