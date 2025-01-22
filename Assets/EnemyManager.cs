@@ -26,7 +26,7 @@ public class EnemyManager : MonoBehaviour
         {
             elapspedTime = 0;
             GameObject enemyGo = Instantiate(enemyPrefab, transform);
-            enemyGo.transform.position = new Vector3(Random.Range(-4.0f,4.0f), 1.5f, transform.position.z);
+            enemyGo.transform.position = new Vector3(Random.Range(-20.0f,20.0f), 1.5f, transform.position.z);
             Enemy enemy = enemyGo.GetComponent<Enemy>();
             
         }
