@@ -17,13 +17,18 @@ public class Enemy : MonoBehaviour, IHit
     public float atkMaxDuration = 2.0f;
     public float atkT = 0f;
 
+    public float hitT;
+    public float hitDur = .1f;
 
     bool dead = false;
+    SpriteRenderer renderer;
 
     public void Init(Enemies data)
     {
         this.data = data;
-        hp = data.hp;
+        hp = data.hp 
+            + (int)(Time.timeSinceLevelLoad / 20);  // Increases HP along time
+        renderer=GetComponent<SpriteRenderer>();
     }
 
     private void Awake()
@@ -33,6 +38,15 @@ public class Enemy : MonoBehaviour, IHit
 
     protected virtual void Update()
     {
+        if (hitT >= 0)
+        {
+            hitT -= Time.deltaTime;
+            if (hitT < 0)
+            {
+                renderer.color = Color.white;
+            }
+        }
+
         GateOfHell gate = GateOfHell.instance;
         if (gate == null) return;
 
@@ -64,6 +78,8 @@ public class Enemy : MonoBehaviour, IHit
     {
         if (dead) return;
         hp-=dmg;
+        hitT = hitDur;
+        GetComponent<SpriteRenderer>().color = Color.black;
         if (hp < 0)
         {
             OnDie();

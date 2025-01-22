@@ -6,7 +6,7 @@ public class Hero : MonoBehaviour
 {
 
     public float speed = 3.0f;
-    float pushForce = 1.0f;
+    public float pushForce = 1.0f;
 
 
     public Heroes data;

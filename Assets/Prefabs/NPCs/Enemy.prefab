@@ -99,11 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2886c6b00505043b54ecd656f1d951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  door: {fileID: 0}
   data: {fileID: 11400000, guid: b456be08d34617e4ab5c1c37208d2717, type: 2}
+  speed: 3
   hp: 2
   atkMaxDuration: 2
   atkT: 0
+  hitT: 0
+  hitDur: 0.05
 --- !u!65 &2292202236783791766
 BoxCollider:
   m_ObjectHideFlags: 0

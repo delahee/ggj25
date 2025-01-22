@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f433daf9a0a1848d89b69504ecf29ced, type: 3}
   m_Name: ZOMBIE
   m_EditorClassIdentifier: 
-  prefab: {fileID: 451110395207141086, guid: c31a06dc8128fa444b2ed2f419d97aa0, type: 3}
   id: ZOMBIE
   tier: 1
   tribe: UNDEAD
   EnemyName: Zombie
   desc: Very slow, weak, fragile.
-  hp: 0
+  hp: 5
   speed: 5
   dmg: 1
   isElite: 0
+  proba: 0
