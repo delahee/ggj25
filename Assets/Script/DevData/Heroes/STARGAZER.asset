@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda55e2285fba43088b5f81a6b26fd0a, type: 3}
+  m_Name: STARGAZER
+  m_EditorClassIdentifier: 
+  id: STARGAZER
+  isPlayable: 0
+  isCommander: 0
+  name: Stargazer
+  desc: He gazes at stars, who knew. Kick him in the ass and send him to the frontline.
+  fx: Fires a dark magic ball that explodes at the end of travel.
+  AtkDmgBasis: 10
+  AtkCooldown: 2
+  Range: 30
+  hp: 100
