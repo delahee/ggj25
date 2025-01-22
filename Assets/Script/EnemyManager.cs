@@ -1,14 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager INSTANCE;
-    
-    public GameObject enemyPrefab;
-    public GateOfHell gateOfHell;
+ 
+    public List<GameObject> enemiesPrefab;
     public float dtEnemySpawn = 1;
     private float elapspedTime;
     
@@ -25,7 +22,7 @@ public class EnemyManager : MonoBehaviour
         if (elapspedTime > dtEnemySpawn)
         {
             elapspedTime = 0;
-            GameObject enemyGo = Instantiate(enemyPrefab, transform);
+            GameObject enemyGo = Instantiate(enemiesPrefab[Random.Range(0,enemiesPrefab.Count)], transform);
             enemyGo.transform.position = new Vector3(Random.Range(-20.0f,20.0f), 1.5f, transform.position.z);
             Enemy enemy = enemyGo.GetComponent<Enemy>();
             
