@@ -122,6 +122,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &111513278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 451110395207141086, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_Name
+      value: Kiwipizza
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.015032485
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0012035
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584057757860969290, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
 --- !u!1 &137156535
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &137156536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,8 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 451110395207141086, guid: efba5916ccee3bb41aa754408bd64cd8, type: 3}
-  cooldown: 1
-  timer: 1
+  cooldown: 2.73
+  timer: 0.6
   t: 0
 --- !u!65 &137156537
 BoxCollider:
@@ -769,6 +826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chocodemon
       objectReference: {fileID: 0}
+    - target: {fileID: 451110395207141086, guid: 663c5a54756070a458adbdfe45664111, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4631179917267792489, guid: 663c5a54756070a458adbdfe45664111, type: 3}
       propertyPath: qMax
       value: 5
@@ -878,6 +939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 8068510914055796677, guid: cf9cabc18b7afe8429318ae5b0a6cf8f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -895,3 +960,4 @@ SceneRoots:
   - {fileID: 137156540}
   - {fileID: 1364648637}
   - {fileID: 1693567630}
+  - {fileID: 111513278}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1171695996346922555}
   - component: {fileID: 2292202236783791766}
   - component: {fileID: 8210165967719362112}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +107,7 @@ MonoBehaviour:
   atkT: 0
   hitT: 0
   hitDur: 0.05
+  dead: 0
 --- !u!65 &2292202236783791766
 BoxCollider:
   m_ObjectHideFlags: 0

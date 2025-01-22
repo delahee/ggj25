@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour, IHit
     public GateOfHell door;
     public Enemies data;
     [Space]
-    [HideInInspector] public int speed = 3;     // Obsolete. Use data.speed instead
+    [HideInInspector] public float speed = 3;     // Obsolete. Use data.speed instead
     public int hp;
 
     public float atkMaxDuration = 2.0f;
@@ -21,7 +21,11 @@ public class Enemy : MonoBehaviour, IHit
     public float hitDur = .1f;
 
    public bool dead = false;
+    bool hpBuffed;
+    bool speedBuffed;
     SpriteRenderer renderer;
+
+    List<KiwiPizza> pizzaList = new();
 
     public void Init(Enemies data)
     {
@@ -86,7 +90,7 @@ public class Enemy : MonoBehaviour, IHit
         }
     }
 
-    void OnDie()
+    protected virtual void OnDie()
     {
         dead = true;
         Destroy(gameObject);
@@ -105,5 +109,36 @@ public class Enemy : MonoBehaviour, IHit
             OnDie();
         }
     }
-    
+
+    public void BuffHP(KiwiPizza kp)
+    {
+        if (hpBuffed) return;
+        if (pizzaList.Contains(kp)) return;
+        
+        hp += data.hp / 2;
+        hpBuffed = true;
+        pizzaList.Add(kp);
+    }
+    public void DebuffHP(KiwiPizza kp)
+    {
+        if (!hpBuffed) return;
+        if (!pizzaList.Contains(kp)) return;
+        pizzaList.Remove(kp);
+        if (pizzaList.Count > 0) return;
+        hp -= data.hp / 2;
+        hpBuffed = false;
+        if (hp < 0)
+            OnDie();
+    }
+
+
+    public void BuffSpeed()
+    {
+        speed = data.speed * 1.5f;
+    }
+    public void DebuffSpeed()
+    {
+        speed = data.speed;
+    }
+
 }
