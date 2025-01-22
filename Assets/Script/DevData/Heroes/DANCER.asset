@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda55e2285fba43088b5f81a6b26fd0a, type: 3}
+  m_Name: DANCER
+  m_EditorClassIdentifier: 
+  id: DANCER
+  isPlayable: 0
+  isCommander: 0
+  name: The Dancer
+  desc: An expert in blade dance that always wanted to be a Ninja.
+  fx: Killing an enemy reset attack cooldown.
+  AtkDmgBasis: 10
+  AtkCooldown: 0.5
+  Range: 7
+  hp: 70

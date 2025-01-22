@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a3b008b76724742a060ac87cbbe333, type: 3}
+  m_Name: REPROCESSOR
+  m_EditorClassIdentifier: 
+  scienceName: Magma Reprocessor
+  desc: A weird device that reproceses magma into a different shape even after the
+    initial creation. Only one at a time though.
+  fx: Allow the reroll of one card per pull. The card rerolled is chosen randomly.
+  isUnique: 1
+  dependence: 0
+  prefab: {fileID: 0}
+  popCost: 0
+  meltCost: 20
+  mithrilCost: 0
+  EffectMethodName: 

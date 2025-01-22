@@ -11,7 +11,7 @@ public class Heroes : ScriptableObject
     public string desc;
     public string fx;
     public int AtkDmgBasis;
-    public int AtkCooldown;
+    public float AtkCooldown;
     public int Range;
     public int hp;
     
