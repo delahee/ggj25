@@ -22,10 +22,11 @@ public class Enemy : MonoBehaviour, IHit
 
    public bool dead = false;
     bool hpBuffed;
+
     bool speedBuffed;
     SpriteRenderer renderer;
 
-    List<KiwiPizza> pizzaList = new();
+    [SerializeField]  List<KiwiPizza> pizzaList = new();
 
     public void Init(Enemies data)
     {
@@ -112,19 +113,20 @@ public class Enemy : MonoBehaviour, IHit
 
     public void BuffHP(KiwiPizza kp)
     {
-        if (hpBuffed) return;
         if (pizzaList.Contains(kp)) return;
+        pizzaList.Add(kp);
         
+        if (hpBuffed) return;
         hp += data.hp / 2;
         hpBuffed = true;
-        pizzaList.Add(kp);
     }
     public void DebuffHP(KiwiPizza kp)
     {
-        if (!hpBuffed) return;
         if (!pizzaList.Contains(kp)) return;
         pizzaList.Remove(kp);
+        if (!hpBuffed) return;
         if (pizzaList.Count > 0) return;
+        if (hpBuffed) Debug.LogWarning("Buffed, but should not");
         hp -= data.hp / 2;
         hpBuffed = false;
         if (hp < 0)
