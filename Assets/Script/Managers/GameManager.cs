@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -34,6 +35,12 @@ public class GameManager : MonoBehaviour
         {
             InitGame();
         }
+    }
+
+    private void Update()
+    {
+        if (Pops >= 5)
+            HeroesManager.INSTANCE.SpawnHero();
     }
 
     #endregion
