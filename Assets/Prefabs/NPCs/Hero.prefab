@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  data: {fileID: 11400000, guid: dacb772abcb50d149ab759e8e143a82d, type: 2}
   enemy: {fileID: 0}
-  affiliation: 0
   hp: 10
   atkMaxDuration: 2
   atkT: 0

@@ -1,13 +1,18 @@
-public class Heroes
+
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Heraut", menuName = "Heraut")]
+public class Heroes : ScriptableObject
 {
     public string id;
-    public string isPlayable;
-    public string isCommander;
+    public bool isPlayable;
+    public bool isCommander;
     public string name;
     public string desc;
-    public string effects;
-    public string range;
-    public string hp;
-    public string cost;
-    public string attackType;
+    public string fx;
+    public int AtkDmgBasis;
+    public int AtkCooldown;
+    public int Range;
+    public int hp;
+    
 }					 	

@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GateOfHell : MonoBehaviour
+
+public interface IHit
+{
+    void OnHit(int dmg);
+}
+
+public class GateOfHell : MonoBehaviour, IHit
 {
     public int hp = 10;
     public float radius = 10;
@@ -20,15 +26,12 @@ public class GateOfHell : MonoBehaviour
         instance = this;
     }
 
-    public void OnHit()
+    private void OnDrawGizmosSelected()
     {
-        if (dead) return;
-        hp--;
-        if (hp <= 0)
-        {
-            GameOver();
-        }
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
+
 
     void GameOver()
     {
@@ -37,9 +40,13 @@ public class GateOfHell : MonoBehaviour
         Application.Quit();
     }
 
-    private void OnDrawGizmosSelected()
+    public void OnHit(int dmg)
     {
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        if (dead) return;
+        hp-=dmg;
+        if (hp <= 0)
+        {
+            GameOver();
+        }
     }
 }

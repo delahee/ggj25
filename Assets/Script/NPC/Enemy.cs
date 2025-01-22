@@ -1,37 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 
 
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IHit
 {
     public int speed = 3;
 
-    public GateOfHell door;
-    public int hp = 5;
+    public Enemies data;
+    public int hp;
 
     public float atkMaxDuration = 2.0f;
     public float atkT = 0f;
 
-    private void Start()
+
+    bool dead = false;
+
+    public void Init(Enemies data)
     {
-        if (door == null)
-        {
-            FindDoor();
-        }
-        if (door == null)
-        {
-            enabled = false;
-            Debug.LogWarning("Door not found");
-        }
+        this.data = data;
+        hp = data.hp;
+    }
+
+    private void Awake()
+    {
+        Init(data);
     }
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, door.transform.position) > 1)
+        GateOfHell gate = GateOfHell.instance;
+        if (gate == null) return;
+
+        if (Vector3.Distance(transform.position, gate.transform.position) > 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, door.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, gate.transform.position, speed * Time.deltaTime);
         }
         else
         {
@@ -39,10 +44,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void FindDoor()
-    {
-        door = FindObjectOfType<GateOfHell>();
-    }
 
     void AttackSequence()
     {
@@ -54,12 +55,13 @@ public class Enemy : MonoBehaviour
     void Attack()
     {
         atkT = Random.Range(0f, atkMaxDuration);
-        door.OnHit();
+        GateOfHell.instance?.OnHit(data.dmg);
     }
 
-    public void OnHit()
+    public void OnHit(int dmg)
     {
-        hp--;
+        if (dead) return;
+        hp-=dmg;
         if (hp < 0)
         {
             OnDie();
@@ -68,6 +70,7 @@ public class Enemy : MonoBehaviour
 
     void OnDie()
     {
+        dead = true;
         Destroy(gameObject);
     }
 

@@ -7,10 +7,11 @@ public class Hero : MonoBehaviour
 
     public float speed = 3.0f;
     float pushForce = 1.0f;
-    float maxFOV = float.MaxValue;
 
-    public Enemy enemy;
+
+    public Heroes data;
     public int hp = 10;
+    Enemy targetEnemy;
 
     public float atkMaxDuration = 2.0f;
     public float atkT = 0f;
@@ -19,15 +20,27 @@ public class Hero : MonoBehaviour
     float patrolT = 0.0f;
     float patrolInterval = 2.0f;
 
+
+    void Init(Heroes data)
+    {
+        this.data = data;
+        hp = data.hp;
+    }
+
+    private void Awake()
+    {
+        Init(data);
+    }
+
     private void Update()
     {
 
-        if (enemy == null)
+        if (targetEnemy == null)
         {
             SeekEnemy();
         }
 
-        if (enemy == null) {
+        if (targetEnemy == null) {
 
             GateOfHell door = FindObjectOfType<GateOfHell>();
             if (door == null) return;
@@ -43,10 +56,10 @@ public class Hero : MonoBehaviour
             return;
         }
 
-        float dist = Vector3.Distance(transform.position, enemy.transform.position);
+        float dist = Vector3.Distance(transform.position, targetEnemy.transform.position);
         if (dist > 1)
         {
-            Vector3 move = Vector3.MoveTowards(transform.position, enemy.transform.position, speed * Time.deltaTime);
+            Vector3 move = Vector3.MoveTowards(transform.position, targetEnemy.transform.position, speed * Time.deltaTime);
             transform.position = move;
         }
         else
@@ -89,14 +102,14 @@ public class Hero : MonoBehaviour
 
     void SeekEnemy()
     {
-        float minDist = maxFOV;
+        float minDist = GateOfHell.instance.radius;
         foreach (Enemy e in FindObjectsOfType<Enemy>())
         {
             var dist = Vector3.Distance(e.transform.position, transform.position);
             if (dist < minDist)
             {
                 minDist = dist;
-                enemy = e;
+                targetEnemy = e;
             }
         }
     }
@@ -105,7 +118,7 @@ public class Hero : MonoBehaviour
     {
         atkT -= Time.deltaTime;
         if (atkT < 0.0f)
-            Attack(enemy);
+            Attack(targetEnemy);
     }
 
     void Attack(Enemy o)
@@ -113,7 +126,7 @@ public class Hero : MonoBehaviour
         Vector3 dir = o.transform.position - transform.position;
         dir.y = 0;
         o.transform.position += dir.normalized * pushForce;
-        o.OnHit();
+        o.OnHit(data.AtkDmgBasis);
 
         atkT = Random.Range(0f, atkMaxDuration);
     }
