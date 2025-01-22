@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Science : ScriptableObject
 {
-    public string ScienceName;
+    public string scienceName;
     public string desc;
     public string fx;
     public bool isUnique;
