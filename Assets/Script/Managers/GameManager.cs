@@ -40,7 +40,23 @@ public class GameManager : MonoBehaviour
 
     #region Game
 
-    public float Pops = 0;
+    private float pops = 0f;
+    private float melts = 0f;
+    private float mithrils = 0f;
+
+    public float Pops { 
+        get => pops;
+        set { pops = value; BubbleManager.Instance.PopText.text = value.ToString(); }
+    }
+    public float Melts { 
+        get => melts;
+        set { melts = value; BubbleManager.Instance.MeltText.text = value.ToString(); }
+    }
+    public float Mithrils { 
+        get => mithrils;
+        set { mithrils = value; BubbleManager.Instance.MithrilText.text = value.ToString(); }
+    }
+
     public DataLists Data;
 
     private async Task InitGame()

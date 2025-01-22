@@ -51,15 +51,34 @@ public class BubbleManager : MonoBehaviour
     static float MeltRate = 0f;
     static float MithrilRate = 0f;
 
-    static float PopAutoRate = 0f;
-    static float MeltAutoRate = 0f;
-    static float MithrilAutoRate = 0f;
+    float popAutoRate = 0f;
+    float meltAutoRate = 0f;
+    float mithrilAutoRate = 0f;
+
+    public static float PopAutoRate
+    {
+        get => Instance.popAutoRate;
+        set { Instance.popAutoRate = value; Instance.PopAutoText.text = value.ToString(); }
+    }
+    public float MeltAutoRate
+    {
+        get => Instance.meltAutoRate;
+        set { Instance.meltAutoRate = value; Instance.MeltAutoText.text = value.ToString(); }
+    }
+    public float MithrilAutoRate
+    {
+        get => Instance.mithrilAutoRate;
+        set { Instance.mithrilAutoRate = value;Instance.MithrilAutoText.text = value.ToString(); }
+    }
+
 
     public GameObject Spawns;
 
     private void Start()
     {
+        MeltAutoRate = 0.20f;
         PopRoutine();
+        InvokeRepeating(nameof(AutoRoutine), 1f, 1f);
     }
     void PopRoutine() 
     {
@@ -74,8 +93,43 @@ public class BubbleManager : MonoBehaviour
     void PopClick()
     {
         GameManager.Instance.Pops += PopValue;
-        PopText.text = GameManager.Instance.Pops.ToString();
     }
 
+    void MeltRoutine()
+    {
+        GameObject go = Instantiate(GameManager.Instance.Data.Bubbles[1].prefab,
+            Spawns.transform.position + new Vector3(Random.Range(-500f, 500f), Random.Range(-500f, 500), 0),
+            Quaternion.identity,
+            Spawns.transform);
+        go.GetComponentInChildren<Button>().onClick.AddListener(MeltClick);
+        Invoke(nameof(MeltRoutine), MeltRate);
+    }
+
+    void MeltClick()
+    {
+        GameManager.Instance.Melts += MeltValue;
+    }
+
+    void MithrilRoutine()
+    {
+        GameObject go = Instantiate(GameManager.Instance.Data.Bubbles[1].prefab,
+            Spawns.transform.position + new Vector3(Random.Range(-500f, 500f), Random.Range(-500f, 500), 0),
+            Quaternion.identity,
+            Spawns.transform);
+        go.GetComponentInChildren<Button>().onClick.AddListener(MithrilClick);
+        Invoke(nameof(MithrilRoutine), MithrilRate);
+    }
+
+    void MithrilClick()
+    {
+        GameManager.Instance.Mithrils += MithrilValue;
+    }
+
+    void AutoRoutine()
+    {
+        GameManager.Instance.Pops += PopAutoRate;
+        GameManager.Instance.Melts += MeltAutoRate;
+        GameManager.Instance.Mithrils += MithrilAutoRate;
+    }
     #endregion
 }
