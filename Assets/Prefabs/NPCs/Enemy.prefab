@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  door: {fileID: 0}
+  data: {fileID: 11400000, guid: b456be08d34617e4ab5c1c37208d2717, type: 2}
   hp: 2
   atkMaxDuration: 2
   atkT: 0
