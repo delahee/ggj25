@@ -17,12 +17,12 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        elapspedTime += Time.deltaTime;
-        if (elapspedTime > deltaTimeBetweenBubbleSpawn)
-        {
-            elapspedTime = 0;
-            var lavaBubble = Instantiate(lavaBubblePrefab, transform);
-            lavaBubble.transform.position = new Vector3(Random.Range(-4.0f,4.0f), -1, Random.Range(-4.0f, -3.0f));
-        }
+        // elapspedTime += Time.deltaTime;
+        // if (elapspedTime > deltaTimeBetweenBubbleSpawn)
+        // {
+        //     elapspedTime = 0;
+        //     var lavaBubble = Instantiate(lavaBubblePrefab, transform);
+        //     lavaBubble.transform.position = new Vector3(Random.Range(-4.0f,4.0f), -1, Random.Range(-4.0f, -3.0f));
+        // }
     }
 }

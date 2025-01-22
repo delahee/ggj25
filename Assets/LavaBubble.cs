@@ -5,6 +5,8 @@ public class LavaBubble : MonoBehaviour
 {
     // Start is called before the first frame update
     private Color endColor = new Color(1, 1, 0, 0);
+    private Ray ray;
+    private RaycastHit hit;
     
     void Awake()
     {
@@ -14,8 +16,19 @@ public class LavaBubble : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Destroy()
+    void Destroy()  
     {
-        Destroy(gameObject);
+        Destroy(this);
+    }
+    
+
+    void Update()
+    {
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast(ray, out hit))
+        {
+            if(Input.GetMouseButtonDown(0))
+               Destroy();
+        }
     }
 }
