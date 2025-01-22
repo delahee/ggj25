@@ -1553,11 +1553,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 0
-    m_Right: 0
+    m_Right: 30
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 5
-  m_Spacing: 20
+  m_Spacing: 30
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -3046,7 +3046,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c433646c6cb48b24db37662a69b611c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pops: 0
   Data: {fileID: 11400000, guid: 871c3c079e5f1304a8508c71c7aca913, type: 2}
 --- !u!1 &2010998693
 GameObject:
@@ -3251,6 +3250,6 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 979583398}
   - {fileID: 1344472198}
   - {fileID: 510809924}
-  - {fileID: 979583398}

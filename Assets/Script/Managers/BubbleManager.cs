@@ -15,7 +15,7 @@ public class BubbleManager : MonoBehaviour
         get
         {
             if (instance == null)
-                Debug.LogError("UpgradeManager is null !!");
+                Debug.LogError("BubbleManager is null !!");
 
             return instance;
         }
@@ -43,13 +43,13 @@ public class BubbleManager : MonoBehaviour
     public TMP_Text MeltAutoText;
     public TMP_Text MithrilAutoText;
 
-    static float PopValue = 1f;
-    static float MeltValue = 0f;
-    static float MithrilValue = 0f;
+    public static float PopValue = 1f;
+    public static float MeltValue = 0f;
+    public static float MithrilValue = 0f;
 
-    static float PopRate = 1f;
-    static float MeltRate = 0f;
-    static float MithrilRate = 0f;
+    public static float PopRate = 1f;
+    public static float MeltRate = 0f;
+    public static float MithrilRate = 0f;
 
     float popAutoRate = 0f;
     float meltAutoRate = 0f;
@@ -70,7 +70,6 @@ public class BubbleManager : MonoBehaviour
         get => Instance.mithrilAutoRate;
         set { Instance.mithrilAutoRate = value;Instance.MithrilAutoText.text = value.ToString(); }
     }
-
 
     public GameObject Spawns;
 

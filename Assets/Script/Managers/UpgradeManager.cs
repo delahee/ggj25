@@ -59,7 +59,7 @@ public class UpgradeManager : MonoBehaviour
 
         foreach (VolcanoBuildings vb in GameManager.Instance.Data.VolcanoBuildings) 
         { 
-            volcanoUpgrades.Add(new Upgrade(vb.name,UpgradeType.Volcano, vb.desc, vb.effect, vb.popCost, vb.meltCost, vb.mithrilCost));
+            volcanoUpgrades.Add(new Upgrade(vb.name,UpgradeType.Volcano, vb.desc, vb.effect, vb.popCost, vb.meltCost, vb.mithrilCost, vb.EffectMethodName));
         }
 
         ecoUpgrades.Add(new Upgrade("eco1", UpgradeType.Economy));
@@ -68,7 +68,8 @@ public class UpgradeManager : MonoBehaviour
         ecoUpgrades.Add(new Upgrade("eco4", UpgradeType.Economy));
     }
 
-    GameObject selectionGO;
+    [HideInInspector]
+    public GameObject selectionGO;
     List<Upgrade> selection = new List<Upgrade>();
 
     void PopulateSelection()
@@ -130,7 +131,6 @@ public class UpgradeManager : MonoBehaviour
             buttons[i].onClick.RemoveAllListeners();
         }
         selection.Clear();
-        Destroy(selectionGO);
     }
 
     #endregion
