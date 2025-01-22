@@ -13,8 +13,12 @@ PrefabInstance:
       value: Zombie
       objectReference: {fileID: 0}
     - target: {fileID: 6237373499025606374, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5dca8ad42acaf5d47862b9861c78c4cb, type: 3}
+    - target: {fileID: 6237373499025606374, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_Color.b
-      value: 0.20283651
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6237373499025606374, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_Color.g
@@ -22,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6237373499025606374, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8294281060259120763, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_LocalPosition.x

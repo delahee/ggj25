@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour, IHit
     public GateOfHell door;
     public Enemies data;
     [Space]
-    public int speed = 3;
+    [HideInInspector] public int speed = 3;     // Obsolete. Use data.speed instead
     public int hp;
 
     public float atkMaxDuration = 2.0f;
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour, IHit
 
         if (Vector3.Distance(transform.position, gate.transform.position) > 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, gate.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, gate.transform.position, data.speed * Time.deltaTime);
         }
         else
         {
