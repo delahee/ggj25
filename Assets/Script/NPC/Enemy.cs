@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public int speed = 3;
 
-    public Door door;
+    public GateOfHell door;
     public int hp = 10;
 
     public float atkMaxDuration = 2.0f;
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
 
     void FindDoor()
     {
-        door = FindObjectOfType<Door>();
+        door = FindObjectOfType<GateOfHell>();
     }
 
     void AttackSequence()

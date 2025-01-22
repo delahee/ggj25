@@ -25,7 +25,7 @@ public class Hero : MonoBehaviour
 
         if (enemy == null) {
 
-            Door door = FindObjectOfType<Door>();
+            GateOfHell door = FindObjectOfType<GateOfHell>();
             if (door == null) return;
 
             if (Vector3.Distance(transform.position, door.transform.position) > 10) { 
