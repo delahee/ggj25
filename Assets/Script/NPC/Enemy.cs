@@ -74,4 +74,18 @@ public class Enemy : MonoBehaviour, IHit
         Destroy(gameObject);
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        // var tower = other.gameObject.GetComponent<Tower>();
+        // if (tower != null)
+        // {
+        //     tower.Fire(transform.position);
+        // }
+        var fireball = other.gameObject.GetComponent<FireBall>();
+        if (fireball != null)
+        {
+            OnDie();
+        }
+    }
+    
 }

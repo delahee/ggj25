@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a3b008b76724742a060ac87cbbe333, type: 3}
   m_Name: Dungeon
   m_EditorClassIdentifier: 
-  buidingName: Elven dungeon
+  buildingName: 
   desc: 
   effect: Allows to build the Mithril pump
   popCost: 0
   meltCost: 0
   mithrilCost: 0
   prefab: {fileID: 911108452430231764, guid: dde97c582f1f00f4d8f8b70a66200b3c, type: 3}
+  EffectMethodName: BathTest
