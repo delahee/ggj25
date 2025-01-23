@@ -128,7 +128,7 @@ public class UpgradeManager : MonoBehaviour
     void PopulateSelection()
     {
         selectionGO = Instantiate(SelectionPrefab, transform.parent);
-        HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
+        Button[] buttons = selectionGO.GetComponentsInChildren<Button>();
 
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -183,11 +183,17 @@ public class UpgradeManager : MonoBehaviour
         }
         PopulateSelection();
     }
+
+    public void OnHover()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Hover");
+    }
     
     public void SelectUpgrade(int index)
     {
         selection[index].DoUpgrade();
-        HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
+        Button[] buttons = selectionGO.GetComponentsInChildren<Button>();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Confirm");
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].onClick.RemoveAllListeners();
