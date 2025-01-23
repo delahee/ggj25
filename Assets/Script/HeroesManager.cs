@@ -27,7 +27,7 @@ public class HeroesManager : MonoBehaviour
         
     }
 
-    public void SpawnHero()
+    public void SpawnHero(string name)
     {
         foreach (var spawnGo in SpawnPoints)
         {

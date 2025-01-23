@@ -37,12 +37,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Pops >= 5)
-            HeroesManager.INSTANCE.SpawnHero();
-    }
-
     #endregion
 
     #region Game

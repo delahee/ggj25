@@ -65,14 +65,18 @@ public class Upgrade : MonoBehaviour
 
     public void DoUpgrade()
     {
-        var up = MakeItGO();
-
-        if (Method != "")
-            up.Invoke(Method,0f);
+        if (UpgradeType.Hero.Equals(Type))
+            HeroesManager.INSTANCE.SpawnHero(Name);
         else
-            Debug.LogError($"No method given!");
+        {
+            var up = MakeItGO();
 
-        Destroy(up);
+            if (Method != "")
+                up.Invoke(Method,0f);
+            else
+                Debug.LogError($"No method given!");
+            Destroy(up);
+        }
         Destroy(UpgradeManager.Instance.selectionGO);
     }
 
@@ -93,5 +97,6 @@ public enum UpgradeType
 {
     Equipment, //heroes, towers and their upgrades
     Volcano, //environment, unlocks or upgrades stats or equipments
-    Economy //capitalism
+    Economy, //capitalism
+    Hero
 }
