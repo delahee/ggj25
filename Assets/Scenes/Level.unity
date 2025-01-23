@@ -310,7 +310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29472510f2f647f5badb14baa1aff3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96ee72e77ab184197b44b6e93b240368, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -462,6 +462,10 @@ PrefabInstance:
     - target: {fileID: 1019385297823048197, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357725056392033811, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
+      propertyPath: dtEnemySpawn
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5795334755474586737, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
       propertyPath: m_Name
