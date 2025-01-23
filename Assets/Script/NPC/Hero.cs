@@ -37,6 +37,19 @@ public class Hero : MonoBehaviour, IHit
     private void Awake()
     {
         Init(data);
+        string eventName = "event:/Heroes/General/Hero_Spawn";
+        if ("SMITH".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Smith_Spawn";
+        else if("STARGAZER".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Stargazer_Spawn";
+        else if("DANCER".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Dancer_Spawn";
+        else if("FIGHTER".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Fighter_Spawn";
+        else if("PYRO".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Pyro_Spawn";
+        else if("CERBERUS".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Cerberus_Spawn";
     }
 
     private void Update()
@@ -140,11 +153,7 @@ public class Hero : MonoBehaviour, IHit
     {
         transform.position += dir;
     }
-
-    void OnDie()
-    {
-        Destroy(gameObject);
-    }
+	
 
     public void OnHit(int dmg)
     {
@@ -154,4 +163,28 @@ public class Hero : MonoBehaviour, IHit
             OnDie();
         }
     }
+	
+
+
+    void OnDie()
+    {
+        string eventName = "event:/Heroes/General/Hero_Death";
+        if ("SMITH".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Smith_Death";
+        else if("STARGAZER".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Stargazer_Death";
+        else if("DANCER".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Dancer_Death";
+        else if("FIGHTER".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Fighter_Death";
+        else if("PYRO".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Pyro_Death";
+        else if("CERBERUS".Equals(data.id))
+            eventName = "event:/Heroes/Hero_Cerberus_Death";
+        
+        FMODUnity.RuntimeManager.PlayOneShot(eventName);
+
+        Destroy(gameObject);
+    }
+	
 }

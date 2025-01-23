@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour, IHit
 
 
 
-    public void Init(Enemies data)
+    public virtual void Init(Enemies data)
     {
         this.data = data;
         this.speed = data.speed;
@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour, IHit
     {
         if (door == null) door = GateOfHell.instance;
     }
-
+    
     protected virtual void Update()
     {
         if (dead) return;

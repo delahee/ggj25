@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Lich : Enemy
@@ -35,7 +36,7 @@ public class Lich : Enemy
         else
         {
             base.Update();
-            
+
             invokeT -= Time.deltaTime;
             if (invokeT < 0)
             {
@@ -43,6 +44,17 @@ public class Lich : Enemy
                 isSummoning = true;
             }
         }
-        
+    }
+
+    public override void Init(Enemies data)
+    {
+        base.Init(data);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_Lich_Spawn");
+    }
+    
+    protected override void OnDie()
+    {
+        base.OnDie();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_Lich_Death");
     }
 }

@@ -7,7 +7,7 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x385a44a08 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x1540e3808 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,12 +16,251 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Amb_Thunder_RFX_08', format=5, channels=1, frequency=48000, lengthbytes=36672, lengthpcm=440650, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.717753.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Amb_Thunder_RFX_01', format=5, channels=1, frequency=48000, lengthbytes=25376, lengthpcm=422614, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.590540.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Amb_Thunder_RFX_04', format=5, channels=1, frequency=48000, lengthbytes=57120, lengthpcm=476902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.470859.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Amb_Thunder_RFX_03', format=5, channels=1, frequency=48000, lengthbytes=26016, lengthpcm=213994, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.447251.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Amb_Thunder_RFX_02', format=5, channels=1, frequency=48000, lengthbytes=34944, lengthpcm=402540, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.618015.
+[LOG] SystemI::createSound                     : filename = Assets/Sound/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x150af3e88, queue head = 0x33857ca08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x150af3e88
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sound/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x398f3ed80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 23040
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Amb_Thunder_Pad', format=5, channels=2, frequency=48000, lengthbytes=830496, lengthpcm=3264000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.784360.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x150af3e88
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x11caf1598
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ROCKImpt-LR_Croatia-Impact Rock Smash Sound Effects   30 ROCKImpt, Impact, Hit, Smash, Dropping, Falling, Rattle, Texture, Rocky Beach, 30_FTUS_AIOL_192k32b 1', format=5, channels=1, frequency=48000, lengthbytes=4000, lengthpcm=22900, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.608135.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x37c62a148
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Rocks, Impact, Brick, Hit Ground, Light SND23813', format=5, channels=2, frequency=48000, lengthbytes=3424, lengthpcm=10836, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.702857.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Fight, Bodyfall, Asphalt, Concrete 04 SND120894 2', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=14100, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.438332.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Fight, Bodyfall, Asphalt, Concrete 04 SND120894 5', format=5, channels=2, frequency=48000, lengthbytes=4032, lengthpcm=17373, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.441165.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Fight, Bodyfall, Asphalt, Concrete 04 SND120894 4', format=5, channels=2, frequency=48000, lengthbytes=5664, lengthpcm=19294, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.384877.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Fight, Bodyfall, Asphalt, Concrete 04 SND120894 1', format=5, channels=2, frequency=48000, lengthbytes=3264, lengthpcm=12856, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.396325.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5420064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 101312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x16bf9a7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38200b18c
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38200b25c
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38200b298
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38200b368
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x341214cb8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Fight, Bodyfall, Asphalt, Concrete 04 SND120894 3', format=5, channels=2, frequency=48000, lengthbytes=5088, lengthpcm=24335, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.435834.
+[LOG] SoundI::release                          : Amb_Thunder_Pad (0x150af3e88)
+[LOG] SoundI::release                          :     Amb_Thunder_Pad (0x3921bfc98)
+[LOG] SoundI::release                          :     Amb_Thunder_Pad (0x150b18268)
+[LOG] SoundI::release                          :  (0x1567e71c8)
+[LOG] SoundI::release                          :     Fight, Bodyfall, Asphalt, Concrete 04 SND120894 5 (0x1567d9928)
+[LOG] SoundI::release                          :  (0x3412ded18)
+[LOG] SoundI::release                          :     Fight, Bodyfall, Asphalt, Concrete 04 SND120894 4 (0x34134dd08)
+[LOG] SoundI::release                          :  (0x150aaa828)
+[LOG] SoundI::release                          :     Fight, Bodyfall, Asphalt, Concrete 04 SND120894 3 (0x150aaa998)
+[LOG] SoundI::release                          :  (0x3412629f8)
+[LOG] SoundI::release                          :     Fight, Bodyfall, Asphalt, Concrete 04 SND120894 2 (0x34139f8e8)
+[LOG] SoundI::release                          :  (0x150aaabf8)
+[LOG] SoundI::release                          :     Fight, Bodyfall, Asphalt, Concrete 04 SND120894 1 (0x150ac51e8)
+[LOG] SoundI::release                          :  (0x398874e38)
+[LOG] SoundI::release                          :     ROCKImpt-LR_Croatia-Impact Rock Smash Sound Effects   30 ROCKImpt, Impact, Hit, Smash, Dropping, Falling, Rattle, Texture, Rocky Beach, 30_FTUS_AIOL_192k32b 1 (0x3988e4fd8)
+[LOG] SoundI::release                          :  (0x1567d70e8)
+[LOG] SoundI::release                          :     Rocks, Impact, Brick, Hit Ground, Light SND23813 (0x156785af8)
+[LOG] SoundI::release                          :  (0x3386d11d8)
+[LOG] SoundI::release                          :     Amb_Thunder_RFX_08 (0x341374f48)
+[LOG] SoundI::release                          :  (0x398f6caf8)
+[LOG] SoundI::release                          :     Amb_Thunder_RFX_04 (0x150ae69e8)
+[LOG] SoundI::release                          :  (0x398f34a58)
+[LOG] SoundI::release                          :     Amb_Thunder_RFX_03 (0x150ac1988)
+[LOG] SoundI::release                          :  (0x398f510c8)
+[LOG] SoundI::release                          :     Amb_Thunder_RFX_02 (0x150abc908)
+[LOG] SoundI::release                          :  (0x151210f48)
+[LOG] SoundI::release                          :     Amb_Thunder_RFX_01 (0x1512110b8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.

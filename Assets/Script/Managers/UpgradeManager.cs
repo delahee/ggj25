@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UpgradeManager : MonoBehaviour
@@ -127,13 +128,15 @@ public class UpgradeManager : MonoBehaviour
     void PopulateSelection()
     {
         selectionGO = Instantiate(SelectionPrefab, transform.parent);
-        Button[] buttons = selectionGO.GetComponentsInChildren<Button>();
+        HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
 
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponentInChildren<TMP_Text>().text = selection[i].Name;
+            buttons[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<TMP_Text>().text = selection[i].Effect;
             int index = i;
             buttons[i].onClick.AddListener(() => SelectUpgrade(index));
+            
         }
     }
     #endregion
@@ -180,11 +183,12 @@ public class UpgradeManager : MonoBehaviour
         }
         PopulateSelection();
     }
-
+    
+    
     public void SelectUpgrade(int index)
     {
         selection[index].DoUpgrade();
-        Button[] buttons = selectionGO.GetComponentsInChildren<Button>();
+        HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].onClick.RemoveAllListeners();

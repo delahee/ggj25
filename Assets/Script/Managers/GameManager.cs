@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         {
             InitGame();
         }
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambience/Amb_Inferno", gameObject);
     }
 
     #endregion

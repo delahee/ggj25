@@ -44,9 +44,10 @@ public class GateOfHell : MonoBehaviour, IHit
     {
         if (dead) return;
         hp-=dmg;
-        if (hp <= 0)
+        if (hp <= 0) 
         {
             GameOver();
         }
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Generic/Enemy_Impact");
     }
 }
