@@ -81,12 +81,11 @@ public class BubbleManager : MonoBehaviour
 
     private void Start()
     {
-        MeltAutoRate = 0.20f;
         PopRoutine();
         InvokeRepeating(nameof(AutoRoutine), 1f, 1f);
     }
 
-    void PopRoutine() 
+    public void PopRoutine() 
     {
         GameObject go = Instantiate(GameManager.Instance.Data.Bubbles[0].prefab, 
             Spawns.transform.position + new Vector3(Random.Range(-500f,500f), Random.Range(-500f, 500), 0), 
@@ -94,7 +93,7 @@ public class BubbleManager : MonoBehaviour
             Spawns.transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(PopClick);
-        Invoke(nameof(PopRoutine), (PopRate != 0) ? 1 / PopRate : 0f);
+        Invoke(nameof(PopRoutine), (PopRate != 0) ? 1 / PopRate : 1f);
     }
 
     void PopClick()
@@ -104,15 +103,15 @@ public class BubbleManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Pops_Gain");
     }
 
-    void MeltRoutine()
+    public void MeltRoutine()
     {
         GameObject go = Instantiate(GameManager.Instance.Data.Bubbles[1].prefab,
             Spawns.transform.position + new Vector3(Random.Range(-500f, 500f), Random.Range(-500f, 500), 0),
             Quaternion.identity,
-            Spawns.transform);
+            transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(MeltClick);
-        Invoke(nameof(MeltRoutine), (MeltRate != 0) ? 1 / MeltRate : 0f);
+        Invoke(nameof(MeltRoutine), (MeltRate != 0) ? 1 / MeltRate : 1f);
     }
 
     void MeltClick()
@@ -122,7 +121,7 @@ public class BubbleManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Melts_Gain");
     }
 
-    void MithrilRoutine()
+    public void MithrilRoutine()
     {
         GameObject go = Instantiate(GameManager.Instance.Data.Bubbles[1].prefab,
             Spawns.transform.position + new Vector3(Random.Range(-500f, 500f), Random.Range(-500f, 500), 0),
@@ -130,7 +129,7 @@ public class BubbleManager : MonoBehaviour
             Spawns.transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(MithrilClick);
-        Invoke(nameof(MithrilRoutine), (MithrilRate != 0) ? 1 / MithrilRate : 0f);
+        Invoke(nameof(MithrilRoutine), (MithrilRate != 0) ? 1 / MithrilRate : 1f);
     }
 
     void MithrilClick()
@@ -152,8 +151,12 @@ public class BubbleManager : MonoBehaviour
         PopAutoRate = imps * PopValue;
         if (UpgradeManager.Instance.UniqueUpgrades.Contains("Beholder"))
             MeltAutoRate = imps * MeltValue;
+        else
+            MeltAutoRate = 0;
         if (UpgradeManager.Instance.UniqueUpgrades.Contains("AutomatedElves"))
             MithrilAutoRate = imps * MithrilValue;
+        else
+            MithrilAutoRate = 0;
     }
     #endregion
 }

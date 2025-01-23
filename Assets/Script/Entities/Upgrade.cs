@@ -71,11 +71,17 @@ public class Upgrade : MonoBehaviour
         {
             var up = MakeItGO();
 
+            if (IsUnique)
+                UpgradeManager.Instance.UniqueUpgrades.Add(Name);
+
             if (Method != "")
-                up.Invoke(Method,0f);
-            else
-                Debug.LogError($"No method given!");
-            Destroy(up);
+            { 
+                up.Invoke(Method, 0f);
+                Debug.Log($"Execute {Method}");
+            }
+            /*else
+                Debug.LogError($"No method given!");*/
+            Destroy(up.transform.parent);
         }
         Destroy(UpgradeManager.Instance.selectionGO);
     }
@@ -95,6 +101,55 @@ public class Upgrade : MonoBehaviour
     void ElbowGrease()
     {
         BubbleManager.PopValue *= 1.20f;
+    }
+
+    void ElvenLoveMachine()
+    {
+        BubbleManager.MithrilRate *= 1.50f;
+    }
+
+    void ElvenLubricant()
+    {
+        BubbleManager.MithrilValue *= 2f;
+    }
+
+    void FurnaceOverload()
+    {
+        BubbleManager.MeltRate *= 1.50f;
+    }
+
+    void GoldPlatedFurnace()
+    {
+        BubbleManager.MeltValue *= 2f;
+    }
+
+    void Imps()
+    {
+        UpgradeManager.Imps = 1;
+    }
+
+    void ImpSpeed()
+    {
+        UpgradeManager.Imps *= 2;
+    }
+
+    void IronMine()
+    {
+        BubbleManager.MeltRate = 1f;
+        BubbleManager.MeltValue = 1f;
+        BubbleManager.Instance.MeltRoutine();
+    }
+
+    void MithrilFactory()
+    {
+        BubbleManager.MithrilRate = 1f;
+        BubbleManager.MithrilValue = 1f;
+        BubbleManager.Instance.MithrilRoutine();
+    }
+
+    void Sustainer()
+    {
+        BubbleManager.PopValue *= 2f;
     }
 
     #endregion
