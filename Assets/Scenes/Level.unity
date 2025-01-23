@@ -465,7 +465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4357725056392033811, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
       propertyPath: dtEnemySpawn
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5795334755474586737, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
       propertyPath: m_Name
