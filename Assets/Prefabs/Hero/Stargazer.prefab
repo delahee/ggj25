@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5743233326204010539}
   - component: {fileID: 3104085892950801313}
   m_Layer: 0
-  m_Name: Pyro
+  m_Name: Stargazer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 1.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.9178746, y: 1.8358662, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1346396402, guid: 9f884e25267204e28ae4316c0dee0fec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20bba3c8781014d5cbb976c9e97a366b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.07, y: 3.29}
+  m_DrawMode: 1
+  m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  pushForce: 1
-  data: {fileID: 11400000, guid: 7b0ea80799a4cf1468c429d0be6b0981, type: 2}
+  pushForce: 0
+  data: {fileID: 11400000, guid: b94612669373ce84eaa6f3351d4e0ebd, type: 2}
   hp: 10
   atkMaxDuration: 0.1
   atkT: 0

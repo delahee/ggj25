@@ -21,3 +21,4 @@ MonoBehaviour:
   popCost: 0
   meltCost: 0
   mithrilCost: 0
+  EffectMethodName: AutoClick

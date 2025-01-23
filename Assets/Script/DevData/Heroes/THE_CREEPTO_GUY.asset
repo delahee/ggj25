@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda55e2285fba43088b5f81a6b26fd0a, type: 3}
+  m_Name: THE_CREEPTO_GUY
+  m_EditorClassIdentifier: 
+  id: THE_CREEPTO_GUY
+  isPlayable: 0
+  isCommander: 0
+  name: The Creepto Guy
+  desc: Always has the "best plans" and you should "totally invest" in them.
+  fx: Weak and whacks people with his PC, but grants you 1% interests on your currencies
+    every 3s. Has however a "2%" chance to lose 50% of it instead. Always backliner.
+  AtkDmgBasis: 5
+  AtkCooldown: 3
+  Range: 7
+  hp: 100

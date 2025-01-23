@@ -60,6 +60,10 @@ public class UpgradeManager : MonoBehaviour
     //TODO populate with dev data
     void PopulateUpgrades()
     {
+        equipmentUpgrades.Clear();
+        volcanoUpgrades.Clear();
+        ecoUpgrades.Clear();
+
         equipmentUpgrades.Add(new Upgrade("tech1", UpgradeType.Equipment));
         equipmentUpgrades.Add(new Upgrade("tech2", UpgradeType.Equipment));
         equipmentUpgrades.Add(new Upgrade("tech3", UpgradeType.Equipment));
@@ -88,6 +92,10 @@ public class UpgradeManager : MonoBehaviour
         {
             UpgradeDependence dep = new UpgradeDependence();
             dep.DependsOnEco = e.dependence;
+
+            if (!UniqueUpgrades.Contains(dep.CheckDependence()))
+                continue;
+
             volcanoUpgrades.Add(new Upgrade(
                 e.ecoName,
                 UpgradeType.Volcano,
