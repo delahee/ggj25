@@ -9,12 +9,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: hp
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: dmg
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 279c3c4262cad2c428d24ef912c1adce, type: 2}
     - target: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_Name
-      value: Angle
+      value: Angel
       objectReference: {fileID: 0}
     - target: {fileID: 6237373499025606374, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_Size.x
@@ -56,8 +64,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5116126009365154246}
   m_SourcePrefab: {fileID: 100100000, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+--- !u!1 &451110395207141086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5116126009365154246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451110395207141086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5b9d2ec307ede439e1fc97de488f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 0}
+  data: {fileID: 11400000, guid: 279c3c4262cad2c428d24ef912c1adce, type: 2}
+  buffHpFx: {fileID: 8834820431700888649}
+  buffSpeedFX: {fileID: 4019694122515850838}
+  speed: 5
+  hp: 120
+  dmg: 22
+  atkMaxDuration: 2
+  dead: 0
+  prefab: {fileID: 3184787713571840630, guid: 7228d59780e2170478da7c216a504dd1, type: 3}
+  ShootInterval: 0.8
+  t: 0.8
+--- !u!198 &4019694122515850838 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 697328819050617703, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8834820431700888649 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4971459433223352696, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
