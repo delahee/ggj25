@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda55e2285fba43088b5f81a6b26fd0a, type: 3}
+  m_Name: THE_BALROG
+  m_EditorClassIdentifier: 
+  id: THE_BALROG
+  isPlayable: 0
+  isCommander: 0
+  name: The Balrog
+  desc: Came to visit a friend and got force-hired.
+  fx: Lashes attack. Two horizontal swipes and a forward slash that has 150% range
+    and 150% dmg in a tighter cone.
+  AtkDmgBasis: 10
+  AtkCooldown: 0.5
+  Range: 15
+  hp: 250

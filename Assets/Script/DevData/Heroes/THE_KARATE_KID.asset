@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda55e2285fba43088b5f81a6b26fd0a, type: 3}
+  m_Name: THE_KARATE_KID
+  m_EditorClassIdentifier: 
+  id: THE_KARATE_KID
+  isPlayable: 0
+  isCommander: 0
+  name: The Karate Kid
+  desc: Will punch down your backline.
+  fx: Unleashes kicks. Killing an ophanim unleashes a dragon kick for 500% dmg and
+    200% range.
+  AtkDmgBasis: 5
+  AtkCooldown: 0.2
+  Range: 7
+  hp: 100
