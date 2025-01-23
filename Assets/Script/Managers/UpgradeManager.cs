@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UpgradeManager : MonoBehaviour
@@ -134,6 +135,7 @@ public class UpgradeManager : MonoBehaviour
             buttons[i].GetComponentInChildren<TMP_Text>().text = selection[i].Name;
             int index = i;
             buttons[i].onClick.AddListener(() => SelectUpgrade(index));
+            
         }
     }
     #endregion
@@ -181,10 +183,16 @@ public class UpgradeManager : MonoBehaviour
         PopulateSelection();
     }
 
+    public void OnHover()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Hover");
+    }
+    
     public void SelectUpgrade(int index)
     {
         selection[index].DoUpgrade();
         Button[] buttons = selectionGO.GetComponentsInChildren<Button>();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Confirm");
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].onClick.RemoveAllListeners();

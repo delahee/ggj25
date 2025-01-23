@@ -35,6 +35,12 @@ public class KiwiPizza : Enemy
         foreach (Enemy enemy in toDebuffOnDeath) {
             enemy.DebuffHP(this);
         }
-        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_Zombie_Death");
+    }
+    
+    public override void Init(Enemies data)
+    {
+        base.Init(data);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_Zombie_Spawn");
     }
 }
