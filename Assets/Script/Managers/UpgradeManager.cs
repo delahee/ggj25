@@ -20,7 +20,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         DontDestroyOnLoad(gameObject);
 
@@ -59,7 +59,21 @@ public class UpgradeManager : MonoBehaviour
 
         foreach (Science vb in GameManager.Instance.Data.SciencesUpgrades) 
         { 
-            volcanoUpgrades.Add(new Upgrade(vb.scienceName, UpgradeType.Volcano, vb.desc, vb.fx, vb.popCost, vb.meltCost, vb.mithrilCost, vb.EffectMethodName));
+            UpgradeDependence dep = new UpgradeDependence();
+            dep.DependsOnScience = vb.dependence; 
+            volcanoUpgrades.Add(new Upgrade(
+                vb.scienceName, 
+                UpgradeType.Volcano, 
+                vb.desc, 
+                vb.fx,
+                vb.isUnique,
+                dep,
+                vb.EffectMethodName,
+                vb.prefab,
+                vb.popCost, 
+                vb.meltCost, 
+                vb.mithrilCost
+                ));
         }
 
         ecoUpgrades.Add(new Upgrade("eco1", UpgradeType.Economy));
