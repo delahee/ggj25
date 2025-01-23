@@ -19,7 +19,7 @@ MonoBehaviour:
     Data3: 783475874
     Data4: -15999547
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     Data3: -1215675205
     Data4: 438533833
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
     Data3: -505541732
     Data4: 810887325
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -100,7 +100,7 @@ MonoBehaviour:
     Data3: -693910859
     Data4: 894123640
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -127,7 +127,7 @@ MonoBehaviour:
     Data3: -432021607
     Data4: -209176887
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -135,26 +135,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 580
---- !u!114 &-7162407639370248539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Sound/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638732488708635920
-  FileSizes:
-  - Name: 
-    Value: 3604
-  Exists: 1
 --- !u!114 &-5973119225200202635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +154,7 @@ MonoBehaviour:
     Data3: -482314854
     Data4: -527569515
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -182,6 +162,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 420
+--- !u!114 &-5625295432057353452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sound/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638732495322554633
+  FileSizes:
+  - Name: Desktop
+    Value: 2630112
+  Exists: 1
 --- !u!114 &-5594808275329454978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
     Data3: 676127662
     Data4: 1670372863
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -228,7 +228,7 @@ MonoBehaviour:
     Data3: -416029522
     Data4: -963836385
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -255,7 +255,7 @@ MonoBehaviour:
     Data3: 204667308
     Data4: 1465731582
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -282,7 +282,7 @@ MonoBehaviour:
     Data3: -879053686
     Data4: -771197480
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -309,7 +309,7 @@ MonoBehaviour:
     Data3: -21754459
     Data4: -1286938457
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -336,7 +336,7 @@ MonoBehaviour:
     Data3: 1052415391
     Data4: -1548168578
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -344,6 +344,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 580
+--- !u!114 &-3223829482474858897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sound/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638732495322590447
+  FileSizes:
+  - Name: Build
+    Value: 3604
+  - Name: Desktop
+    Value: 3604
+  Exists: 1
 --- !u!114 &-3132052292835706387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +385,7 @@ MonoBehaviour:
     Data3: -1493167980
     Data4: -1032652168
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -390,7 +412,7 @@ MonoBehaviour:
     Data3: -10799720
     Data4: 1367465678
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -417,7 +439,7 @@ MonoBehaviour:
     Data3: 1944463008
     Data4: 307529738
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -444,7 +466,7 @@ MonoBehaviour:
     Data3: -1327117691
     Data4: -2105764304
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -471,7 +493,7 @@ MonoBehaviour:
     Data3: -1764498799
     Data4: 1497696922
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -498,7 +520,7 @@ MonoBehaviour:
     Data3: 772445312
     Data4: 615050796
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -525,7 +547,7 @@ MonoBehaviour:
     Data3: 540586113
     Data4: 289918423
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -552,7 +574,7 @@ MonoBehaviour:
     Data3: 1183579066
     Data4: -103888582
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -579,7 +601,7 @@ MonoBehaviour:
     Data3: -95401795
     Data4: -1736990274
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -606,7 +628,7 @@ MonoBehaviour:
     Data3: -112965760
     Data4: -1289973501
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -633,7 +655,7 @@ MonoBehaviour:
     Data3: -448302206
     Data4: 1217895776
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -660,7 +682,7 @@ MonoBehaviour:
     Data3: -1019995745
     Data4: 1048843194
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -687,7 +709,7 @@ MonoBehaviour:
     Data3: 391635130
     Data4: 1752229516
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -714,7 +736,7 @@ MonoBehaviour:
     Data3: 1947024805
     Data4: 1922104519
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -741,7 +763,7 @@ MonoBehaviour:
     Data3: -1953470287
     Data4: -1219943653
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -762,8 +784,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -7162407639370248539}
-  - {fileID: 2912302557868308543}
+  - {fileID: -3223829482474858897}
+  - {fileID: -5625295432057353452}
   EditorEvents:
   - {fileID: -1239030677973835819}
   - {fileID: -1847725916806442087}
@@ -810,10 +832,10 @@ MonoBehaviour:
   - {fileID: -841041465426963959}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   StringsBanks:
-  - {fileID: -7162407639370248539}
-  cacheTime: 638732488708635920
+  - {fileID: -3223829482474858897}
+  cacheTime: 638732495322590447
   cacheVersion: 131622
 --- !u!114 &25190989832176529
 MonoBehaviour:
@@ -834,7 +856,7 @@ MonoBehaviour:
     Data3: 1886668714
     Data4: 1875706388
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -861,7 +883,7 @@ MonoBehaviour:
     Data3: 301143203
     Data4: 668944658
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -888,7 +910,7 @@ MonoBehaviour:
     Data3: 602411959
     Data4: 1158001117
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -915,7 +937,7 @@ MonoBehaviour:
     Data3: -857037683
     Data4: -1896302936
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -942,7 +964,7 @@ MonoBehaviour:
     Data3: -554524491
     Data4: -200570691
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -969,7 +991,7 @@ MonoBehaviour:
     Data3: -1180854897
     Data4: 1182877905
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -996,7 +1018,7 @@ MonoBehaviour:
     Data3: 788535996
     Data4: -1340797975
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1004,24 +1026,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &2912302557868308543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Sound/Build/Desktop/Master.bank
-  Name: Desktop/Master
-  StudioPath: bank:/Master
-  lastModified: 638732488708621473
-  FileSizes: []
-  Exists: 1
 --- !u!114 &3195109491199543124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,7 +1045,7 @@ MonoBehaviour:
     Data3: -2076175437
     Data4: -465077624
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1068,7 +1072,7 @@ MonoBehaviour:
     Data3: 931973553
     Data4: 1257045105
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1095,7 +1099,7 @@ MonoBehaviour:
     Data3: 350928565
     Data4: 294336945
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1122,7 +1126,7 @@ MonoBehaviour:
     Data3: 2064422318
     Data4: 1155178536
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1149,7 +1153,7 @@ MonoBehaviour:
     Data3: 720958891
     Data4: -959432230
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1176,7 +1180,7 @@ MonoBehaviour:
     Data3: -902962019
     Data4: 273034185
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1203,7 +1207,7 @@ MonoBehaviour:
     Data3: 564696488
     Data4: -1908441189
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1230,7 +1234,7 @@ MonoBehaviour:
     Data3: -1001753195
     Data4: 1715828051
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1257,7 +1261,7 @@ MonoBehaviour:
     Data3: -168736369
     Data4: 562380545
   Banks:
-  - {fileID: 2912302557868308543}
+  - {fileID: -5625295432057353452}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
