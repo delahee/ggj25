@@ -23,5 +23,5 @@ public enum DependsOnEco
     NONE,
     Imps,
     IronMine,
-    MithilFactory
+    MithrilFactory
 }

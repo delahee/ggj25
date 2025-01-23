@@ -87,6 +87,16 @@ public class Upgrade : MonoBehaviour
         UpgradeManager.Imps += 1;
     }
 
+    void Bps()
+    {
+        BubbleManager.PopRate += 1f;
+    }
+
+    void ElbowGrease()
+    {
+        BubbleManager.PopValue *= 1.20f;
+    }
+
     #endregion
 }
 
