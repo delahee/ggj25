@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8210165967719362112, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8294281060259120763, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -56,8 +60,77 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7356798339881199249}
+    - targetCorrespondingSourceObject: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3703075043693187864}
   m_SourcePrefab: {fileID: 100100000, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+--- !u!1 &451110395207141086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &7356798339881199249
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451110395207141086}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3703075043693187864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451110395207141086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c9b892926377a4a9d067f7a7ee91e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 0}
+  data: {fileID: 11400000, guid: 217796de4a65d274985c25ae7e9f37f6, type: 2}
+  buffHpFx: {fileID: 8834820431700888649}
+  buffSpeedFX: {fileID: 4019694122515850838}
+  speed: 3
+  hp: 0
+  atkMaxDuration: 2
+  atkT: 0
+  hitT: 0
+  hitDur: 0.1
+  dead: 0
+  pizzaList: []
+  virtueList: []
+  toDebuffOnDeath: []
+--- !u!198 &4019694122515850838 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 697328819050617703, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8834820431700888649 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4971459433223352696, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}

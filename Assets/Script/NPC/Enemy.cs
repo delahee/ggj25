@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -8,32 +9,45 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IHit
 {
-    public GateOfHell door;
-    public Enemies data;
+    public  GateOfHell       door;
+    public  Enemies          data;
+    public  ParticleSystem   buffHpFx;
+    public  ParticleSystem   buffSpeedFX;
     [Space]
-    [HideInInspector] public float speed = 3;     // Obsolete. Use data.speed instead
-    public int hp;
+    public  float    speed = 3;
+    public  int      hp;
+    public  int      dmg;
 
-    public float atkMaxDuration = 2.0f;
-    public float atkT = 0f;
+    [SerializeField] 
+            float atkMaxDuration = 2.0f;
+            float atkT = 0f;
 
-    public float hitT;
-    public float hitDur = .1f;
+            float hitT;
+            float hitDur = .1f;
 
-   public bool dead = false;
-    bool hpBuffed;
+    public  bool dead;
+            bool hpBuffed;
+            bool speedBuffed;
 
-    bool speedBuffed;
-    SpriteRenderer renderer;
+            List<KiwiPizza>   pizzaList   = new();
+            List<Virtue>      virtueList  = new();
 
-    [SerializeField]  List<KiwiPizza> pizzaList = new();
+            SpriteRenderer renderer;
+
+    private void OnValidate()
+    {
+        if (data != null) Init(data);
+    }
 
     public void Init(Enemies data)
     {
         this.data = data;
+        this.speed = data.speed;
+        this.dmg = data.dmg;
         hp = data.hp 
             + (int)(Time.timeSinceLevelLoad / 20);  // Increases HP along time
-        renderer=GetComponent<SpriteRenderer>();
+
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     private void Awake()
@@ -75,7 +89,7 @@ public class Enemy : MonoBehaviour, IHit
 
     void Attack()
     {
-        atkT = Random.Range(0f, atkMaxDuration);
+        atkT = UnityEngine.Random.Range(0f, atkMaxDuration);
         GateOfHell.instance?.OnHit(data.dmg);
     }
 
@@ -117,30 +131,52 @@ public class Enemy : MonoBehaviour, IHit
         pizzaList.Add(kp);
         
         if (hpBuffed) return;
-        hp += data.hp / 2;
         hpBuffed = true;
+        hp += data.hp / 2;
+
+        buffHpFx.Play();
     }
     public void DebuffHP(KiwiPizza kp)
     {
         if (!pizzaList.Contains(kp)) return;
         pizzaList.Remove(kp);
-        if (!hpBuffed) return;
         if (pizzaList.Count > 0) return;
-        if (hpBuffed) Debug.LogWarning("Buffed, but should not");
-        hp -= data.hp / 2;
+        
+        if (!hpBuffed) return;
         hpBuffed = false;
+        hp -= data.hp / 2;
+
+        buffHpFx.Stop();
+        
         if (hp < 0)
             OnDie();
     }
 
 
-    public void BuffSpeed()
+    public void BuffSpeed(Virtue v)
     {
+        if (virtueList.Contains(v)) return;
+        virtueList.Add(v);
+
+        if (speedBuffed) return;
+        speedBuffed = true;
         speed = data.speed * 1.5f;
+
+        buffSpeedFX.Play();
+
     }
-    public void DebuffSpeed()
+    public void DebuffSpeed(Virtue v)
     {
+        if (!virtueList.Contains(v)) return;
+        virtueList.Remove(v);
+        if (virtueList.Count > 0) return;
+
+        if (!speedBuffed) return;
+        speedBuffed = false;
         speed = data.speed;
+
+        buffSpeedFX.Stop();
+
     }
 
 }
