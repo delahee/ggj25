@@ -20,6 +20,11 @@ public class Hero : MonoBehaviour
     float patrolT = 0.0f;
     float patrolInterval = 2.0f;
 
+    private void OnValidate()
+    {
+        if (data != null)
+            Init(data);
+    }
 
     void Init(Heroes data)
     {

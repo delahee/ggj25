@@ -9,9 +9,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: hp
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: dmg
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 37457a072cea1774f8bc44600d47902f, type: 2}
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_Name
       value: Cupido
@@ -44,6 +56,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6772782054960246270, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 835d62fb1c600634e9d26232ca32aebc, type: 2}
     - target: {fileID: 8294281060259120763, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
