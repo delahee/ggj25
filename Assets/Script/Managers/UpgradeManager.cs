@@ -132,6 +132,7 @@ public class UpgradeManager : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponentInChildren<TMP_Text>().text = selection[i].Name;
+            buttons[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<TMP_Text>().text = selection[i].Effect;
             int index = i;
             buttons[i].onClick.AddListener(() => SelectUpgrade(index));
         }
