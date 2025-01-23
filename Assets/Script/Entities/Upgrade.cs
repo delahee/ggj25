@@ -10,10 +10,14 @@ public class Upgrade : MonoBehaviour
     public UpgradeType Type;
     public string Description = "";
     public string Effect;
+    public bool IsUnique;
+    public UpgradeDependence Dependence;
+    public GameObject Prefab;
     public float PopCost;
     public float MeltCost;
     public float MithrilCost;
     public string Method;
+    public EquipType EquipType;
 
     public Upgrade(string name, UpgradeType type)
     {
@@ -21,14 +25,27 @@ public class Upgrade : MonoBehaviour
         Type = type;
     }
 
-    public Upgrade(string name, UpgradeType type, string description, string effect, float popCost, float meltCost, float mithrilCost, string method) : this(name, type)
+    public Upgrade(string name, 
+        UpgradeType type, 
+        string description, 
+        string effect, 
+        bool isUnique, 
+        UpgradeDependence dependence, 
+        string method, 
+        GameObject prefab = null, float popCost = 0, float meltCost = 0, float mithrilCost = 0, EquipType equipType = EquipType.Weapon) : this(name, type)
     {
         Description = description;
         Effect = effect;
+        IsUnique = isUnique;
+        Dependence = dependence;
+        Prefab = prefab;
         PopCost = popCost;
         MeltCost = meltCost;
         MithrilCost = mithrilCost;
         Method = method;
+
+        if (type == UpgradeType.Equipment)
+            EquipType = equipType;
     }
 
     public Upgrade MakeItGO() 
@@ -63,6 +80,13 @@ public class Upgrade : MonoBehaviour
     {
         BubbleManager.Instance.MeltAutoRate += 2;
     }
+}
+
+public class UpgradeDependence
+{
+    public DependsOnEquip DependsOnEquip;
+    public DependsOnScience DependsOnScience;
+    public DependsOnEco DependsOnEco;
 }
 
 public enum UpgradeType
