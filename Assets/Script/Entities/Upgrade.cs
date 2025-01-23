@@ -67,6 +67,9 @@ public class Upgrade : MonoBehaviour
     {
         var up = MakeItGO();
 
+        if (up.IsUnique)
+            UpgradeManager.Instance.UniqueUpgrades.Add(up.Name);
+
         if (Method != "")
             up.Invoke(Method,0f);
         else
@@ -76,10 +79,14 @@ public class Upgrade : MonoBehaviour
         Destroy(UpgradeManager.Instance.selectionGO);
     }
 
-    void BathTest()
+    #region methods
+
+    void AutoClick()
     {
-        BubbleManager.Instance.MeltAutoRate += 2;
+        UpgradeManager.Imps += 1;
     }
+
+    #endregion
 }
 
 public class UpgradeDependence
@@ -87,6 +94,17 @@ public class UpgradeDependence
     public DependsOnEquip DependsOnEquip;
     public DependsOnScience DependsOnScience;
     public DependsOnEco DependsOnEco;
+
+    public string CheckDependence()
+    {
+        if(DependsOnEquip != DependsOnEquip.NONE)
+            return DependsOnEquip.ToString();
+        if (DependsOnScience != DependsOnScience.NONE)
+            return DependsOnScience.ToString();
+        if (DependsOnEco != DependsOnEco.NONE)
+            return DependsOnEco.ToString();
+        return "";
+    }
 }
 
 public enum UpgradeType

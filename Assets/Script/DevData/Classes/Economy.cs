@@ -21,7 +21,7 @@ public class Economy : ScriptableObject
 public enum DependsOnEco
 {
     NONE,
-    IMPS,
-    IRON_MINE,
-    MITHRIL_FACTORY
+    Imps,
+    IronMine,
+    MithilFactory
 }

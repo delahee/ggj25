@@ -36,6 +36,14 @@ public class UpgradeManager : MonoBehaviour
 
     #region Upgrades
 
+    public List<string> UniqueUpgrades;
+
+    public static int Imps
+    {
+        get => Imps;
+        set { Imps = value; BubbleManager.Instance.CalculateAutoRate(value); }
+    }
+
     int equipmentLevel = 0;
     int volcanoLevel   = 0;
     int ecoLevel       = 0;
@@ -57,29 +65,43 @@ public class UpgradeManager : MonoBehaviour
         equipmentUpgrades.Add(new Upgrade("tech3", UpgradeType.Equipment));
         equipmentUpgrades.Add(new Upgrade("tech4", UpgradeType.Equipment));
 
-        foreach (Science vb in GameManager.Instance.Data.SciencesUpgrades) 
+        foreach (Science s in GameManager.Instance.Data.SciencesUpgrades) 
         { 
             UpgradeDependence dep = new UpgradeDependence();
-            dep.DependsOnScience = vb.dependence; 
+            dep.DependsOnScience = s.dependence; 
             volcanoUpgrades.Add(new Upgrade(
-                vb.scienceName, 
+                s.scienceName, 
                 UpgradeType.Volcano, 
-                vb.desc, 
-                vb.fx,
-                vb.isUnique,
+                s.desc, 
+                s.fx,
+                s.isUnique,
                 dep,
-                vb.EffectMethodName,
-                vb.prefab,
-                vb.popCost, 
-                vb.meltCost, 
-                vb.mithrilCost
+                s.EffectMethodName,
+                s.prefab,
+                s.popCost, 
+                s.meltCost, 
+                s.mithrilCost
                 ));
         }
 
-        ecoUpgrades.Add(new Upgrade("eco1", UpgradeType.Economy));
-        ecoUpgrades.Add(new Upgrade("eco2", UpgradeType.Economy));
-        ecoUpgrades.Add(new Upgrade("eco3", UpgradeType.Economy));
-        ecoUpgrades.Add(new Upgrade("eco4", UpgradeType.Economy));
+        foreach(Economy e in GameManager.Instance.Data.EconomyUpgrades)
+        {
+            UpgradeDependence dep = new UpgradeDependence();
+            dep.DependsOnEco = e.dependence;
+            volcanoUpgrades.Add(new Upgrade(
+                e.ecoName,
+                UpgradeType.Volcano,
+                e.desc,
+                e.fx,
+                e.isUnique,
+                dep,
+                e.EffectMethodName,
+                null,
+                e.popCost,
+                e.meltCost,
+                e.mithrilCost
+                ));
+        }
     }
 
     [HideInInspector]
