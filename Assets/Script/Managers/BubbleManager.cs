@@ -94,7 +94,7 @@ public class BubbleManager : MonoBehaviour
             Spawns.transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(PopClick);
-        Invoke(nameof(PopRoutine), PopRate);
+        Invoke(nameof(PopRoutine), (PopRate != 0) ? 1 / PopRate : 0f);
     }
 
     void PopClick()
@@ -112,7 +112,7 @@ public class BubbleManager : MonoBehaviour
             Spawns.transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(MeltClick);
-        Invoke(nameof(MeltRoutine), MeltRate);
+        Invoke(nameof(MeltRoutine), (MeltRate != 0) ? 1 / MeltRate : 0f);
     }
 
     void MeltClick()
@@ -130,7 +130,7 @@ public class BubbleManager : MonoBehaviour
             Spawns.transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(MithrilClick);
-        Invoke(nameof(MithrilRoutine), MithrilRate);
+        Invoke(nameof(MithrilRoutine), (MithrilRate != 0) ? 1 / MithrilRate : 0f);
     }
 
     void MithrilClick()
@@ -150,8 +150,10 @@ public class BubbleManager : MonoBehaviour
     public void CalculateAutoRate(int imps)
     {
         PopAutoRate = imps * PopValue;
-        MeltAutoRate = imps * MeltValue;
-        MithrilAutoRate = imps * MithrilValue;
+        if (UpgradeManager.Instance.UniqueUpgrades.Contains("Beholder"))
+            MeltAutoRate = imps * MeltValue;
+        if (UpgradeManager.Instance.UniqueUpgrades.Contains("AutomatedElves"))
+            MithrilAutoRate = imps * MithrilValue;
     }
     #endregion
 }
