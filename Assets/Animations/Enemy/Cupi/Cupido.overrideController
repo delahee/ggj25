@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cupido
+  m_Controller: {fileID: 9100000, guid: 65841738fcfe8d047b01a76dc5596dad, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3d4f51cc9dfb8b34baecdeb00c5b4aef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c6d1da0a2090f15478e196034e11331a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6916730769bc63645ab8a18ecd8f4d55, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 24fa85c1083ef404ca76f37d7e5cb807, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1766c56d73a05e34182218c31727c4c6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 33187659cf9694c44a6097e058cd1e42, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e1762e86251b1ca42bfb59c7ab7d8008, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ad56ed677190080419a6a578131f2c94, type: 2}

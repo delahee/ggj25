@@ -3,9 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Xml.Linq;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 
+public enum NPC_State
+{
+    Idle,
+    Walk,
+    Atk,
+    Hit,
+    Dead,
+}
 
 public class Enemy : MonoBehaviour, IHit
 {
@@ -29,10 +38,15 @@ public class Enemy : MonoBehaviour, IHit
             bool hpBuffed;
             bool speedBuffed;
 
+
             List<KiwiPizza>   pizzaList   = new();
             List<Virtue>      virtueList  = new();
 
             SpriteRenderer renderer;
+            Animator animator;
+
+    int atkAnimHashCode;
+    public AnimationClip atkAnim;
 
     private void OnValidate()
     {
@@ -48,6 +62,7 @@ public class Enemy : MonoBehaviour, IHit
             + (int)(Time.timeSinceLevelLoad / 20);  // Increases HP along time
 
         renderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void Awake()
@@ -57,12 +72,15 @@ public class Enemy : MonoBehaviour, IHit
 
     protected virtual void Update()
     {
+
+
         if (hitT >= 0)
         {
             hitT -= Time.deltaTime;
             if (hitT < 0)
             {
                 renderer.color = Color.white;
+
             }
         }
 
@@ -89,13 +107,18 @@ public class Enemy : MonoBehaviour, IHit
 
     void Attack()
     {
+        animator.SetTrigger("Atk");
+     
         atkT = UnityEngine.Random.Range(0f, atkMaxDuration);
         GateOfHell.instance?.OnHit(data.dmg);
     }
 
+
     public virtual void OnHit(int dmg)
     {
         if (dead) return;
+
+        animator.SetBool("Hit", true);
         hp-=dmg;
         hitT = hitDur;
         GetComponent<SpriteRenderer>().color = Color.black;
@@ -107,6 +130,7 @@ public class Enemy : MonoBehaviour, IHit
 
     protected virtual void OnDie()
     {
+        animator.SetBool("Dead", true);
         dead = true;
         Destroy(gameObject);
     }
