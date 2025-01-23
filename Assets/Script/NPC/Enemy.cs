@@ -18,6 +18,8 @@ public enum NPC_State
 
 public class Enemy : MonoBehaviour, IHit
 {
+    public GameObject atkFX;
+
     public  GateOfHell       door;
     public  Hero             target;
     public  Enemies          data;
@@ -27,9 +29,10 @@ public class Enemy : MonoBehaviour, IHit
     public  float    speed = 3;
     public  int      hp;
     public  int      dmg;
+    public  float      pushForce = 1.0f;
 
     [SerializeField] 
-            float atkMaxDuration = 2.0f;
+            float atkMaxDuration = 1.0f;
             float atkT = 0f;
 
             float hitT;
@@ -47,10 +50,6 @@ public class Enemy : MonoBehaviour, IHit
             Animator animator;
 
 
-    private void OnValidate()
-    {
-        if (data != null) Init(data);
-    }
 
     public void Init(Enemies data)
     {
@@ -119,7 +118,11 @@ public class Enemy : MonoBehaviour, IHit
         animator.SetTrigger("Atk");
         if (target)
         {
-            // apply dmg to hero
+            Vector3 dir = target.transform.position - transform.position;
+            dir.y = 0;
+            target.Push(dir.normalized * pushForce);
+            Instantiate(atkFX, target.transform.position, target.transform.rotation);
+            target.OnHit(dmg);
         }
         else
         {
@@ -141,6 +144,11 @@ public class Enemy : MonoBehaviour, IHit
         {
             OnDie();
         }
+    }
+
+    public void Push(Vector3 dir)
+    {
+        transform.position += dir;
     }
 
     protected virtual void OnDie()

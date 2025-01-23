@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : MonoBehaviour
+public class Hero : MonoBehaviour, IHit
 {
+    public GameObject atkFX;
+
 
     public float speed = 3.0f;
     public float pushForce = 1.0f;
@@ -13,12 +15,12 @@ public class Hero : MonoBehaviour
     public int hp = 10;
     Enemy targetEnemy;
 
-    public float atkMaxDuration = 2.0f;
+    public float atkMaxDuration = 1.0f;
     public float atkT = 0f;
 
     Vector3 patrolPos;
     float patrolT = 0.0f;
-    float patrolInterval = 2.0f;
+    float patrolInterval = 3.0f;
 
     private void OnValidate()
     {
@@ -72,14 +74,12 @@ public class Hero : MonoBehaviour
 
     void RequestPatrolPos()
     {
-        var gate = GateOfHell.instance;
-        if (gate == null) return;
+        Vector3 parentPos = transform.parent.position;
 
-
-        if (Vector3.Distance(transform.position, gate.transform.position) > gate.radius / 2)
+        if (Vector3.Distance(transform.position, parentPos) > 5)
         {
-            Vector3 c = Random.insideUnitCircle * gate.radius / 2;
-            patrolPos = gate.transform.position + new Vector3(c.x, 0, c.y);
+            Vector3 c = Random.insideUnitCircle * 5;
+            patrolPos = parentPos + new Vector3(c.x, 0, c.y);
         }
         else
         {
@@ -107,6 +107,7 @@ public class Hero : MonoBehaviour
         float minDist = GateOfHell.instance.radius;
         foreach (Enemy e in FindObjectsOfType<Enemy>())
         {
+            if (e.dead) continue;
             var dist = Vector3.Distance(e.transform.position, transform.position);
             if (dist < minDist)
             {
@@ -127,23 +128,30 @@ public class Hero : MonoBehaviour
     {
         Vector3 dir = o.transform.position - transform.position;
         dir.y = 0;
-        o.transform.position += dir.normalized * pushForce;
+        o.Push(dir.normalized*pushForce);
         o.OnHit(data.AtkDmgBasis);
-
+        Instantiate(atkFX, o.transform.position, o.transform.rotation);
+        o.target = this;
         atkT = Random.Range(0f, atkMaxDuration);
     }
 
-    void OnHit()
+
+    public void Push(Vector3 dir)
+    {
+        transform.position += dir;
+    }
+
+    void OnDie()
+    {
+        Destroy(gameObject);
+    }
+
+    public void OnHit(int dmg)
     {
         hp--;
         if (hp < 0)
         {
             OnDie();
         }
-    }
-
-    void OnDie()
-    {
-        Destroy(gameObject);
     }
 }
