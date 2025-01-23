@@ -75,12 +75,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   data: {fileID: 11400000, guid: 13edda25ad3edc5498f9555d1c2f0c27, type: 2}
-  speed: 3
-  hp: 0
+  buffHpFx: {fileID: 8834820431700888649}
+  buffSpeedFX: {fileID: 4019694122515850838}
+  speed: 5
+  hp: 78
+  dmg: 12
   atkMaxDuration: 2
-  atkT: 0
-  hitT: 0
-  hitDur: 0.1
   dead: 0
 --- !u!135 &2818931162432847904
 SphereCollider:
@@ -103,3 +103,13 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!198 &4019694122515850838 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 697328819050617703, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8834820431700888649 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4971459433223352696, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
