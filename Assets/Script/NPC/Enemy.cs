@@ -130,6 +130,8 @@ public class Enemy : MonoBehaviour, IHit
     {
         animator.SetBool("Dead", true);
         dead = true;
+        EnemyManager.INSTANCE.EnemyDestroyed();
+        
         Destroy(gameObject);
     }
 
