@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Debug = FMOD.Debug;
 
 public class HeroesManager : MonoBehaviour
@@ -12,7 +13,7 @@ public class HeroesManager : MonoBehaviour
     public GameObject SmithPrefab;
     public GameObject StargazerPrefab;
     public GameObject DancerPrefab;
-    public GameObject HellgirlPrefab;
+    public GameObject FighterPrefab;
     public GameObject PyroPrefab;
     public GameObject KerberosPrefab;
     // Start is called before the first frame update
@@ -27,21 +28,37 @@ public class HeroesManager : MonoBehaviour
         
     }
 
-    public void SpawnHero(string name)
+    public void SpawnHero(string heroName)
     {
         foreach (var spawnGo in SpawnPoints)
         {
             SpawnPoint spawn = spawnGo.GetComponent<SpawnPoint>();
             if (spawn.isAvailable)
-            {   
-                GameObject pyro = Instantiate(PyroPrefab, transform);
+            {
+                GameObject hero = instantiateHero(heroName);
                 spawn.isAvailable = false;
-                spawn.attachedHero = pyro.GetComponent<Hero>();
-                GameManager.Instance.Melts -= 10;
+                spawn.attachedHero = hero.GetComponent<Hero>();
+                GameManager.Instance.Melts -= 5;
                 return;
             }
         }
         UnityEngine.Debug.Log("All Spawnpoint full");
+    }
+
+    private GameObject instantiateHero(string heroName)
+    {
+        if ("SMITH".Equals(heroName))
+            return Instantiate(SmithPrefab, transform);
+        else if ("STARGAZER".Equals(heroName))
+            return Instantiate(StargazerPrefab, transform);
+        else if ("DANCER".Equals(heroName))
+            return Instantiate(DancerPrefab, transform);
+        else if ("FIGHTER".Equals(heroName))
+            return Instantiate(FighterPrefab, transform);
+        else if ("CERBERUS".Equals(heroName))
+            return Instantiate(KerberosPrefab, transform);
+        
+        return Instantiate(PyroPrefab, transform);
     }
     
 }

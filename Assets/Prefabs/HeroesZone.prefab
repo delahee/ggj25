@@ -57,12 +57,12 @@ MonoBehaviour:
   - {fileID: 1936833219028479861}
   - {fileID: 5888739089741099535}
   - {fileID: 4625621308818617450}
-  SmithPrefab: {fileID: 0}
-  StargazerPrefab: {fileID: 0}
-  DancerPrefab: {fileID: 0}
-  HellgirlPrefab: {fileID: 0}
+  SmithPrefab: {fileID: 8068510914055796677, guid: 64b9a5a747775ff4eb78640c5df90c23, type: 3}
+  StargazerPrefab: {fileID: 8068510914055796677, guid: 40af3cf9922a0564bbef12cd8cad0581, type: 3}
+  DancerPrefab: {fileID: 8068510914055796677, guid: 1ead0ce5633c923459439874c2270bde, type: 3}
+  FighterPrefab: {fileID: 8068510914055796677, guid: d304a20735704ef49a9b191f10d91b4b, type: 3}
   PyroPrefab: {fileID: 8068510914055796677, guid: cf9cabc18b7afe8429318ae5b0a6cf8f, type: 3}
-  KerberosPrefab: {fileID: 0}
+  KerberosPrefab: {fileID: 8068510914055796677, guid: 779c6f203a15e2d4aa8b507d21c97abc, type: 3}
 --- !u!1 &1936833219028479861
 GameObject:
   m_ObjectHideFlags: 0
