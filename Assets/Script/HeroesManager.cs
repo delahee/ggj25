@@ -36,8 +36,10 @@ public class HeroesManager : MonoBehaviour
             if (spawn.isAvailable)
             {
                 GameObject hero = instantiateHero(heroName);
+                hero.transform.SetParent(spawnGo.transform);
                 spawn.isAvailable = false;
                 spawn.attachedHero = hero.GetComponent<Hero>();
+                hero.transform.position = spawn.transform.position;
                 GameManager.Instance.Melts -= 5;
                 return;
             }
