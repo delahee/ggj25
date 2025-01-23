@@ -19,6 +19,7 @@ public enum NPC_State
 public class Enemy : MonoBehaviour, IHit
 {
     public  GateOfHell       door;
+    public  Hero             target;
     public  Enemies          data;
     public  ParticleSystem   buffHpFx;
     public  ParticleSystem   buffSpeedFX;
@@ -32,7 +33,7 @@ public class Enemy : MonoBehaviour, IHit
             float atkT = 0f;
 
             float hitT;
-            float hitDur = .1f;
+    [SerializeField] float hitDur = .1f;
 
     public  bool dead;
             bool hpBuffed;
@@ -68,9 +69,14 @@ public class Enemy : MonoBehaviour, IHit
         Init(data);
     }
 
+    private void Start()
+    {
+        if (door == null) door = GateOfHell.instance;
+    }
+
     protected virtual void Update()
     {
-
+        if (dead) return;
 
         if (hitT >= 0)
         {
@@ -82,12 +88,16 @@ public class Enemy : MonoBehaviour, IHit
             }
         }
 
-        GateOfHell gate = GateOfHell.instance;
-        if (gate == null) return;
+        if (door == null) return;
+        
+        Vector3 pos = door.transform.position;
+        if (target)        
+            pos = target.transform.position;
+        
 
-        if (Vector3.Distance(transform.position, gate.transform.position) > 1)
+        if (Vector3.Distance(transform.position, pos) > 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, gate.transform.position, data.speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pos, data.speed * Time.deltaTime);
         }
         else
         {
@@ -105,10 +115,17 @@ public class Enemy : MonoBehaviour, IHit
 
     void Attack()
     {
-        animator.SetTrigger("Atk");
-     
         atkT = UnityEngine.Random.Range(0f, atkMaxDuration);
-        GateOfHell.instance?.OnHit(data.dmg);
+        animator.SetTrigger("Atk");
+        if (target)
+        {
+            // apply dmg to hero
+        }
+        else
+        {
+            door?.OnHit(data.dmg);
+        }
+     
     }
 
 
@@ -128,9 +145,12 @@ public class Enemy : MonoBehaviour, IHit
 
     protected virtual void OnDie()
     {
+        renderer.color = Color.white;
         animator.SetBool("Dead", true);
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         dead = true;
-        Destroy(gameObject);
+        Destroy(gameObject, 30.0f);
     }
 
     private void OnCollisionEnter(Collision other)

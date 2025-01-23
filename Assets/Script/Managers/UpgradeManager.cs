@@ -70,7 +70,7 @@ public class UpgradeManager : MonoBehaviour
         equipmentUpgrades.Add(new Upgrade("tech3", UpgradeType.Equipment));
         equipmentUpgrades.Add(new Upgrade("tech4", UpgradeType.Equipment));
 
-        foreach (Science s in GameManager.Instance.Data.SciencesUpgrades) 
+        foreach (var s in GameManager.Instance.Data.SciencesUpgrades) 
         { 
             UpgradeDependence dep = new UpgradeDependence();
             dep.DependsOnScience = s.dependence; 
@@ -89,15 +89,15 @@ public class UpgradeManager : MonoBehaviour
                 ));
         }
 
-        foreach(Economy e in GameManager.Instance.Data.EconomyUpgrades)
+        foreach(var e in GameManager.Instance.Data.EconomyUpgrades)
         {
             UpgradeDependence dep = new UpgradeDependence();
             dep.DependsOnEco = e.dependence;
 
-            if (!UniqueUpgrades.Contains(dep.CheckDependence()))
+            if (dep.CheckDependence() != "" && !UniqueUpgrades.Contains(dep.CheckDependence()))
                 continue;
 
-            volcanoUpgrades.Add(new Upgrade(
+            ecoUpgrades.Add(new Upgrade(
                 e.ecoName,
                 UpgradeType.Volcano,
                 e.desc,

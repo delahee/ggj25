@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: hp
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_Name
       value: Zombie
@@ -28,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6772782054960246270, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: c569e64ec9025cf4992398e394d9e5b8, type: 2}
     - target: {fileID: 8294281060259120763, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

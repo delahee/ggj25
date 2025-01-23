@@ -7,10 +7,8 @@ public class Chocodemon : Enemy
 {
     [Space]
     [Range(0.0f, 1.0f)] 
-    public float subMobChance = .3f;
-    [Min(1)]
-    public int qMax = 3;
-    public GameObject ownPrefab;
+    public float subMobChance = .1f;
+    public GameObject prefab;
 
     public override void OnHit(int dmg)
     {
@@ -24,10 +22,8 @@ public class Chocodemon : Enemy
 
     void SubMob()
     {
-        for (int i = 0; i < Random.Range(1, qMax+1); i++)
-        {
             var c = Random.insideUnitCircle * 3;
-            Instantiate(ownPrefab).transform.position = transform.position + new Vector3(c.x, 0, c.y);
-        }
+            Instantiate(prefab).transform.position = transform.position + new Vector3(c.x, 0, c.y);
+
     }
 }

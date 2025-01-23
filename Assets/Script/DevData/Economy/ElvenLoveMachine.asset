@@ -21,3 +21,4 @@ MonoBehaviour:
   popCost: 0
   meltCost: 20
   mithrilCost: 10
+  EffectMethodName: ElvenLoveMachine

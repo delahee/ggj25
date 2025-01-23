@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6772782054960246270, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: a589c6491b8c3e84ead5aaa647170f7b, type: 2}
     - target: {fileID: 8294281060259120763, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 50
@@ -91,13 +95,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 0}
+  target: {fileID: 0}
   data: {fileID: 11400000, guid: 279c3c4262cad2c428d24ef912c1adce, type: 2}
   buffHpFx: {fileID: 8834820431700888649}
   buffSpeedFX: {fileID: 4019694122515850838}
   speed: 5
-  hp: 120
+  hp: 127
   dmg: 22
   atkMaxDuration: 2
+  hitDur: 0.1
   dead: 0
   prefab: {fileID: 3184787713571840630, guid: 7228d59780e2170478da7c216a504dd1, type: 3}
   ShootInterval: 0.8
