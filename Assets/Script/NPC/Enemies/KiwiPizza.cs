@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KiwiPizza : Enemy
 {
-    public List<Enemy> toDebuffOnDeath = new();     // For debuffing on death
+    List<Enemy> toDebuffOnDeath = new();     // For debuffing on death
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,5 +35,6 @@ public class KiwiPizza : Enemy
         foreach (Enemy enemy in toDebuffOnDeath) {
             enemy.DebuffHP(this);
         }
+        
     }
 }

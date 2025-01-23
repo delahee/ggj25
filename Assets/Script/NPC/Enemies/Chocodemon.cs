@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Chocodemon : Enemy
 {
+    [Space]
     [Range(0.0f, 1.0f)] 
     public float subMobChance = .3f;
     [Min(1)]
