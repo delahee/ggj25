@@ -9738,7 +9738,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f2141d8faeee74b3c88cbbafba409fc1, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -9763,6 +9763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 0}
+  target: {fileID: 0}
   data: {fileID: 11400000, guid: b456be08d34617e4ab5c1c37208d2717, type: 2}
   buffHpFx: {fileID: 4971459433223352696}
   buffSpeedFX: {fileID: 697328819050617703}
@@ -9770,6 +9771,7 @@ MonoBehaviour:
   hp: 5
   dmg: 1
   atkMaxDuration: 2
+  hitDur: 0.1
   dead: 0
 --- !u!65 &2292202236783791766
 BoxCollider:
