@@ -56,6 +56,7 @@ public class UpgradeManager : MonoBehaviour
     List<Upgrade> equipmentUpgrades = new List<Upgrade>();
     List<Upgrade> volcanoUpgrades   = new List<Upgrade>();
     List<Upgrade> ecoUpgrades       = new List<Upgrade>();
+    List<Upgrade> heroUpgrades       = new List<Upgrade>();
 
     //TODO populate with dev data
     void PopulateUpgrades()
@@ -110,6 +111,13 @@ public class UpgradeManager : MonoBehaviour
                 e.mithrilCost
                 ));
         }
+        
+        heroUpgrades.Add(new Upgrade("SMITH", UpgradeType.Hero));
+        heroUpgrades.Add(new Upgrade("STARGAZER", UpgradeType.Hero));
+        heroUpgrades.Add(new Upgrade("DANCER", UpgradeType.Hero));
+        heroUpgrades.Add(new Upgrade("FIGHTER", UpgradeType.Hero));
+        heroUpgrades.Add(new Upgrade("PYRO", UpgradeType.Hero));
+        heroUpgrades.Add(new Upgrade("CERBERUS", UpgradeType.Hero));
     }
 
     [HideInInspector]
@@ -160,6 +168,13 @@ public class UpgradeManager : MonoBehaviour
                 selection.Add(ecoUpgrades[0]);
                 selection.Add(ecoUpgrades[1]);
                 selection.Add(ecoUpgrades[2]);
+                EcoLevel++;
+                break;
+            case "hero":
+                heroUpgrades.Shuffle();
+                selection.Add(heroUpgrades[0]);
+                selection.Add(heroUpgrades[1]);
+                selection.Add(heroUpgrades[2]);
                 EcoLevel++;
                 break;
         }

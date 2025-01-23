@@ -25,9 +25,10 @@ public class Angel : Enemy
 
         if (door != null)
         {
-            EyeProj proj = Instantiate(prefab, transform.position, Quaternion.identity);
+            EyeProj proj = Instantiate(prefab, transform.position, transform.rotation);
             proj.targetPos = door.transform.position;
             proj.dmg = dmg;
+            proj.owner = this;
         }
         else
             door = GateOfHell.instance;

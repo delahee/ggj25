@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6772782054960246270, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a259682f3e3c6f143949bdb1282a4001, type: 2}
     - target: {fileID: 8294281060259120763, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -72,12 +76,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   data: {fileID: 11400000, guid: 587e041cb680a9747b218f0dc52ca183, type: 2}
-  speed: 3
-  hp: 0
+  buffHpFx: {fileID: 0}
+  buffSpeedFX: {fileID: 0}
+  speed: 5
+  hp: 40
+  dmg: 6
   atkMaxDuration: 2
-  atkT: 0
-  hitT: 0
-  hitDur: 0.1
   dead: 0
   subMobChance: 0.3
   qMax: 3
