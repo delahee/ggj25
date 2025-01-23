@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6772782054960246270, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 4eda86605e7899742b78dd518ce4d80c, type: 2}
     - target: {fileID: 8294281060259120763, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -72,11 +76,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   data: {fileID: 11400000, guid: ad29ae48eb298f149b93ce04c9775a83, type: 2}
-  speed: 3
-  hp: 0
+  buffHpFx: {fileID: 8834820431700888649}
+  buffSpeedFX: {fileID: 4019694122515850838}
+  speed: 4
+  hp: 21
+  dmg: 2
   atkMaxDuration: 2
-  atkT: 0
-  hitT: 0
-  hitDur: 0.1
   dead: 0
+  atkAnim: {fileID: 0}
   zombie: {fileID: 451110395207141086, guid: c31a06dc8128fa444b2ed2f419d97aa0, type: 3}
+--- !u!198 &4019694122515850838 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 697328819050617703, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8834820431700888649 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4971459433223352696, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+  m_PrefabInstance: {fileID: 4496204707591617841}
+  m_PrefabAsset: {fileID: 0}
