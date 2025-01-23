@@ -9,9 +9,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: hp
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: dmg
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: efa66181af146aa40956ff62d3ea15c5, type: 2}
+    - target: {fileID: 1171695996346922555, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_Name
       value: Goblin
@@ -32,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6772782054960246270, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: f3e8e9dc416ab25469cd88792f475070, type: 2}
     - target: {fileID: 8294281060259120763, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
