@@ -1,0 +1,1267 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9133479357667278456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Volcano/Bubble_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Volcano/Bubble_Spawn
+  Guid:
+    Data1: 1308380299
+    Data2: 1213731097
+    Data3: 783475874
+    Data4: -15999547
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 80
+  Length: 180
+--- !u!114 &-8891744100332021294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Pyro_Firebolt
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Pyro_Firebolt
+  Guid:
+    Data1: 561562303
+    Data2: 1144679712
+    Data3: -1215675205
+    Data4: 438533833
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1010
+--- !u!114 &-8368343474846883553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Fighter_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Fighter_Spawn
+  Guid:
+    Data1: -689569796
+    Data2: 1130803103
+    Data3: -505541732
+    Data4: 810887325
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &-7713133088714893900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Towers/Tower_ Bombs_Build
+  m_EditorClassIdentifier: 
+  Path: event:/Towers/Tower_ Bombs_Build
+  Guid:
+    Data1: -1949675701
+    Data2: 1096168548
+    Data3: -693910859
+    Data4: 894123640
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7560083836970059104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Towers/Tower_ Bombs_Buy
+  m_EditorClassIdentifier: 
+  Path: event:/Towers/Tower_ Bombs_Buy
+  Guid:
+    Data1: 1983187779
+    Data2: 1146716199
+    Data3: -432021607
+    Data4: -209176887
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &-7162407639370248539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sound/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638732488708635920
+  FileSizes:
+  - Name: 
+    Value: 3604
+  Exists: 1
+--- !u!114 &-5973119225200202635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Volcano/Bubble_Explode
+  m_EditorClassIdentifier: 
+  Path: event:/Volcano/Bubble_Explode
+  Guid:
+    Data1: -1833350636
+    Data2: 1215933857
+    Data3: -482314854
+    Data4: -527569515
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 420
+--- !u!114 &-5594808275329454978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Pyro_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Pyro_Death
+  Guid:
+    Data1: 848104661
+    Data2: 1223192775
+    Data3: 676127662
+    Data4: 1670372863
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5203060258614580647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Towers/Tower_Arrows_Build
+  m_EditorClassIdentifier: 
+  Path: event:/Towers/Tower_Arrows_Build
+  Guid:
+    Data1: -1482267993
+    Data2: 1181512118
+    Data3: -416029522
+    Data4: -963836385
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4517023570880141932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_Hover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_Hover
+  Guid:
+    Data1: 764554112
+    Data2: 1212514707
+    Data3: 204667308
+    Data4: 1465731582
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 300
+--- !u!114 &-4031438869248367908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Smith_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Smith_Death
+  Guid:
+    Data1: 1223089326
+    Data2: 1332264435
+    Data3: -879053686
+    Data4: -771197480
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3668081475270762320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/General/Hero_Stuff_Replace
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/General/Hero_Stuff_Replace
+  Guid:
+    Data1: 1018043930
+    Data2: 1250010732
+    Data3: -21754459
+    Data4: -1286938457
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1480
+--- !u!114 &-3560167214890138044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Towers/Tower_ Freezers_Buy
+  m_EditorClassIdentifier: 
+  Path: event:/Towers/Tower_ Freezers_Buy
+  Guid:
+    Data1: -1697149805
+    Data2: 1164963624
+    Data3: 1052415391
+    Data4: -1548168578
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &-3132052292835706387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Stargazer_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Stargazer_Death
+  Guid:
+    Data1: 778923979
+    Data2: 1304780497
+    Data3: -1493167980
+    Data4: -1032652168
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3030776105263063301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Enemy_Zombie_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Enemy_Zombie_Death
+  Guid:
+    Data1: 1288732422
+    Data2: 1094872369
+    Data3: -10799720
+    Data4: 1367465678
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2475937157801864639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Generic/Enemy_Impact
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Generic/Enemy_Impact
+  Guid:
+    Data1: 268411973
+    Data2: 1300492436
+    Data3: 1944463008
+    Data4: 307529738
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 550
+--- !u!114 &-2456002774665875322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Cerberus_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Cerberus_Spawn
+  Guid:
+    Data1: 2019944679
+    Data2: 1180807307
+    Data3: -1327117691
+    Data4: -2105764304
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &-2414392536074350710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/General/Hero_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/General/Hero_Spawn
+  Guid:
+    Data1: 1153112277
+    Data2: 1209571925
+    Data3: -1764498799
+    Data4: 1497696922
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &-2169970654985427853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/_Test Sounds/Loop Test Stereo
+  m_EditorClassIdentifier: 
+  Path: event:/_Test Sounds/Loop Test Stereo
+  Guid:
+    Data1: -476316804
+    Data2: 1213406652
+    Data3: 772445312
+    Data4: 615050796
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12307
+--- !u!114 &-1858847003341320049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/General/Hero_Stuff_Equip
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/General/Hero_Stuff_Equip
+  Guid:
+    Data1: -725144777
+    Data2: 1102644646
+    Data3: 540586113
+    Data4: 289918423
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 343
+--- !u!114 &-1847725916806442087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/_Test Sounds/Ping 2D
+  m_EditorClassIdentifier: 
+  Path: event:/_Test Sounds/Ping 2D
+  Guid:
+    Data1: -1334292447
+    Data2: 1127178793
+    Data3: 1183579066
+    Data4: -103888582
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 470
+--- !u!114 &-1828034192532650842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Enemy_Lich_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Enemy_Lich_Death
+  Guid:
+    Data1: -66620967
+    Data2: 1243811100
+    Data3: -95401795
+    Data4: -1736990274
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1757782895581947563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Enemy_Lich_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Enemy_Lich_Spawn
+  Guid:
+    Data1: 497789871
+    Data2: 1196551049
+    Data3: -112965760
+    Data4: -1289973501
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1649091823953218073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/_Test Sounds/Ping 3D
+  m_EditorClassIdentifier: 
+  Path: event:/_Test Sounds/Ping 3D
+  Guid:
+    Data1: -1670943882
+    Data2: 1338365504
+    Data3: -448302206
+    Data4: 1217895776
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3567
+--- !u!114 &-1239030677973835819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/_Test Sounds/Loop Test Mono
+  m_EditorClassIdentifier: 
+  Path: event:/_Test Sounds/Loop Test Mono
+  Guid:
+    Data1: 1909191698
+    Data2: 1300849532
+    Data3: -1019995745
+    Data4: 1048843194
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1712
+--- !u!114 &-1186328689867364158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Enemy_Zombie_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Enemy_Zombie_Spawn
+  Guid:
+    Data1: 966843530
+    Data2: 1254073103
+    Data3: 391635130
+    Data4: 1752229516
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-841041465426963959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Amb_Inferno
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Amb_Inferno
+  Guid:
+    Data1: 1744374728
+    Data2: 1322417533
+    Data3: 1947024805
+    Data4: 1922104519
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30000
+--- !u!114 &-589875550858175545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Towers/Tower_ Freezers_Build
+  m_EditorClassIdentifier: 
+  Path: event:/Towers/Tower_ Freezers_Build
+  Guid:
+    Data1: -955374135
+    Data2: 1200385013
+    Data3: -1953470287
+    Data4: -1219943653
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -7162407639370248539}
+  - {fileID: 2912302557868308543}
+  EditorEvents:
+  - {fileID: -1239030677973835819}
+  - {fileID: -1847725916806442087}
+  - {fileID: -1649091823953218073}
+  - {fileID: -2169970654985427853}
+  - {fileID: -4517023570880141932}
+  - {fileID: 8852557789378686791}
+  - {fileID: 5573866311050407189}
+  - {fileID: -5973119225200202635}
+  - {fileID: -9133479357667278456}
+  - {fileID: -3030776105263063301}
+  - {fileID: 959119675330397019}
+  - {fileID: -7560083836970059104}
+  - {fileID: -7713133088714893900}
+  - {fileID: 4160854627563309210}
+  - {fileID: 589092009238741999}
+  - {fileID: 7069805505810103732}
+  - {fileID: -1186328689867364158}
+  - {fileID: -3560167214890138044}
+  - {fileID: 3195109491199543124}
+  - {fileID: -5203060258614580647}
+  - {fileID: -4031438869248367908}
+  - {fileID: -1757782895581947563}
+  - {fileID: 25190989832176529}
+  - {fileID: 3762351305261245817}
+  - {fileID: -589875550858175545}
+  - {fileID: 130536708164520439}
+  - {fileID: -3132052292835706387}
+  - {fileID: 1067756804577464691}
+  - {fileID: -5594808275329454978}
+  - {fileID: 4551665425636502709}
+  - {fileID: -1828034192532650842}
+  - {fileID: 1943150705200375634}
+  - {fileID: 6887483630201951831}
+  - {fileID: -2456002774665875322}
+  - {fileID: 4234593826821730790}
+  - {fileID: -8368343474846883553}
+  - {fileID: -8891744100332021294}
+  - {fileID: -3668081475270762320}
+  - {fileID: -1858847003341320049}
+  - {fileID: -2475937157801864639}
+  - {fileID: 462582823986221902}
+  - {fileID: -2414392536074350710}
+  - {fileID: -841041465426963959}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 2912302557868308543}
+  StringsBanks:
+  - {fileID: -7162407639370248539}
+  cacheTime: 638732488708635920
+  cacheVersion: 131622
+--- !u!114 &25190989832176529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Towers/Tower_ Siege_Build
+  m_EditorClassIdentifier: 
+  Path: event:/Towers/Tower_ Siege_Build
+  Guid:
+    Data1: -65489488
+    Data2: 1306541927
+    Data3: 1886668714
+    Data4: 1875706388
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &130536708164520439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Towers/Tower_Arrows_Buy
+  m_EditorClassIdentifier: 
+  Path: event:/Towers/Tower_Arrows_Buy
+  Guid:
+    Data1: 398991563
+    Data2: 1312318523
+    Data3: 301143203
+    Data4: 668944658
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &462582823986221902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/General/Hero_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/General/Hero_Death
+  Guid:
+    Data1: 1108812081
+    Data2: 1121325556
+    Data3: 602411959
+    Data4: 1158001117
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &589092009238741999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Currency/Currency_Melts_Gain
+  m_EditorClassIdentifier: 
+  Path: event:/Currency/Currency_Melts_Gain
+  Guid:
+    Data1: -1508663724
+    Data2: 1122223939
+    Data3: -857037683
+    Data4: -1896302936
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1310
+--- !u!114 &959119675330397019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Cerberus_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Cerberus_Death
+  Guid:
+    Data1: 1238250762
+    Data2: 1156974558
+    Data3: -554524491
+    Data4: -200570691
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1067756804577464691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Dancer_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Dancer_Spawn
+  Guid:
+    Data1: 749222866
+    Data2: 1150757377
+    Data3: -1180854897
+    Data4: 1182877905
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &1943150705200375634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Currency/Currency_Mithril_Gain
+  m_EditorClassIdentifier: 
+  Path: event:/Currency/Currency_Mithril_Gain
+  Guid:
+    Data1: 1199133403
+    Data2: 1097270497
+    Data3: 788535996
+    Data4: -1340797975
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &2912302557868308543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sound/Build/Desktop/Master.bank
+  Name: Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638732488708621473
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3195109491199543124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Currency/Currency_Pops_Gain
+  m_EditorClassIdentifier: 
+  Path: event:/Currency/Currency_Pops_Gain
+  Guid:
+    Data1: -675695710
+    Data2: 1165666076
+    Data3: -2076175437
+    Data4: -465077624
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 960
+--- !u!114 &3762351305261245817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Fighter_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Fighter_Death
+  Guid:
+    Data1: 1545204918
+    Data2: 1311511127
+    Data3: 931973553
+    Data4: 1257045105
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4160854627563309210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Smith_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Smith_Spawn
+  Guid:
+    Data1: 1822203727
+    Data2: 1153575074
+    Data3: 350928565
+    Data4: 294336945
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &4234593826821730790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Pyro_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Pyro_Spawn
+  Guid:
+    Data1: 1756783605
+    Data2: 1154751572
+    Data3: 2064422318
+    Data4: 1155178536
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &4551665425636502709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Towers/Tower_ Siege_Buy
+  m_EditorClassIdentifier: 
+  Path: event:/Towers/Tower_ Siege_Buy
+  Guid:
+    Data1: 1949381334
+    Data2: 1328681494
+    Data3: 720958891
+    Data4: -959432230
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &5573866311050407189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_Confirm
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_Confirm
+  Guid:
+    Data1: -2035230755
+    Data2: 1161913301
+    Data3: -902962019
+    Data4: 273034185
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 225
+--- !u!114 &6887483630201951831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Stargazer_Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Stargazer_Spawn
+  Guid:
+    Data1: 763618785
+    Data2: 1164324538
+    Data3: 564696488
+    Data4: -1908441189
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 580
+--- !u!114 &7069805505810103732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heroes/Hero_Dancer_Death
+  m_EditorClassIdentifier: 
+  Path: event:/Heroes/Hero_Dancer_Death
+  Guid:
+    Data1: 1112660838
+    Data2: 1175072993
+    Data3: -1001753195
+    Data4: 1715828051
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8852557789378686791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_Back
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_Back
+  Guid:
+    Data1: 1443594714
+    Data2: 1248213191
+    Data3: -168736369
+    Data4: 562380545
+  Banks:
+  - {fileID: 2912302557868308543}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 485
