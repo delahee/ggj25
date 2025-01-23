@@ -32,8 +32,8 @@ public class EyeProj : MonoBehaviour
                 {
                     e.OnHit(dmg);
                 }
-                Destroy();
             }
+            Destroy();
         }
     }
 

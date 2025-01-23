@@ -45,8 +45,6 @@ public class Enemy : MonoBehaviour, IHit
             SpriteRenderer renderer;
             Animator animator;
 
-    int atkAnimHashCode;
-    public AnimationClip atkAnim;
 
     private void OnValidate()
     {
