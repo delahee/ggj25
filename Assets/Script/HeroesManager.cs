@@ -35,11 +35,11 @@ public class HeroesManager : MonoBehaviour
             SpawnPoint spawn = spawnGo.GetComponent<SpawnPoint>();
             if (spawn.isAvailable)
             {
-                GameObject hero = instantiateHero(heroName);
-                hero.transform.SetParent(spawnGo.transform);
+                GameObject heroGo = instantiateHero(heroName);
+                heroGo.transform.SetParent(spawnGo.transform);
                 spawn.isAvailable = false;
-                spawn.attachedHero = hero.GetComponent<Hero>();
-                hero.transform.position = spawn.transform.position;
+                spawn.attachedHero = heroGo.GetComponent<Hero>();
+                heroGo.transform.position = spawn.transform.position;
                 GameManager.Instance.Melts -= 5;
                 return;
             }
