@@ -16,4 +16,9 @@ public class Destroyer : MonoBehaviour
         else
             Destroy(b.transform.parent.gameObject);
     }
+
+    public void DestroyItWithAnim(string anim)
+    {
+        GetComponent<Animator>().Play(anim);
+    }
 }
