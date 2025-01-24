@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StargazerBall : MonoBehaviour
 {
-    public Vector3 targetPos;
+    public Transform target;
     public float speed = 3.0f;
     public float exploRadius = 3.0f;
     public int dmg;
@@ -13,7 +13,11 @@ public class StargazerBall : MonoBehaviour
     public SpriteRenderer explo;
 
 
-    
+    private void Start()
+    {
+        explo.gameObject.SetActive(false);
+        explo.transform.localScale = Vector3.one * exploRadius;
+    }
 
     private void Update()
     {
@@ -22,8 +26,8 @@ public class StargazerBall : MonoBehaviour
             explo.transform.localScale *= 1 - Time.deltaTime * 10;
             return;
         }
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, targetPos) < .1f)
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, target.position) < .1f)
         {
             Destroy();
         }

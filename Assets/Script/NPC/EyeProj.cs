@@ -17,7 +17,7 @@ public class EyeProj : MonoBehaviour
     private void Start()
     {
         explo.gameObject.SetActive(false);
-        
+        explo.transform.localScale = Vector3.one * exploRadius;
     }
 
     private void OnValidate()

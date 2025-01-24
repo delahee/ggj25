@@ -63,6 +63,6 @@ public class Stargazer : Hero
         }
         var ball = Instantiate(prefab, transform.position, transform.rotation);
         ball.dmg = data.AtkDmgBasis;
-        ball.targetPos = targetEnemy.transform.position;
+        ball.target = targetEnemy.transform;
     }
 }
