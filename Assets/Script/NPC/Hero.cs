@@ -6,7 +6,6 @@ public class Hero : MonoBehaviour, IHit
 {
     public GameObject atkFX;
 
-
     public float speed = 3.0f;
     public float pushForce = 1.0f;
 

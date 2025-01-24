@@ -75,6 +75,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkFX: {fileID: 1836718727366022038, guid: 46702d768394f194f8265350802ad608, type: 3}
+  Speedcurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.10052262
+      value: 0.9997416
+      inSlope: -0.12203374
+      outSlope: -0.12203374
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.47359362
+    - serializedVersion: 3
+      time: 0.94947815
+      value: 0.15447076
+      inSlope: -1.8239583
+      outSlope: -1.8239583
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0051575
+      value: 0.04966736
+      inSlope: -1.9407614
+      outSlope: -1.9407614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.02916686
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Sizecurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.10052262
+      value: 0.9997416
+      inSlope: -0.12203374
+      outSlope: -0.12203374
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.47359362
+    - serializedVersion: 3
+      time: 0.94947815
+      value: 0.15447076
+      inSlope: -1.8239583
+      outSlope: -1.8239583
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0051575
+      value: 0.04966736
+      inSlope: -1.9407614
+      outSlope: -1.9407614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.02916686
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   door: {fileID: 0}
   target: {fileID: 0}
   data: {fileID: 11400000, guid: 587e041cb680a9747b218f0dc52ca183, type: 2}
