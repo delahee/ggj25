@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class Upgrade : MonoBehaviour 
 {
@@ -152,6 +154,55 @@ public class Upgrade : MonoBehaviour
         BubbleManager.PopValue *= 2f;
     }
 
+    void Aerodynamic()
+    {
+        //TODO Emile : black smith land one more turret
+    }
+
+    void Barking()
+    {
+        //TODO Emile : black smith's turret shoots 20% faster
+    }
+
+    void Enhancer()
+    {
+        //TODO Emile : all heroes do 25% more damage
+    }
+
+    void Hammergedon()
+    {
+        //TODO Emile : Immediately deal 50% of their health as damage to each enemy on screen.
+    }
+
+    void Lounge()
+    {
+        //TODO Emile : Add 2 more hero slots
+    }
+
+    void Masseur()
+    {
+        //TODO Emile : Heroes regen 20% faster
+    }
+
+    void Nova()
+    {
+        //TODO Emile : Heroes all do twice the damage
+    }
+
+    void Heart()
+    {
+        //TODO Emile : Heroes all gain +50% HP
+    }
+
+    void Pill()
+    {
+        //TODO Emile : Heroes all do 50% more damage
+    }
+
+    void Shotgun()
+    {
+        //TODO Emile : Blacksmith turrets now shoot two more projectiles in a cone.
+    }
     #endregion
 }
 
