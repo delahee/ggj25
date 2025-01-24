@@ -11,7 +11,7 @@ public interface IHit
 public class GateOfHell : MonoBehaviour, IHit
 {
     public int hp = 10;
-    public float radius = 10;
+    public float radius = 20;
     bool dead = false;
 
     public static GateOfHell instance;
@@ -28,7 +28,7 @@ public class GateOfHell : MonoBehaviour, IHit
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.black;
+        Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
@@ -37,7 +37,6 @@ public class GateOfHell : MonoBehaviour, IHit
     {
         dead = true;
         Debug.Log("GameOver");
-        Application.Quit();
     }
 
     public void OnHit(int dmg)

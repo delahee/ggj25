@@ -10,6 +10,10 @@ public class Destroyer : MonoBehaviour
         Button b = GetComponent<Button>();
         if(b != null )
            b.onClick.RemoveAllListeners();
-        Destroy(go); 
+        
+        if( go != null )
+            Destroy(go); 
+        else
+            Destroy(b.transform.parent.gameObject);
     }
 }
