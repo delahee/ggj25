@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemies : ScriptableObject
 {
     public string id;
-    public string tier;
+    public int tier;
     public string tribe;
     public string EnemyName;
     public string desc;

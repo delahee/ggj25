@@ -93,6 +93,13 @@ public class Enemy : MonoBehaviour, IHit
             pos = target.transform.position;
 
         float diff = (transform.position.z - door.transform.position.z) / 31.33f;
+        if (EnemyManager.INSTANCE != null)
+        {
+            diff = Mathf.InverseLerp(
+                door.transform.position.z, 
+                EnemyManager.INSTANCE.transform.position.z, 
+                transform.position.z);
+        }
         if (Vector3.Distance(transform.position, pos) > 1)
         {
             transform.position = Vector3.MoveTowards(transform.position, pos, data.speed*Sizecurve.Evaluate(diff) * Time.deltaTime);
@@ -174,8 +181,12 @@ public class Enemy : MonoBehaviour, IHit
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         dead = true;
-        Destroy(gameObject, 30.0f);
+        Destroy(gameObject, 5.0f);
+        if (EnemyManager.INSTANCE != null)
+            EnemyManager.INSTANCE.EnemyDestroyed();
+
     }
+
 
     private void OnCollisionEnter(Collision other)
     {
