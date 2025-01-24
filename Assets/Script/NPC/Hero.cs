@@ -13,7 +13,7 @@ public class Hero : MonoBehaviour, IHit
 
     public Heroes data;
     public int hp = 10;
-    Enemy targetEnemy;
+    protected Enemy targetEnemy;
 
     public float atkMaxDuration = 1.0f;
     public float atkT = 0f;
@@ -50,7 +50,7 @@ public class Hero : MonoBehaviour, IHit
             eventName = "event:/Heroes/Hero_Cerberus_Spawn";
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (dead) return;
 
@@ -59,7 +59,7 @@ public class Hero : MonoBehaviour, IHit
             SeekEnemy();
         }
 
-        if (targetEnemy == null) {
+        if (targetEnemy == null || targetEnemy.dead) {
 
             if (Vector3.Distance(transform.position, transform.parent.position) > 10) { 
                 transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, speed * Time.deltaTime);
@@ -100,7 +100,7 @@ public class Hero : MonoBehaviour, IHit
         }
 
     }
-    void PatrolSequence()
+    protected void PatrolSequence()
     {
         if (Vector3.Distance(transform.position, patrolPos) > .1f) 
             transform.position = Vector3.MoveTowards(transform.position, patrolPos, speed * Time.deltaTime);
@@ -114,10 +114,13 @@ public class Hero : MonoBehaviour, IHit
         }
     }
 
-    void SeekEnemy()
+    protected void SeekEnemy()
     {
         GateOfHell gate = GateOfHell.instance;
-        if (gate == null) return;
+        if (gate == null) { 
+            targetEnemy = null;
+            return;
+        }
 
         float max = -float.MaxValue;
         foreach (Enemy e in FindObjectsOfType<Enemy>())

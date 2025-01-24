@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3633550795249895647}
   - component: {fileID: 5743233326204010539}
-  - component: {fileID: 3104085892950801313}
+  - component: {fileID: 8271582030407912772}
   m_Layer: 0
   m_Name: Stargazer
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3104085892950801313
+--- !u!114 &8271582030407912772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,13 +94,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8068510914055796677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34c7f2d3e8938c49a9bb455d7b88f9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f7ac98a4c470c64da13c128581c222b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   atkFX: {fileID: 1836718727366022038, guid: ae402d4b472af3f449b6cba7c99b238d, type: 3}
-  speed: 5
-  pushForce: 0.1
+  speed: 3
+  pushForce: 1
   data: {fileID: 11400000, guid: b94612669373ce84eaa6f3351d4e0ebd, type: 2}
-  hp: 100
-  atkMaxDuration: 0.1
+  hp: 10
+  atkMaxDuration: 1
   atkT: 0
+  dead: 0
+  reloadTime: 1
+  reloadT: 0.6
+  prefab: {fileID: 8007081554142931871, guid: f3f1bc9411e51854d8d5fb3f7c0e0b73, type: 3}
