@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7002187749613865422}
   - component: {fileID: 7896058163607886132}
   - component: {fileID: 5809788558977211634}
+  - component: {fileID: 4342032059920265087}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -145,6 +146,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3966e697fb5169543abd29d5e246a354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4342032059920265087
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5678709302789271433}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 55b1b3222bdb0bc468d1c411a1b84c9c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6190579676073523739
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +194,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5863895910698566966}
   m_Father: {fileID: 0}
