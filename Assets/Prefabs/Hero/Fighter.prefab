@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34c7f2d3e8938c49a9bb455d7b88f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkFX: {fileID: 1836718727366022038, guid: ae402d4b472af3f449b6cba7c99b238d, type: 3}
   speed: 5
-  pushForce: 2
+  pushForce: 0.1
   data: {fileID: 11400000, guid: 8eca8c18d82858d4fbc54af8f45e5179, type: 2}
-  hp: 10
+  hp: 200
   atkMaxDuration: 0.1
   atkT: 0

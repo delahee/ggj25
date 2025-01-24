@@ -117,6 +117,19 @@ public class Hero : MonoBehaviour, IHit
 
     void SeekEnemy()
     {
+        GateOfHell gate = GateOfHell.instance;
+        if (gate == null) return;
+
+        float max = -float.MaxValue;
+        foreach (Enemy e in FindObjectsOfType<Enemy>())
+        {
+            if (e.dead) continue;
+            float score = Vector3.Distance(gate.transform.position, e.transform.position) - Vector3.Distance(transform.position, e.transform.position);
+            if (score > max) max = score;
+            targetEnemy = e;
+        }
+        return;
+
         float minDist = GateOfHell.instance.radius;
         foreach (Enemy e in FindObjectsOfType<Enemy>())
         {

@@ -9,6 +9,11 @@ public class Angel : Enemy
     public float ShootInterval = .8f;
     public float t = .8f;
 
+    private void Start()
+    {
+        FindTarget();
+    }
+
     protected override void Update()
     {
         base.Update();
