@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8068510914055796677
+--- !u!1 &4224716466821111962
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3633550795249895647}
-  - component: {fileID: 5743233326204010539}
-  - component: {fileID: 4655536302141850500}
+  - component: {fileID: 3950307694947843443}
+  - component: {fileID: 999930319294275333}
+  - component: {fileID: 9053430199474398254}
   m_Layer: 0
-  m_Name: Smith
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3633550795249895647
+--- !u!4 &3950307694947843443
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8068510914055796677}
+  m_GameObject: {fileID: 4224716466821111962}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0, y: 1.25, z: 0}
-  m_LocalScale: {x: 0.11594203, y: 0.15805471, z: 1}
+  m_LocalRotation: {x: 0.42261767, y: -0.00070071605, z: 0.0015026906, w: 0.90630656}
+  m_LocalPosition: {x: 0.699, y: 1.25, z: 8.95}
+  m_LocalScale: {x: 0.8, y: 1.71, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
---- !u!212 &5743233326204010539
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0.19}
+--- !u!212 &999930319294275333
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8068510914055796677}
+  m_GameObject: {fileID: 4224716466821111962}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,35 +74,33 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 587846492, guid: dfc7d26a1d5054588be572c37a6a772e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Color: {r: 0.38731194, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 10, y: 20}
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4655536302141850500
+--- !u!114 &9053430199474398254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8068510914055796677}
+  m_GameObject: {fileID: 4224716466821111962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ce2295da9688744bb6fe1f58b80385, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b6ffde5873c653438da8f21dc3f6662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkFX: {fileID: 1836718727366022038, guid: ae402d4b472af3f449b6cba7c99b238d, type: 3}
-  speed: 3
-  pushForce: 0
-  data: {fileID: 11400000, guid: dacb772abcb50d149ab759e8e143a82d, type: 2}
-  hp: 10
-  atkMaxDuration: 1
-  atkT: 0
-  dead: 0
-  prefab: {fileID: 9053430199474398254, guid: 5c15a00a3332cf348b919d71c2b7c85e, type: 3}
+  fx: {fileID: 1836718727366022038, guid: 3f28a82f983024c458aa43cd5a39b73f, type: 3}
+  target: {fileID: 0}
+  reloadTime: 0.3
+  reloadT: 0
+  lifespan: 10
+  hp: 5
+  dmg: 5
