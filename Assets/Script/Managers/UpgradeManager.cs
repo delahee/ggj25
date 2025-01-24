@@ -65,11 +65,12 @@ public class UpgradeManager : MonoBehaviour
         equipmentUpgrades.Clear();
         volcanoUpgrades.Clear();
         ecoUpgrades.Clear();
+        heroUpgrades.Clear();
 
-        equipmentUpgrades.Add(new Upgrade("tech1", UpgradeType.Equipment));
+        /*equipmentUpgrades.Add(new Upgrade("tech1", UpgradeType.Equipment));
         equipmentUpgrades.Add(new Upgrade("tech2", UpgradeType.Equipment));
         equipmentUpgrades.Add(new Upgrade("tech3", UpgradeType.Equipment));
-        equipmentUpgrades.Add(new Upgrade("tech4", UpgradeType.Equipment));
+        equipmentUpgrades.Add(new Upgrade("tech4", UpgradeType.Equipment));*/
 
         foreach (var s in GameManager.Instance.Data.SciencesUpgrades) 
         { 
@@ -136,7 +137,15 @@ public class UpgradeManager : MonoBehaviour
             buttons[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<TMP_Text>().text = selection[i].Effect;
             int index = i;
             buttons[i].onClick.AddListener(() => SelectUpgrade(index));
-            priceTag[i].price.text = "Pop " + selection[i].PopCost + " Melt " + selection[i].MeltCost + " Mithril " + selection[i].MithrilCost;
+            priceTag[i].price.text = priceTag[i].PriceFormatter(selection[i].PopCost, selection[i].MeltCost, selection[i].MithrilCost);
+
+            if(selection[i].PopCost > GameManager.Instance.Pops || 
+                selection[i].MeltCost > GameManager.Instance.Melts || 
+                selection[i].MithrilCost > GameManager.Instance.Mithrils)
+            {
+                priceTag[i].price.color = Color.red;
+                buttons[i].interactable = false;
+            }
 
         }
     }
@@ -174,12 +183,13 @@ public class UpgradeManager : MonoBehaviour
                 selection.Add(ecoUpgrades[2]);
                 EcoLevel++;
                 break;
+            
             case "hero":
                 heroUpgrades.Shuffle();
                 selection.Add(heroUpgrades[0]);
                 selection.Add(heroUpgrades[1]);
                 selection.Add(heroUpgrades[2]);
-                EcoLevel++;
+                EquipmentLevel++;
                 break;
         }
         PopulateSelection();
@@ -189,6 +199,9 @@ public class UpgradeManager : MonoBehaviour
     public void SelectUpgrade(int index)
     {
         selection[index].DoUpgrade();
+        GameManager.Instance.Pops -= selection[index].PopCost;
+        GameManager.Instance.Melts -= selection[index].MeltCost;
+        GameManager.Instance.Mithrils -= selection[index].MithrilCost;
         HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
         for (int i = 0; i < buttons.Length; i++)
         {
