@@ -43,53 +43,71 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:Music/Music_Game");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        SortEnemies();
         INSTANCE = this;
+        InvokeRepeating(nameof(IncreaseSpawnAMountEachSecond), 0, 1);
     }
 
     // Update is called once per frame
     void Update()
     {
         elapspedTime += Time.deltaTime;
-        float timeSinceLoaded = Time.timeSinceLevelLoad;
-        int curStep = 0;
+        
         if (enemiesCounter < maxEnemies && elapspedTime > dtEnemySpawn)
         {
             elapspedTime = 0;
-            curStep = 0;
+            
+            // Select only demons which their tier is less than actual
+            int curStep = 0;
             for (int i = 0; i < steps.Length; i++)
             {
-                if (steps[i] < timeSinceLoaded)
-                    curStep = i;
-            }
-
-            float maxIdx = 0;
-            foreach (GameObject go in enemiesPrefab)
-            {
-                Enemy en = go.GetComponent<Enemy>();
-                if (en.data.tier <= curStep)
-                    maxIdx++;
+                if (steps[i] < Time.timeSinceLevelLoad)
+                    curStep = i+1;
                 else
                     break;
             }
 
-            GameObject prefab = enemiesPrefab[Random.Range(0, curStep)];
-            Enemy e = prefab.GetComponent<Enemy>();
-            if (e == null) return;
-                        
-            GameObject enemyGo = Instantiate(prefab, transform);
-            enemyGo.transform.position = new Vector3(Random.Range(-lineLength,lineLength), 1.5f, transform.position.z);
-            Enemy enemy = enemyGo.GetComponent<Enemy>();
-            enemiesCounter++;
+            if (curStep > 0)
+            {
+                int maxIdx = 0;
+                foreach (GameObject go in enemiesPrefab)
+                {
+                    Enemy en = go.GetComponent<Enemy>();
+                    if (en.data.tier <= curStep)
+                        maxIdx++;
+                    else
+                        break;
+                }
+                
+                GameObject prefab = enemiesPrefab[Random.Range(0, maxIdx)];
+                GameObject enemyGo = Instantiate(prefab, transform);
+                enemyGo.transform.position = new Vector3(Random.Range(-lineLength, lineLength), 1.5f, transform.position.z);
+                enemiesCounter++;
+            }
         }
-        
+
         // Increase maxEnemies every 10 kills
-        if (enemiesKilled % 10 == 0)
+        if (enemiesKilled % 10 == 0 && enemiesKilled > 0)
         {
             if (dtEnemySpawn > 1)
                 dtEnemySpawn -= 1;
+            maxEnemies++;
+        }
+    }
+
+    void IncreaseSpawnAMountEachSecond()
+    {
+        if (Time.timeSinceLevelLoad > steps[steps.Length - 1])
+        {
+            dtEnemySpawn -= (1/60.0f)*dtEnemySpawn;
             maxEnemies++;
         }
     }

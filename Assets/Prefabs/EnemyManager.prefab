@@ -45,20 +45,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def22810489e84adfa73b6158666e6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineLength: 20
+  steps:
+  - 30
+  - 60
+  - 120
+  - 160
+  - 200
+  - 240
+  - 300
   enemiesPrefab:
-  - {fileID: 451110395207141086, guid: 4dc4c2edcb7a2154598ab584829bff7b, type: 3}
-  - {fileID: 451110395207141086, guid: dbcfbdd3f4a19a641bbf7c59e3612a01, type: 3}
-  - {fileID: 451110395207141086, guid: 663c5a54756070a458adbdfe45664111, type: 3}
-  - {fileID: 451110395207141086, guid: cb2952be12753194aac6005ed5f23d41, type: 3}
-  - {fileID: 451110395207141086, guid: f02b1221edddb1e43824ba57b9983e73, type: 3}
-  - {fileID: 451110395207141086, guid: f91dd6a51f39d4e4a8e23ad07457d50f, type: 3}
   - {fileID: 451110395207141086, guid: 6e8e44a409f7ffb43a306e99d226459b, type: 3}
+  - {fileID: 451110395207141086, guid: c31a06dc8128fa444b2ed2f419d97aa0, type: 3}
+  - {fileID: 451110395207141086, guid: efba5916ccee3bb41aa754408bd64cd8, type: 3}
   - {fileID: 451110395207141086, guid: ac7f470f818acad4f983a399df345bee, type: 3}
+  - {fileID: 451110395207141086, guid: 663c5a54756070a458adbdfe45664111, type: 3}
+  - {fileID: 451110395207141086, guid: f02b1221edddb1e43824ba57b9983e73, type: 3}
+  - {fileID: 451110395207141086, guid: dbcfbdd3f4a19a641bbf7c59e3612a01, type: 3}
+  - {fileID: 451110395207141086, guid: cb2952be12753194aac6005ed5f23d41, type: 3}
   - {fileID: 451110395207141086, guid: a4f72c5e2257db040b40cce671a989b3, type: 3}
   - {fileID: 451110395207141086, guid: b1f88ad9b30895f4b80f9ae5c20353d7, type: 3}
-  - {fileID: 451110395207141086, guid: efba5916ccee3bb41aa754408bd64cd8, type: 3}
-  - {fileID: 451110395207141086, guid: c31a06dc8128fa444b2ed2f419d97aa0, type: 3}
-  dtEnemySpawn: 3
+  - {fileID: 451110395207141086, guid: 4dc4c2edcb7a2154598ab584829bff7b, type: 3}
+  - {fileID: 451110395207141086, guid: 4dc4c2edcb7a2154598ab584829bff7b, type: 3}
+  dtEnemySpawn: 10
 --- !u!1 &6304503628305006599
 GameObject:
   m_ObjectHideFlags: 0
