@@ -22,11 +22,9 @@ public class Hero : MonoBehaviour, IHit
     float patrolT = 0.0f;
     float patrolInterval = 3.0f;
 
-    private void OnValidate()
-    {
-        if (data != null)
-            Init(data);
-    }
+    public bool dead;
+
+
 
     void Init(Heroes data)
     {
@@ -54,6 +52,7 @@ public class Hero : MonoBehaviour, IHit
 
     private void Update()
     {
+        if (dead) return;
 
         if (targetEnemy == null)
         {
@@ -181,6 +180,9 @@ public class Hero : MonoBehaviour, IHit
 
     void OnDie()
     {
+        dead = true;
+        enabled = false;
+
         string eventName = "event:/Heroes/General/Hero_Death";
         if ("SMITH".Equals(data.id))
             eventName = "event:/Heroes/Hero_Smith_Death";

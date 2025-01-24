@@ -109,9 +109,9 @@ public class Enemy : MonoBehaviour, IHit
 
     void Attack()
     {
-        atkT = UnityEngine.Random.Range(0f, atkMaxDuration);
+        atkT = Random.Range(0f, atkMaxDuration);
         animator.SetTrigger("Atk");
-        if (target)
+        if (target && !target.dead)
         {
             Vector3 dir = target.transform.position - transform.position;
             dir.y = 0;
@@ -121,6 +121,7 @@ public class Enemy : MonoBehaviour, IHit
         }
         else
         {
+            FindTarget();
             door?.OnHit(data.dmg);
         }
      
@@ -133,7 +134,8 @@ public class Enemy : MonoBehaviour, IHit
         {
             float dist = Vector2.Distance(transform.position, h.transform.position);
             if (dist < minDist)
-            { 
+            {
+                if (h.dead) continue;
                 target = h;
                 minDist = dist;
             }
