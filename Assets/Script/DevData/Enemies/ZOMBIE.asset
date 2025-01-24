@@ -17,8 +17,9 @@ MonoBehaviour:
   tribe: UNDEAD
   EnemyName: Zombie
   desc: Very slow, weak, fragile.
+  fx: 
   hp: 5
-  speed: 5
+  speed: 3
   dmg: 1
   isElite: 0
   proba: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
   desc: A more evolved form of undead. Is convinced it's the strongest (it's not).
   fx: Spawn a group of zombies from time to time
   hp: 20
-  speed: 4
+  speed: 2
   dmg: 2
   isElite: 1
   proba: 0

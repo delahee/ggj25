@@ -19,7 +19,7 @@ MonoBehaviour:
   desc: Brown, leaking and with a cherry on top. Do not lick.
   fx: May drop a part of them upon taking damage. The part become a mob
   hp: 40
-  speed: 5
+  speed: 3
   dmg: 6
   isElite: 0
   proba: 0

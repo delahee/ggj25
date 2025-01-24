@@ -20,7 +20,7 @@ MonoBehaviour:
     slow.
   fx: Spin while attacking
   hp: 50
-  speed: 3
+  speed: 1
   dmg: 10
   isElite: 1
   proba: 0

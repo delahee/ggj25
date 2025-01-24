@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f433daf9a0a1848d89b69504ecf29ced, type: 3}
   m_Name: ACCUSER
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4046221343360891887, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
   id: ACCUSER
   tier: 7
   tribe: SATAN
   EnemyName: The Accuser
   desc: 'The devil themselves. It''s the final boss basically ? '
+  fx: 
   hp: 1000
-  speed: 4
+  speed: 2
   dmg: 40
   isElite: 0
+  proba: 0
