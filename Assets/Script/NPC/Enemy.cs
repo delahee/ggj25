@@ -131,6 +131,19 @@ public class Enemy : MonoBehaviour, IHit
      
     }
 
+    protected void FindTarget()
+    {
+        float minDist = float.MaxValue;
+        foreach (var h in FindObjectsOfType<Hero>())
+        {
+            float dist = Vector2.Distance(transform.position, h.transform.position);
+            if (dist < minDist)
+            { 
+                target = h;
+                minDist = dist;
+            }
+        }
+    }
 
     public virtual void OnHit(int dmg)
     {

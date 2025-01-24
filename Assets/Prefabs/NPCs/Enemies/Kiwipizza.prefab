@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42973c0bf4552be46b9bf0e78b61eb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkFX: {fileID: 1836718727366022038, guid: 46702d768394f194f8265350802ad608, type: 3}
   door: {fileID: 0}
   target: {fileID: 0}
   data: {fileID: 11400000, guid: 13edda25ad3edc5498f9555d1c2f0c27, type: 2}
@@ -93,6 +94,7 @@ MonoBehaviour:
   speed: 5
   hp: 93
   dmg: 12
+  pushForce: 1
   atkMaxDuration: 2
   hitDur: 0.1
   dead: 0

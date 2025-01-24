@@ -110,20 +110,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c9b892926377a4a9d067f7a7ee91e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkFX: {fileID: 1836718727366022038, guid: 46702d768394f194f8265350802ad608, type: 3}
   door: {fileID: 0}
+  target: {fileID: 0}
   data: {fileID: 11400000, guid: 217796de4a65d274985c25ae7e9f37f6, type: 2}
   buffHpFx: {fileID: 8834820431700888649}
   buffSpeedFX: {fileID: 4019694122515850838}
   speed: 3
   hp: 0
+  dmg: 0
+  pushForce: 1
   atkMaxDuration: 2
-  atkT: 0
-  hitT: 0
   hitDur: 0.1
   dead: 0
-  pizzaList: []
-  virtueList: []
-  toDebuffOnDeath: []
 --- !u!198 &4019694122515850838 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 697328819050617703, guid: 2a85c5b51f4b0044c96ebeb655398fbd, type: 3}
