@@ -88,7 +88,7 @@ public class BubbleManager : MonoBehaviour
     public void PopRoutine() 
     {
         GameObject go = Instantiate(GameManager.Instance.Data.Bubbles[0].prefab, 
-            Spawns.transform.position + new Vector3(Random.Range(-500f,500f), Random.Range(-500f, 500), 0), 
+            Spawns.transform.position + new Vector3(Random.Range(-400f, 400f), Random.Range(-50f, 50f), 0), 
             Quaternion.identity, 
             Spawns.transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
@@ -106,7 +106,7 @@ public class BubbleManager : MonoBehaviour
     public void MeltRoutine()
     {
         GameObject go = Instantiate(GameManager.Instance.Data.Bubbles[1].prefab,
-            Spawns.transform.position + new Vector3(Random.Range(-500f, 500f), Random.Range(-500f, 500), 0),
+              Spawns.transform.position + new Vector3(Random.Range(-400f, 400f), Random.Range(-50f, 50f), 0),
             Quaternion.identity,
             transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
@@ -124,7 +124,7 @@ public class BubbleManager : MonoBehaviour
     public void MithrilRoutine()
     {
         GameObject go = Instantiate(GameManager.Instance.Data.Bubbles[1].prefab,
-            Spawns.transform.position + new Vector3(Random.Range(-500f, 500f), Random.Range(-500f, 500), 0),
+             Spawns.transform.position + new Vector3(Random.Range(-400f, 400f), Random.Range(-50f, 50f), 0),
             Quaternion.identity,
             Spawns.transform);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
