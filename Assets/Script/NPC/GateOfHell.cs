@@ -49,4 +49,5 @@ public class GateOfHell : MonoBehaviour, IHit
         }
         FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Generic/Enemy_Impact");
     }
+    
 }

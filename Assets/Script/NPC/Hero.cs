@@ -18,7 +18,7 @@ public class Hero : MonoBehaviour, IHit
     public float atkMaxDuration = 1.0f;
     public float atkT = 0f;
 
-    Vector3 patrolPos;
+    protected Vector3 patrolPos;
     float patrolT = 0.0f;
     float patrolInterval = 3.0f;
 
@@ -84,7 +84,7 @@ public class Hero : MonoBehaviour, IHit
         }
     }
 
-    void RequestPatrolPos()
+    protected void RequestPatrolPos()
     {
         Vector3 parentPos = transform.parent.position;
 
