@@ -75,7 +75,11 @@ public class UpgradeManager : MonoBehaviour
         foreach (var s in GameManager.Instance.Data.SciencesUpgrades) 
         { 
             UpgradeDependence dep = new UpgradeDependence();
-            dep.DependsOnScience = s.dependence; 
+            dep.DependsOnScience = s.dependence;
+
+            if (dep.CheckDependence() != "" && !UniqueUpgrades.Contains(dep.CheckDependence()))
+                continue;
+
             volcanoUpgrades.Add(new Upgrade(
                 s.scienceName, 
                 UpgradeType.Volcano, 
