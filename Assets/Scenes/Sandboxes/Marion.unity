@@ -525,6 +525,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 413022639550981796, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 95.1584
+      objectReference: {fileID: 0}
     - target: {fileID: 2238427122455148105, guid: 66084bcf98b00406686de78584b17261, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -605,9 +609,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3977812534499299022, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -42.8611
+      objectReference: {fileID: 0}
+    - target: {fileID: 3977812534499299022, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 8.3261
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418892050705053709, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -45.1206
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418892050705053709, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.6676
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418892050705053709, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.4365
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524488268506020663, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 94.9481
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577396538043261012, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -38.6044
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577396538043261012, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.243
+      objectReference: {fileID: 0}
     - target: {fileID: 7367848019986366246, guid: 66084bcf98b00406686de78584b17261, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616291801009440147, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 81.8653
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
