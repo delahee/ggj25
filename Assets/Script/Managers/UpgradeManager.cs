@@ -129,14 +129,15 @@ public class UpgradeManager : MonoBehaviour
     {
         selectionGO = Instantiate(SelectionPrefab, transform.parent);
         HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
-
+        PriceUpdater[] priceTag = selectionGO.GetComponentsInChildren<PriceUpdater>();
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponentInChildren<TMP_Text>().text = selection[i].Name;
             buttons[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<TMP_Text>().text = selection[i].Effect;
             int index = i;
             buttons[i].onClick.AddListener(() => SelectUpgrade(index));
-            
+            priceTag[i].price.text = "Pop " + selection[i].PopCost + " Melt " + selection[i].MeltCost + " Mithril " + selection[i].MithrilCost;
+
         }
     }
     #endregion
