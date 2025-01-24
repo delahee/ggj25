@@ -1,6 +1,6 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
-
 
 public enum NPC_State
 {
@@ -14,6 +14,9 @@ public enum NPC_State
 public class Enemy : MonoBehaviour, IHit
 {
     public GameObject atkFX;
+
+    public AnimationCurve Speedcurve;
+    public AnimationCurve Sizecurve;
 
     public  GateOfHell       door;
     public  Hero             target;
@@ -66,6 +69,7 @@ public class Enemy : MonoBehaviour, IHit
     private void Start()
     {
         if (door == null) door = GateOfHell.instance;
+        Sizecurve.Evaluate(0);
     }
     
     protected virtual void Update()
@@ -87,16 +91,18 @@ public class Enemy : MonoBehaviour, IHit
         Vector3 pos = door.transform.position;
         if (target)        
             pos = target.transform.position;
-        
 
+        float diff = (transform.position.z - door.transform.position.z) / 31.33f;
         if (Vector3.Distance(transform.position, pos) > 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, pos, data.speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pos, data.speed*Sizecurve.Evaluate(diff) * Time.deltaTime);
         }
         else
         {
             AttackSequence();
         }
+        
+        transform.localScale = new Vector3(Sizecurve.Evaluate(diff), Sizecurve.Evaluate(diff), 1) ;
     }
 
 
