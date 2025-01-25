@@ -21,6 +21,15 @@ public class Upgrade : MonoBehaviour
     public string Method;
     public EquipType EquipType;
 
+    public static int   maxTurret           = 1;
+    public static float boostTurretFireRate = 1;
+    public static float boostHeroDmg        = 0;
+    public static float boostHeroHP         = 0;
+    public static float boostHeroRegen      = 0;
+    public static int   turretShot          = 0;
+    public static int   additionnalHeroSlot = 0;
+
+
     public Upgrade(string name, UpgradeType type)
     {
         Name = name;
@@ -157,51 +166,65 @@ public class Upgrade : MonoBehaviour
     void Aerodynamic()
     {
         //TODO Emile : black smith land one more turret
+        maxTurret++;
     }
 
     void Barking()
     {
         //TODO Emile : black smith's turret shoots 20% faster
+        boostTurretFireRate += .2f;
     }
 
     void Enhancer()
     {
         //TODO Emile : all heroes do 25% more damage
+        boostHeroDmg += .25f;
     }
 
     void Hammergedon()
     {
         //TODO Emile : Immediately deal 50% of their health as damage to each enemy on screen.
+        foreach (Enemy e in FindObjectsOfType<Enemy>())
+        {
+            if (e.dead) continue;
+            e.OnHit(e.hp / 2);
+        }
     }
 
     void Lounge()
     {
         //TODO Emile : Add 2 more hero slots
+        additionnalHeroSlot += 2;
     }
 
     void Masseur()
     {
         //TODO Emile : Heroes regen 20% faster
+        boostHeroRegen += .2f;
     }
 
     void Nova()
     {
         //TODO Emile : Heroes all do twice the damage
+        boostHeroDmg *= 2;
     }
 
     void Heart()
     {
         //TODO Emile : Heroes all gain +50% HP
+        boostHeroHP += .5f;
     }
 
     void Pill()
     {
         //TODO Emile : Heroes all do 50% more damage
+        boostHeroDmg += .5f;
     }
 
     void Shotgun()
     {
         //TODO Emile : Blacksmith turrets now shoot two more projectiles in a cone.
+        turretShot += 2;
     }
     #endregion
 }

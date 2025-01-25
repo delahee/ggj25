@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using DG.Tweening;
 using UnityEngine;
 
@@ -7,11 +8,15 @@ public class Turret : MonoBehaviour, IHit
 {
     public GameObject fx;
     public Enemy target;
+    public Smith owner;
     public float reloadTime;
     public float reloadT;
     public float lifespan;
     public int hp;
     public int dmg;
+
+
+    [Range(0.0f, 180.0f)] public float coneAngle = 45.0f;
 
     bool dead;
 
@@ -33,7 +38,7 @@ public class Turret : MonoBehaviour, IHit
         Vector2 dir = new Vector2(toEnemy.x, toEnemy.z);
         transform.rotation = Quaternion.Euler(50, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90);
 
-        reloadT -= Time.deltaTime;
+        reloadT -= Time.deltaTime * (1+Upgrade.boostTurretFireRate);
         if (reloadT < 0)
         {
             reloadT = reloadTime;
@@ -70,7 +75,19 @@ public class Turret : MonoBehaviour, IHit
 
     void Destroy()
     {
+        if (owner != null) owner.OnTurretDestroyed(this);
         dead = true;
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        float len = 30.0f;
+        float angle = Mathf.Deg2Rad * coneAngle / 2;
+        Vector3 l = transform.position + new Vector3(Mathf.Cos(angle)   , 0.0f, Mathf.Sin(angle))   * len;
+        Vector3 r = transform.position + new Vector3(Mathf.Cos(-angle)  , 0.0f, Mathf.Sin(-angle))  * len;
+        Gizmos.DrawLine(transform.position, r);
+        Gizmos.DrawLine(transform.position, l);
+        
     }
 }

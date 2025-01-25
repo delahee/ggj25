@@ -5,9 +5,11 @@ using UnityEngine;
 
 
 public class Smith : Hero
-{
+{    
     [Header("Smith")]
     public Turret prefab;
+    public int maxTurret = 1;
+    int turretCounter = 0;
     public float timeToCreateATurret = 3.0f;
     Vector3 turretPos;
     public float t = 0.0f;
@@ -53,7 +55,15 @@ public class Smith : Hero
 
     void SpawnTurret()
     {
+        if (turretCounter >= maxTurret + Upgrade.maxTurret) return;
         Turret t = Instantiate(prefab, transform.position, transform.rotation);
-        t.dmg = data.AtkDmgBasis;
+        t.dmg = getDmg();
+        t.owner = this;
+        turretCounter++;
+    }
+
+    public void OnTurretDestroyed(Turret t)
+    {
+        turretCounter--;
     }
 }

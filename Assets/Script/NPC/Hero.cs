@@ -8,7 +8,8 @@ public class Hero : MonoBehaviour, IHit
 
     public float speed = 3.0f;
     public float pushForce = 1.0f;
-
+    public float regenSpeed = 1;
+    public float regenT = 1;
 
     public Heroes data;
     public int hp = 10;
@@ -22,13 +23,12 @@ public class Hero : MonoBehaviour, IHit
     float patrolInterval = 3.0f;
 
     public bool dead;
-
-
+       
 
     void Init(Heroes data)
     {
         this.data = data;
-        hp = data.hp;
+        hp = Mathf.FloorToInt(data.hp * (1+Upgrade.boostHeroHP));
     }
 
     private void Awake()
@@ -52,6 +52,13 @@ public class Hero : MonoBehaviour, IHit
     protected virtual void Update()
     {
         if (dead) return;
+
+        regenT -= Time.deltaTime * regenSpeed * (1+Upgrade.boostHeroRegen);
+        if (regenT < 0)
+        {
+            regenT = 1.0f;
+            hp++;
+        }
 
         if (targetEnemy == null)
         {
@@ -156,12 +163,13 @@ public class Hero : MonoBehaviour, IHit
         Vector3 dir = o.transform.position - transform.position;
         dir.y = 0;
         o.Push(dir.normalized*pushForce);
-        o.OnHit(data.AtkDmgBasis);
+        o.OnHit(getDmg());
         Instantiate(atkFX, o.transform.position, o.transform.rotation);
         o.target = this;
         atkT = Random.Range(0f, atkMaxDuration);
     }
 
+    protected int getDmg() => Mathf.FloorToInt(data.AtkDmgBasis * (1+Upgrade.boostHeroDmg));
 
     public void Push(Vector3 dir)
     {
