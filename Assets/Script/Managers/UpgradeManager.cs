@@ -38,6 +38,23 @@ public class UpgradeManager : MonoBehaviour
     #region Upgrades
 
     public List<string> UniqueUpgrades;
+    public Button Equipment, Volcano, Economy;
+    public TextMeshProUGUI EquipPrice, VolcanoPrice, EcoPrice;
+
+    public void CalculateUpgradePrice()
+    {
+        float equipPrice = EquipmentLevel * 1.5f + (VolcanoLevel + EcoLevel) * 1.1f;
+        float volcanoPrice = VolcanoLevel * 1.5f + (EquipmentLevel + EcoLevel) * 1.1f;
+        float ecoPrice = EcoLevel * 1.5f + (VolcanoLevel + EquipmentLevel) * 1.1f;
+
+        EquipPrice.text = equipPrice + " Pops";
+        VolcanoPrice.text = volcanoPrice + " Pops";
+        EcoPrice.text = ecoPrice + " Pops";
+
+        Equipment.interactable = (equipPrice <= GameManager.Instance.Pops);
+        Volcano.interactable = (equipPrice <= GameManager.Instance.Pops);
+        Economy.interactable = (equipPrice <= GameManager.Instance.Pops);
+    }
 
     public static int Imps
     {
