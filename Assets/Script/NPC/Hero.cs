@@ -25,8 +25,8 @@ public class Hero : MonoBehaviour, IHit
     public bool dead;
     public static List<Enemy> targeted = new();
       
-    Animator animator;
-    SpriteRenderer spr;
+    protected Animator animator;
+    protected SpriteRenderer spr;
 
     void Init(Heroes data)
     {

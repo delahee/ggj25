@@ -46,8 +46,10 @@ public class Stargazer : Hero
             PatrolSequence();
         else
         {
-            var targetPos = transform.position + steering.normalized * speed * Time.deltaTime;
-            MoveTo(targetPos);
+            if (targetEnemy != null)
+                spr.flipX = (targetEnemy.transform.position - transform.position).x < 0;
+            transform.position += steering.normalized * speed * Time.deltaTime;
+            
         }
 
         reloadT -= Time.deltaTime;
