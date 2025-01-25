@@ -23,7 +23,11 @@ public class StargazerBall : MonoBehaviour
     {
         if (dead)
         {
-            explo.transform.localScale *= 1 - Time.deltaTime * 10;
+            // explo.transform.localScale *= 1 - Time.deltaTime * 10;
+
+            Color c = explo.color;
+            c.a *= 1 - Time.deltaTime * 10;
+            explo.color = c;
             return;
         }
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);

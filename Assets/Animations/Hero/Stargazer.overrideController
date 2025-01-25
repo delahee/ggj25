@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Stargazer
+  m_Controller: {fileID: 9100000, guid: c1654e446f66e3149ab59b519e3f779f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 361b9ce3504f2b24fab0a82f5ff2f375, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8b89cb9c331385d428daa48c64dc2f8c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fc85c0180cf275c4ab2de97e172fed8e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b3111061b7c93dc4c9ba5d895c3df9bc, type: 2}

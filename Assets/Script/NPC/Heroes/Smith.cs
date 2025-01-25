@@ -47,8 +47,7 @@ public class Smith : Hero
 
         if (Vector3.Distance(transform.position, turretPos) > .1f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, turretPos, speed * Time.deltaTime);
-
+            MoveTo(turretPos);
         }
 
     }

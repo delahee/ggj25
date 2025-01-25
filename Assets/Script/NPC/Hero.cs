@@ -23,7 +23,10 @@ public class Hero : MonoBehaviour, IHit
     float patrolInterval = 3.0f;
 
     public bool dead;
-       
+    public static List<Enemy> targeted = new();
+      
+    Animator animator;
+    SpriteRenderer spr;
 
     void Init(Heroes data)
     {
@@ -34,6 +37,10 @@ public class Hero : MonoBehaviour, IHit
     private void Awake()
     {
         Init(data);
+        animator = GetComponent<Animator>();
+        spr = GetComponentInChildren<SpriteRenderer>();
+        InvokeRepeating(nameof(SeekEnemy), 00.0f, .3f);
+
         string eventName = "event:/Heroes/General/Hero_Spawn";
         if ("SMITH".Equals(data.id))
             eventName = "event:/Heroes/Hero_Smith_Spawn";
@@ -49,6 +56,11 @@ public class Hero : MonoBehaviour, IHit
             eventName = "event:/Heroes/Hero_Cerberus_Spawn";
     }
 
+    protected virtual void Start()
+    {
+        InvokeRepeating(nameof(SeekEnemy), 00.0f, .3f);
+    }
+
     protected virtual void Update()
     {
         if (dead) return;
@@ -60,15 +72,11 @@ public class Hero : MonoBehaviour, IHit
             hp++;
         }
 
-        if (targetEnemy == null)
-        {
-            SeekEnemy();
-        }
 
         if (targetEnemy == null || targetEnemy.dead) {
 
             if (Vector3.Distance(transform.position, transform.parent.position) > 10) { 
-                transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, speed * Time.deltaTime);
+                MoveTo(transform.parent.position);
             }
             else
             {
@@ -81,13 +89,21 @@ public class Hero : MonoBehaviour, IHit
         float dist = Vector3.Distance(transform.position, targetEnemy.transform.position);
         if (dist > 1)
         {
-            Vector3 move = Vector3.MoveTowards(transform.position, targetEnemy.transform.position, speed * Time.deltaTime);
-            transform.position = move;
+            MoveTo(targetEnemy.transform.position);
         }
         else
         {
             AttackSequence();
         }
+    }
+    
+    protected void MoveTo(Vector3 into)
+    {
+        var dir = (into - transform.position);
+        if (dir.magnitude > 0.01f)
+            spr.flipX = dir.x < 0;
+        Vector3 move = Vector3.MoveTowards(transform.position, into, speed * Time.deltaTime);
+        transform.position = move;
     }
 
     protected void RequestPatrolPos()
@@ -109,7 +125,7 @@ public class Hero : MonoBehaviour, IHit
     protected void PatrolSequence()
     {
         if (Vector3.Distance(transform.position, patrolPos) > .1f) 
-            transform.position = Vector3.MoveTowards(transform.position, patrolPos, speed * Time.deltaTime);
+            MoveTo(patrolPos);
         else 
             patrolT -= Time.deltaTime;
         
@@ -128,26 +144,22 @@ public class Hero : MonoBehaviour, IHit
             return;
         }
 
-        float max = -float.MaxValue;
+        float max = float.MaxValue;
         foreach (Enemy e in FindObjectsOfType<Enemy>())
         {
             if (e.dead) continue;
-            float score = Vector3.Distance(gate.transform.position, e.transform.position) - Vector3.Distance(transform.position, e.transform.position);
-            if (score > max) max = score;
-            targetEnemy = e;
-        }
-        return;
 
-        float minDist = GateOfHell.instance.radius;
-        foreach (Enemy e in FindObjectsOfType<Enemy>())
-        {
-            if (e.dead) continue;
-            var dist = Vector3.Distance(e.transform.position, transform.position);
-            if (dist < minDist)
+            float score = Vector3.Distance(gate.transform.position, e.transform.position);
+            if (score < max)
             {
-                minDist = dist;
+                max = score;
                 targetEnemy = e;
             }
+        }
+
+        if (!targeted.Contains(targetEnemy))
+        {
+            targeted.Add(targetEnemy);
         }
     }
 
@@ -160,6 +172,7 @@ public class Hero : MonoBehaviour, IHit
 
     void Attack(Enemy o)
     {
+        animator.SetTrigger("atk");
         Vector3 dir = o.transform.position - transform.position;
         dir.y = 0;
         o.Push(dir.normalized*pushForce);
@@ -167,6 +180,9 @@ public class Hero : MonoBehaviour, IHit
         Instantiate(atkFX, o.transform.position, o.transform.rotation);
         o.target = this;
         atkT = Random.Range(0f, atkMaxDuration);
+        SeekEnemy();
+        if (targetEnemy.dead)
+            targeted.Remove(targetEnemy);
     }
 
     protected int getDmg() => Mathf.FloorToInt(data.AtkDmgBasis * (1+Upgrade.boostHeroDmg));

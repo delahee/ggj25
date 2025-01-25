@@ -17,8 +17,9 @@ public class Stargazer : Hero
 
     Enemy closest;
 
-    private void Start()
+    protected override void Start()
     {
+        InvokeRepeating(nameof(SeekEnemy), 0.0f, reloadTime);
         reloadT = reloadTime;
     }
 
@@ -44,7 +45,8 @@ public class Stargazer : Hero
             PatrolSequence();
         else
         {
-            transform.position += steering.normalized * speed * Time.deltaTime;
+            var targetPos = transform.position + steering.normalized * speed * Time.deltaTime;
+            MoveTo(targetPos);
         }
 
         reloadT -= Time.deltaTime;
