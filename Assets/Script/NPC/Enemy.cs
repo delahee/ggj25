@@ -185,6 +185,8 @@ public class Enemy : MonoBehaviour, IHit
         if (EnemyManager.INSTANCE != null)
             EnemyManager.INSTANCE.EnemyDestroyed();
 
+        Hero.targeted.Remove(this);
+
     }
 
 

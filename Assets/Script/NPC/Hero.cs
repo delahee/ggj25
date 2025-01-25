@@ -144,10 +144,12 @@ public class Hero : MonoBehaviour, IHit
             return;
         }
 
+        Enemy old = targetEnemy;
         float max = float.MaxValue;
         foreach (Enemy e in FindObjectsOfType<Enemy>())
         {
             if (e.dead) continue;
+            if (targeted.Contains(e)) continue;
 
             float score = Vector3.Distance(gate.transform.position, e.transform.position);
             if (score < max)
@@ -157,6 +159,10 @@ public class Hero : MonoBehaviour, IHit
             }
         }
 
+        // Heroes does not aim the same enemy
+        if (targetEnemy == null) return;
+        if (old != null)
+            targeted.Remove(old);
         if (!targeted.Contains(targetEnemy))
         {
             targeted.Add(targetEnemy);
@@ -181,8 +187,6 @@ public class Hero : MonoBehaviour, IHit
         o.target = this;
         atkT = Random.Range(0f, atkMaxDuration);
         SeekEnemy();
-        if (targetEnemy.dead)
-            targeted.Remove(targetEnemy);
     }
 
     protected int getDmg() => Mathf.FloorToInt(data.AtkDmgBasis * (1+Upgrade.boostHeroDmg));
