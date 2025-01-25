@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using static UnityEngine.UI.GridLayoutGroup;
 
+[SelectionBase]
 public class Stargazer : Hero
 {
     [Header("Stargazer")]
