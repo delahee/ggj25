@@ -139,8 +139,11 @@ public class UpgradeManager : MonoBehaviour
 
             HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
             PriceUpdater[] priceTag = selectionGO.GetComponentsInChildren<PriceUpdater>();
+            
             for (int i = 0; i < buttons.Length; i++)
             {
+                if (buttons[i].tag == "Skip")
+                    continue;
                 if (selection[i].PopCost > GameManager.Instance.Pops ||
                     selection[i].MeltCost > GameManager.Instance.Melts ||
                     selection[i].MithrilCost > GameManager.Instance.Mithrils)
@@ -221,7 +224,7 @@ public class UpgradeManager : MonoBehaviour
                 continue;*/
 
             heroUpgrades.Add(new Upgrade(
-                e.name,
+                e.id,
                 UpgradeType.Hero,
                 e.desc,
                 e.fx,
