@@ -68,8 +68,11 @@ public class Hero : MonoBehaviour, IHit
         regenT -= Time.deltaTime * regenSpeed * (1+Upgrade.boostHeroRegen);
         if (regenT < 0)
         {
-            regenT = 1.0f;
-            hp++;
+            if (hp < data.hp * (1 + Upgrade.boostHeroHP))
+            {
+                regenT = 1.0f;
+                hp++;
+            }
         }
 
 
@@ -150,6 +153,7 @@ public class Hero : MonoBehaviour, IHit
         {
             if (e.dead) continue;
             if (targeted.Contains(e)) continue;
+            if (e.transform.position.z > gate.radius) continue;
 
             float score = Vector3.Distance(gate.transform.position, e.transform.position);
             if (score < max)
