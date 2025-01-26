@@ -148,6 +148,8 @@ public class BubbleManager : MonoBehaviour
 
     public void CalculateAutoRate(int imps)
     {
+        if(imps <= 0) return;
+
         PopAutoRate = imps * PopValue;
         if (UpgradeManager.Instance.UniqueUpgrades.Contains("Beholder"))
             MeltAutoRate = imps * MeltValue;

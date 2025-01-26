@@ -107,10 +107,12 @@ public class UpgradeManager : MonoBehaviour
 
     }
 
+    int imps;
+
     public static int Imps
     {
-        get => Imps;
-        set { Imps = value; BubbleManager.Instance.CalculateAutoRate(value); }
+        get => Instance.imps;
+        set { Instance.imps = value; BubbleManager.Instance.CalculateAutoRate(value); }
     }
 
     int equipmentLevel = 0;
@@ -127,7 +129,18 @@ public class UpgradeManager : MonoBehaviour
     List<Upgrade> ecoUpgrades       = new List<Upgrade>();
     List<Upgrade> heroUpgrades       = new List<Upgrade>();
 
-    //TODO populate with dev data
+    private void Update()
+    {
+        if (selectionGO)
+        {
+            Equipment.interactable = false;
+            Volcano.interactable = false;
+            Economy.interactable = false;
+        }
+        else
+            CalculateUpgradePrice();
+    }
+
     void PopulateUpgrades()
     {
         equipmentUpgrades.Clear();
@@ -301,8 +314,7 @@ public class UpgradeManager : MonoBehaviour
         }
         PopulateSelection();
     }
-    
-    
+       
     public void SelectUpgrade(int index)
     {
         selection[index].DoUpgrade();
