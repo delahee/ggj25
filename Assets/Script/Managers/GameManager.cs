@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
             InitGame();
         }
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambience/Amb_Inferno", gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Music/Music_Game", gameObject);
     }
 
     #endregion
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
     private async Task InitGame()
     {
         UpgradeManager.Instance.CalculateUpgradePrice();
+        
     }
 
     #endregion

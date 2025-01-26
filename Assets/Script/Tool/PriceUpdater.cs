@@ -17,9 +17,9 @@ public class PriceUpdater : MonoBehaviour
         if (pop > 0)
             res += $"{pop} Pop";
         if (melt > 0)
-            res += $"{melt} Melt";
+            res += $" {melt} Melt";
         if (mithril > 0)
-            res += $"{mithril} Mithril";
+            res += $" {mithril} Mithril";
         
         //if (res != "")
             return res;

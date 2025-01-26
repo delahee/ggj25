@@ -52,8 +52,48 @@ public class UpgradeManager : MonoBehaviour
         EcoPrice.text = ecoPrice + " Pops";
 
         Equipment.interactable = (equipPrice <= GameManager.Instance.Pops);
-        Volcano.interactable = (equipPrice <= GameManager.Instance.Pops);
-        Economy.interactable = (equipPrice <= GameManager.Instance.Pops);
+        Volcano.interactable = (volcanoPrice <= GameManager.Instance.Pops);
+        Economy.interactable = (ecoPrice <= GameManager.Instance.Pops);
+
+        if (Equipment.interactable)
+        {
+            var texts = Equipment.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach(var t in texts)
+                t.color = Color.white;
+        }
+        else
+        {
+            var texts = Equipment.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach (var t in texts)
+                t.color = Color.red;
+        }
+
+        if (Volcano.interactable)
+        {
+            var texts = Volcano.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach (var t in texts)
+                t.color = Color.white;
+        }
+        else
+        {
+            var texts = Volcano.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach (var t in texts)
+                t.color = Color.red;
+        }
+
+        if (Economy.interactable)
+        {
+            var texts = Economy.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach (var t in texts)
+                t.color = Color.white;
+        }
+        else
+        {
+            var texts = Economy.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach (var t in texts)
+                t.color = Color.red;
+        }
+
     }
 
     public static int Imps
