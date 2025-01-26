@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,20 +25,56 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    static FMOD.Studio.EventInstance instanceAmb, music;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
 
         if (instance != null)
+        {
+            /*music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            instanceAmb.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);*/
             Destroy(Instance.gameObject);
+        }
 
         instance = this;
         if (State == State.Starting || State == State.Playing)
         {
             InitGame();
         }
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambience/Amb_Inferno", gameObject);
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Music/Music_Game", gameObject);
+
+        SetMusic();
+    }
+
+    public void SetMusic()
+    {
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            instanceAmb = RuntimeManager.CreateInstance("event:/Ambience/Amb_Inferno");
+            //instance.set3DAttributes(RuntimeUtils.To3DAttributes(transposition));
+            instanceAmb.start();
+            instanceAmb.release();
+            music = RuntimeManager.CreateInstance("event:/Music/Music_Game");
+            music.start();
+            music.release();
+            //FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Ambience/Amb_Inferno", gameObject);
+            //FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Music/Music_Game", gameObject);
+        }
+        else
+        {
+            music = RuntimeManager.CreateInstance("event:/Music/Music_Intro");
+            music.start();
+            music.release();
+            //FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Music/Music_Intro", gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+/*        music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        instanceAmb.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);*/
     }
 
     #endregion

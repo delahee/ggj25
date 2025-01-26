@@ -24,6 +24,7 @@ public class Intro : MonoBehaviour
             yield return null; 
         }
         UnloadIntro();
+        GameManager.Instance.SetMusic();
     }
     public void UnloadIntro()
     {
