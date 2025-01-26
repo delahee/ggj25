@@ -51,7 +51,18 @@ public class UpgradeManager : MonoBehaviour
         VolcanoPrice.text = volcanoPrice + " Pops";
         EcoPrice.text = ecoPrice + " Pops";
 
-        Equipment.interactable = (equipPrice <= GameManager.Instance.Pops);
+        bool heroesFull = true;
+        foreach (var spawnGo in HeroesManager.INSTANCE.SpawnPoints)
+        {
+            SpawnPoint spawn = spawnGo.GetComponent<SpawnPoint>();
+            if (spawn.isAvailable)
+            {
+                heroesFull = false;
+                break;
+            }
+        }
+
+        Equipment.interactable = (equipPrice <= GameManager.Instance.Pops && !heroesFull);
         Volcano.interactable = (volcanoPrice <= GameManager.Instance.Pops);
         Economy.interactable = (ecoPrice <= GameManager.Instance.Pops);
 
@@ -174,13 +185,36 @@ public class UpgradeManager : MonoBehaviour
                 e.mithrilCost
                 ));
         }
-        
-        heroUpgrades.Add(new Upgrade("SMITH", UpgradeType.Hero));
+
+        foreach (var e in GameManager.Instance.Data.HeroesUpgrades)
+        {
+            UpgradeDependence dep = new UpgradeDependence();
+            //dep.DependsOnEco = e.dependence;
+
+            /*if (dep.CheckDependence() != "" && !UniqueUpgrades.Contains(dep.CheckDependence()))
+                continue;*/
+
+            heroUpgrades.Add(new Upgrade(
+                e.name,
+                UpgradeType.Hero,
+                e.desc,
+                e.fx,
+                false,
+                dep,
+                "",
+                null,
+                0,
+                0,
+                0
+                ));
+        }
+
+       /* heroUpgrades.Add(new Upgrade("SMITH", UpgradeType.Hero));
         heroUpgrades.Add(new Upgrade("STARGAZER", UpgradeType.Hero));
         heroUpgrades.Add(new Upgrade("DANCER", UpgradeType.Hero));
         heroUpgrades.Add(new Upgrade("FIGHTER", UpgradeType.Hero));
         heroUpgrades.Add(new Upgrade("PYRO", UpgradeType.Hero));
-        heroUpgrades.Add(new Upgrade("CERBERUS", UpgradeType.Hero));
+        heroUpgrades.Add(new Upgrade("CERBERUS", UpgradeType.Hero));*/
     }
 
     [HideInInspector]
@@ -194,20 +228,32 @@ public class UpgradeManager : MonoBehaviour
         PriceUpdater[] priceTag = selectionGO.GetComponentsInChildren<PriceUpdater>();
         for (int i = 0; i < buttons.Length; i++)
         {
-            buttons[i].GetComponentInChildren<TMP_Text>().text = selection[i].Name;
-            buttons[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<TMP_Text>().text = selection[i].Effect;
-            int index = i;
-            buttons[i].onClick.AddListener(() => SelectUpgrade(index));
-            priceTag[i].price.text = priceTag[i].PriceFormatter(selection[i].PopCost, selection[i].MeltCost, selection[i].MithrilCost);
-
-            if(selection[i].PopCost > GameManager.Instance.Pops || 
-                selection[i].MeltCost > GameManager.Instance.Melts || 
-                selection[i].MithrilCost > GameManager.Instance.Mithrils)
+            if (buttons[i].tag == "Skip")
+                buttons[i].onClick.AddListener(() => {
+                    HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
+                    for (int i = 0; i < buttons.Length; i++)
+                    {
+                        buttons[i].onClick.RemoveAllListeners();
+                    }
+                    selection.Clear();
+                    Destroy(selectionGO);
+                });
+            else
             {
-                priceTag[i].price.color = Color.red;
-                buttons[i].interactable = false;
-            }
+                buttons[i].GetComponentInChildren<TMP_Text>().text = selection[i].Name;
+                buttons[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<TMP_Text>().text = selection[i].Effect;
+                int index = i;
+                buttons[i].onClick.AddListener(() => SelectUpgrade(index));
+                priceTag[i].price.text = priceTag[i].PriceFormatter(selection[i].PopCost, selection[i].MeltCost, selection[i].MithrilCost);
 
+                if (selection[i].PopCost > GameManager.Instance.Pops ||
+                    selection[i].MeltCost > GameManager.Instance.Melts ||
+                    selection[i].MithrilCost > GameManager.Instance.Mithrils)
+                {
+                    priceTag[i].price.color = Color.red;
+                    buttons[i].interactable = false;
+                }
+            }
         }
     }
     #endregion
@@ -260,9 +306,12 @@ public class UpgradeManager : MonoBehaviour
     public void SelectUpgrade(int index)
     {
         selection[index].DoUpgrade();
-        GameManager.Instance.Pops -= selection[index].PopCost;
-        GameManager.Instance.Melts -= selection[index].MeltCost;
-        GameManager.Instance.Mithrils -= selection[index].MithrilCost;
+        if (!UpgradeType.Hero.Equals(selection[index].Type))
+        {
+            GameManager.Instance.Pops -= selection[index].PopCost;
+            GameManager.Instance.Melts -= selection[index].MeltCost;
+            GameManager.Instance.Mithrils -= selection[index].MithrilCost;
+        }
         HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
         for (int i = 0; i < buttons.Length; i++)
         {

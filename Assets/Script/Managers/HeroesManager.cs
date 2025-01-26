@@ -40,7 +40,6 @@ public class HeroesManager : MonoBehaviour
                 spawn.isAvailable = false;
                 spawn.attachedHero = heroGo.GetComponent<Hero>();
                 heroGo.transform.position = spawn.transform.position;
-                GameManager.Instance.Melts -= 5;
                 return;
             }
         }

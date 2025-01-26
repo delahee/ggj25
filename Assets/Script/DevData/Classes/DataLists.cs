@@ -7,4 +7,5 @@ public class DataLists : ScriptableObject
     public List<Bubbles> Bubbles;
     public List<Science> SciencesUpgrades;
     public List<Economy> EconomyUpgrades;
+    public List<Heroes> HeroesUpgrades;
 }

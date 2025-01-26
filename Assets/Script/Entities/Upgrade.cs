@@ -74,8 +74,11 @@ public class Upgrade : MonoBehaviour
         return up;
     }
 
-    public void DoUpgrade()
+    public void DoUpgrade(bool skip = false)
     {
+        if (skip)
+            Destroy(UpgradeManager.Instance.selectionGO);
+
         if (UpgradeType.Hero.Equals(Type))
             HeroesManager.INSTANCE.SpawnHero(Name);
         else

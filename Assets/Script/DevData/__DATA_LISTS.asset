@@ -41,3 +41,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 86394aa8df84d524d84e6a99d5b6da3e, type: 2}
   - {fileID: 11400000, guid: 08ebcc287c75f2340a1c0007c75afaa7, type: 2}
   - {fileID: 11400000, guid: 8078d7ff14de91e499922d7a4599cd97, type: 2}
+  HeroesUpgrades:
+  - {fileID: 11400000, guid: dacb772abcb50d149ab759e8e143a82d, type: 2}
+  - {fileID: 11400000, guid: b94612669373ce84eaa6f3351d4e0ebd, type: 2}
+  - {fileID: 11400000, guid: a176814c672923742bf694f77d96ae48, type: 2}
+  - {fileID: 11400000, guid: 8eca8c18d82858d4fbc54af8f45e5179, type: 2}
+  - {fileID: 11400000, guid: 7b0ea80799a4cf1468c429d0be6b0981, type: 2}
+  - {fileID: 11400000, guid: ef3093484d2a40544a83d41f2ea2ae6f, type: 2}
