@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.Diagnostics;
 
 public interface IHit
 {
@@ -10,10 +11,9 @@ public interface IHit
 
 public class GateOfHell : MonoBehaviour, IHit
 {
-    public int hp = 10;
+    public int hp = 6666;
     public float radius = 20;
     bool dead = false;
-
     public static GateOfHell instance;
 
     private void Awake()
@@ -24,6 +24,12 @@ public class GateOfHell : MonoBehaviour, IHit
             return;
         }
         instance = this;
+
+    }
+
+    void Crash()
+    {
+        Utils.ForceCrash(ForcedCrashCategory.FatalError);
     }
 
     private void OnDrawGizmosSelected()
@@ -36,6 +42,7 @@ public class GateOfHell : MonoBehaviour, IHit
     void GameOver()
     {
         dead = true;
+        Crash();
         Debug.Log("GameOver");
     }
 
