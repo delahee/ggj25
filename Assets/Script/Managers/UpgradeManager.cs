@@ -136,6 +136,19 @@ public class UpgradeManager : MonoBehaviour
             Equipment.interactable = false;
             Volcano.interactable = false;
             Economy.interactable = false;
+
+            HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
+            PriceUpdater[] priceTag = selectionGO.GetComponentsInChildren<PriceUpdater>();
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                if (selection[i].PopCost > GameManager.Instance.Pops ||
+                    selection[i].MeltCost > GameManager.Instance.Melts ||
+                    selection[i].MithrilCost > GameManager.Instance.Mithrils)
+                {
+                    priceTag[i].price.color = Color.red;
+                    buttons[i].interactable = false;
+                }
+            }
         }
         else
             CalculateUpgradePrice();
