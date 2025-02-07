@@ -252,6 +252,8 @@ public class UpgradeManager : MonoBehaviour
 
     void PopulateSelection()
     {
+        Time.timeScale = 0.0f;
+
         selectionGO = Instantiate(SelectionPrefab, transform.parent);
         HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
         PriceUpdater[] priceTag = selectionGO.GetComponentsInChildren<PriceUpdater>();
@@ -346,8 +348,8 @@ public class UpgradeManager : MonoBehaviour
             buttons[i].onClick.RemoveAllListeners();
         }
         selection.Clear();
+        Time.timeScale = 1.0f;
     }
-
     #endregion
 }
 
