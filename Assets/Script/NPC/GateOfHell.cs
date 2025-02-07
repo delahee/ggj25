@@ -29,7 +29,8 @@ public class GateOfHell : MonoBehaviour, IHit
 
     void Crash()
     {
-        Utils.ForceCrash(ForcedCrashCategory.FatalError);
+        //Utils.ForceCrash(ForcedCrashCategory.FatalError);
+        Application.Quit();
     }
 
     private void OnDrawGizmosSelected()
