@@ -40,18 +40,41 @@ public class UpgradeManager : MonoBehaviour
     public List<string> UniqueUpgrades;
     public Button Equipment, Volcano, Economy;
     public TextMeshProUGUI EquipPrice, VolcanoPrice, EcoPrice;
+    public int equipPriceVar = 10;
+    public int volcanoPriceVar = 10;
+    public int ecoPriceVar = 10;
 
-    public void CalculateUpgradePrice()
+
+    public void CalculateUpgradePrice(string F)
     {
-        float equipPrice = EquipmentLevel * 1.5f + (VolcanoLevel + EcoLevel) * 1.1f;
+        if(F == "Volcano")
+        {
+            equipPriceVar = Mathf.RoundToInt((float)equipPriceVar * 1.1f);
+            volcanoPriceVar = Mathf.RoundToInt((float)volcanoPriceVar * 1.5f);
+            ecoPriceVar = Mathf.RoundToInt((float)ecoPriceVar * 1.1f);
+        }
+        else if (F == "Equipment")
+        {
+            equipPriceVar = Mathf.RoundToInt((float)equipPriceVar * 1.5f);
+            volcanoPriceVar = Mathf.RoundToInt((float)volcanoPriceVar * 1.1f);
+            ecoPriceVar = Mathf.RoundToInt((float)ecoPriceVar * 1.1f);
+        }
+        else if (F == "Economy")
+        {
+            equipPriceVar = Mathf.RoundToInt((float)equipPriceVar * 1.1f);
+            volcanoPriceVar = Mathf.RoundToInt((float)volcanoPriceVar * 1.1f);
+            ecoPriceVar = Mathf.RoundToInt((float)ecoPriceVar * 1.5f);
+        }
+
+        /*float equipPrice = EquipmentLevel * 1.5f + (VolcanoLevel + EcoLevel) * 1.1f;
         float volcanoPrice = VolcanoLevel * 1.5f + (EquipmentLevel + EcoLevel) * 1.1f;
-        float ecoPrice = EcoLevel * 1.5f + (VolcanoLevel + EquipmentLevel) * 1.1f;
+        float ecoPrice = EcoLevel * 1.5f + (VolcanoLevel + EquipmentLevel) * 1.1f;*/
 
-        EquipPrice.text = equipPrice + " Pops";
-        VolcanoPrice.text = volcanoPrice + " Pops";
-        EcoPrice.text = ecoPrice + " Pops";
+        EquipPrice.text = equipPriceVar + " Pops";
+        VolcanoPrice.text = volcanoPriceVar + " Pops";
+        EcoPrice.text = ecoPriceVar + " Pops";
 
-        bool heroesFull = true;
+        /*bool heroesFull = true;
         foreach (var spawnGo in HeroesManager.INSTANCE.SpawnPoints)
         {
             SpawnPoint spawn = spawnGo.GetComponent<SpawnPoint>();
@@ -62,9 +85,11 @@ public class UpgradeManager : MonoBehaviour
             }
         }
 
-        Equipment.interactable = (equipPrice <= GameManager.Instance.Pops && !heroesFull);
-        Volcano.interactable = (volcanoPrice <= GameManager.Instance.Pops);
-        Economy.interactable = (ecoPrice <= GameManager.Instance.Pops);
+        Equipment.interactable = (equipPriceVar <= GameManager.Instance.Pops && !heroesFull); //Checked if heroes are full, but equipment should still be buyable
+        Volcano.interactable = (volcanoPriceVar <= GameManager.Instance.Pops);
+        Economy.interactable = (ecoPriceVar <= GameManager.Instance.Pops);*/
+
+        CheckInteraction();
 
         if (Equipment.interactable)
         {
@@ -108,6 +133,13 @@ public class UpgradeManager : MonoBehaviour
     }
 
     int imps;
+
+    public void CheckInteraction() // NEW -> Function to check interaction
+    {
+        Equipment.interactable = (equipPriceVar <= GameManager.Instance.Pops);
+        Volcano.interactable = (volcanoPriceVar <= GameManager.Instance.Pops);
+        Economy.interactable = (ecoPriceVar <= GameManager.Instance.Pops);
+    }
 
     public static int Imps
     {
@@ -154,7 +186,7 @@ public class UpgradeManager : MonoBehaviour
             }
         }
         else
-            CalculateUpgradePrice();
+            CalculateUpgradePrice("None");
     }
 
     void PopulateUpgrades()
@@ -261,10 +293,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (buttons[i].tag == "Skip")
                 buttons[i].onClick.AddListener(() => {
-                    HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
-                    for (int i = 0; i < buttons.Length; i++)
+                    /*HellButton[]*/ buttons = selectionGO.GetComponentsInChildren<HellButton>();
+                    for (int j = 0; j < buttons.Length; j++)
                     {
-                        buttons[i].onClick.RemoveAllListeners();
+                        buttons[j].onClick.RemoveAllListeners();
                     }
                     selection.Clear();
                     Destroy(selectionGO);
@@ -304,6 +336,7 @@ public class UpgradeManager : MonoBehaviour
                 selection.Add(equipmentUpgrades[1]);
                 selection.Add(equipmentUpgrades[2]);
                 EquipmentLevel++;
+                CalculateUpgradePrice("Equipment");
                 break;
 
             case "volcano":
@@ -312,6 +345,7 @@ public class UpgradeManager : MonoBehaviour
                 selection.Add(volcanoUpgrades[1]);
                 selection.Add(volcanoUpgrades[2]);
                 VolcanoLevel++;
+                CalculateUpgradePrice("Volcano");
                 break;
             
             case "eco":
@@ -320,6 +354,7 @@ public class UpgradeManager : MonoBehaviour
                 selection.Add(ecoUpgrades[1]);
                 selection.Add(ecoUpgrades[2]);
                 EcoLevel++;
+                CalculateUpgradePrice("Economy");
                 break;
             
             case "hero":
@@ -328,6 +363,7 @@ public class UpgradeManager : MonoBehaviour
                 selection.Add(heroUpgrades[1]);
                 selection.Add(heroUpgrades[2]);
                 EquipmentLevel++;
+                CalculateUpgradePrice("Equipment");
                 break;
         }
         PopulateSelection();
