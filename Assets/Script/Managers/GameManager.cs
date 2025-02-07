@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     public float Pops { 
         get => pops;
-        set { pops = value; BubbleManager.Instance.PopText.text = value.ToString(); UpgradeManager.Instance.CalculateUpgradePrice(); }
+        set { pops = value; BubbleManager.Instance.PopText.text = value.ToString(); UpgradeManager.Instance.CalculateUpgradePrice("None"); }
     }
     public float Melts { 
         get => melts;
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 
     private async Task InitGame()
     {
-        UpgradeManager.Instance.CalculateUpgradePrice();
+        UpgradeManager.Instance.CalculateUpgradePrice("None");
         
     }
 
