@@ -176,6 +176,7 @@ public class Enemy : MonoBehaviour, IHit
 
     protected virtual void OnDie()
     {
+        DeathCounterManager.Instance.DeathCounter += 1;
         renderer.color = Color.white;
         animator.SetBool("Dead", true);
         GetComponent<BoxCollider>().enabled = false;
