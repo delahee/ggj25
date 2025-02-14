@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using DG.Tweening;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Turret : MonoBehaviour, IHit
 {
@@ -14,6 +15,8 @@ public class Turret : MonoBehaviour, IHit
     public float lifespan;
     public int hp;
     public int dmg;
+    public float range;
+    protected Enemy targetEnemy;
 
 
     [Range(0.0f, 180.0f)] public float coneAngle = 45.0f;
@@ -49,12 +52,24 @@ public class Turret : MonoBehaviour, IHit
     void FindTarget()
     {
 
-        foreach (var e in FindObjectsOfType<Enemy>())
+        /*foreach (var e in FindObjectsOfType<Enemy>())
         {
             if (e.dead) continue;
             target = e;
             return;
+        }*/
+        float max = float.MaxValue;
+        foreach (Enemy e in FindObjectsOfType<Enemy>())
+        {
+            if (e.dead) continue;
+           float score = Vector3.Distance(transform.position, e.transform.position);
+            if (score < max && score <= range)
+            {
+                max = score;
+                targetEnemy = e;
+            }
         }
+        target = targetEnemy;
     }
 
     void shoot()
