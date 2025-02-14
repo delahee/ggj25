@@ -99,8 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fx: {fileID: 1836718727366022038, guid: 3f28a82f983024c458aa43cd5a39b73f, type: 3}
   target: {fileID: 0}
-  reloadTime: 0.3
+  owner: {fileID: 0}
+  reloadTime: 0.5
   reloadT: 0
   lifespan: 10
   hp: 5
   dmg: 5
+  range: 10
+  coneAngle: 45

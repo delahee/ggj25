@@ -300,6 +300,7 @@ public class UpgradeManager : MonoBehaviour
                     }
                     selection.Clear();
                     Destroy(selectionGO);
+                    Time.timeScale = 1.0f;
                 });
             else
             {
