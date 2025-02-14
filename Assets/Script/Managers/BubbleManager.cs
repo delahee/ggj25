@@ -82,6 +82,7 @@ public class BubbleManager : MonoBehaviour
     private void Start()
     {
         PopRoutine();
+        GameManager.Instance.State = State.Playing;
         InvokeRepeating(nameof(AutoRoutine), 1f, 1f);
     }
 

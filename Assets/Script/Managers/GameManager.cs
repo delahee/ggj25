@@ -87,23 +87,24 @@ public class GameManager : MonoBehaviour
 
     public float Pops { 
         get => pops;
-        set { pops = value; BubbleManager.Instance.PopText.text = value.ToString(); UpgradeManager.Instance.CalculateUpgradePrice("None"); }
+        set { pops = value; BubbleManager.Instance.PopText.text = Mathf.RoundToInt(value).ToString(); UpgradeManager.Instance.CalculateUpgradePrice("None"); }
     }
     public float Melts { 
         get => melts;
-        set { melts = value; BubbleManager.Instance.MeltText.text = value.ToString(); }
+        set { melts = value; BubbleManager.Instance.MeltText.text = Mathf.RoundToInt(value).ToString(); }
     }
     public float Mithrils { 
         get => mithrils;
-        set { mithrils = value; BubbleManager.Instance.MithrilText.text = value.ToString(); }
+        set { mithrils = value; BubbleManager.Instance.MithrilText.text = Mathf.RoundToInt(value).ToString(); }
     }
 
     public DataLists Data;
 
     private async Task InitGame()
     {
-        UpgradeManager.Instance.CalculateUpgradePrice("None");
-        
+        //UpgradeManager.Instance.CalculateUpgradePrice("None");
+        Debug.Log("Test");
+        HeroesManager.INSTANCE.SpawnHero("SMITH");
     }
 
     #endregion

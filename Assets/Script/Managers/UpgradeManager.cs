@@ -331,6 +331,7 @@ public class UpgradeManager : MonoBehaviour
         switch (type)
         {
             case "equip":
+                GameManager.Instance.Pops = GameManager.Instance.Pops - equipPriceVar;
                 equipmentUpgrades.Shuffle();
                 selection.Add(equipmentUpgrades[0]);
                 selection.Add(equipmentUpgrades[1]);
@@ -340,6 +341,7 @@ public class UpgradeManager : MonoBehaviour
                 break;
 
             case "volcano":
+                GameManager.Instance.Pops = GameManager.Instance.Pops - volcanoPriceVar;
                 volcanoUpgrades.Shuffle();
                 selection.Add(volcanoUpgrades[0]);
                 selection.Add(volcanoUpgrades[1]);
@@ -349,6 +351,7 @@ public class UpgradeManager : MonoBehaviour
                 break;
             
             case "eco":
+                GameManager.Instance.Pops = GameManager.Instance.Pops - ecoPriceVar;
                 ecoUpgrades.Shuffle();
                 selection.Add(ecoUpgrades[0]);
                 selection.Add(ecoUpgrades[1]);
@@ -358,6 +361,7 @@ public class UpgradeManager : MonoBehaviour
                 break;
             
             case "hero":
+                GameManager.Instance.Pops = GameManager.Instance.Pops - equipPriceVar;
                 heroUpgrades.Shuffle();
                 selection.Add(heroUpgrades[0]);
                 selection.Add(heroUpgrades[1]);
