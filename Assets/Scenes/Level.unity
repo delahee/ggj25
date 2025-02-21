@@ -1784,7 +1784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 393308980848334597, guid: 6f7c69a417138441fb765c92feeca342, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 393308980848334597, guid: 6f7c69a417138441fb765c92feeca342, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4489,6 +4489,14 @@ PrefabInstance:
     - target: {fileID: 1019385297823048197, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357725056392033811, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
+      propertyPath: lineLength
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357725056392033811, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
+      propertyPath: VlineLength
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4357725056392033811, guid: 8afde05656a864a30ac712ed15921d20, type: 3}
       propertyPath: dtEnemySpawn
