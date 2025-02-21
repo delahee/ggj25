@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -84,18 +85,116 @@ public class GameManager : MonoBehaviour
     private float pops = 0f;
     private float melts = 0f;
     private float mithrils = 0f;
+    private Color PBC = new Color();
+    private Color MeBC = new Color();
+    private Color MiBC = new Color();
 
     public float Pops { 
         get => pops;
-        set { pops = value; BubbleManager.Instance.PopText.text = Mathf.RoundToInt(value).ToString(); UpgradeManager.Instance.CalculateUpgradePrice("None"); }
+        set 
+        {
+            bool change = false;
+            bool minoring = false;
+            string prevtext = BubbleManager.Instance.PopText.text;
+            if (Mathf.RoundToInt(pops) != Mathf.RoundToInt(value)) change = true;
+            if (Mathf.RoundToInt(pops) > Mathf.RoundToInt(value)) minoring = true;
+            pops = value; 
+            BubbleManager.Instance.PopText.text = Mathf.RoundToInt(value).ToString(); 
+            UpgradeManager.Instance.CalculateUpgradePrice("None");
+            if (change)
+            {
+                ShakeManager.Instance.ObjectShaker(GameObject.Find("PopHolder").transform, new Vector3(1, 0, 0), 10, 3, 2);
+                if(minoring) StartCoroutine(Redening(BubbleManager.Instance.PopText, PBC));
+                int maxlength = Mathf.Max(BubbleManager.Instance.PopText.text.Length, prevtext.Length);
+                var foundIndexes = new List<int>();
+                for (int i = 0; i < maxlength; i++)
+                {
+                    if (i >= prevtext.Length || (i < BubbleManager.Instance.PopText.text.Length && prevtext[i]!= BubbleManager.Instance.PopText.text[i]))
+                        foundIndexes.Add(i);
+                }               
+                if (foundIndexes.Count > 0)
+                {
+                    for(int i = 0; i<foundIndexes.Count; i++)
+                    {
+                        int j = Mathf.Abs(foundIndexes[i] - BubbleManager.Instance.PopText.text.Length);
+                        BubbleManager.Instance.PopText.GetComponent<CurrencyJuice>().TextShaker(j, new Vector3(0, 1, 0), 25, 3, 1.5f);
+                    }
+                }
+            }
+        }
     }
     public float Melts { 
         get => melts;
-        set { melts = value; BubbleManager.Instance.MeltText.text = Mathf.RoundToInt(value).ToString(); }
+        set 
+        {
+            bool change = false;
+            bool minoring = false;
+            string prevtext = BubbleManager.Instance.MeltText.text;
+            if (Mathf.RoundToInt(melts) != Mathf.RoundToInt(value)) change = true;
+            if (Mathf.RoundToInt(melts) > Mathf.RoundToInt(value)) minoring = true;
+            melts = value; 
+            BubbleManager.Instance.MeltText.text = Mathf.RoundToInt(value).ToString();
+            if (change)
+            {
+                ShakeManager.Instance.ObjectShaker(GameObject.Find("MeltHolder").transform, new Vector3(1, 0, 0), 10, 3, 2);
+                if (minoring) StartCoroutine(Redening(BubbleManager.Instance.MeltText, MeBC));
+                int maxlength = Mathf.Max(BubbleManager.Instance.MeltText.text.Length, prevtext.Length);
+                var foundIndexes = new List<int>();
+                for (int i = 0; i < maxlength; i++)
+                {
+                    if (i >= prevtext.Length || (i < BubbleManager.Instance.MeltText.text.Length && prevtext[i] != BubbleManager.Instance.MeltText.text[i]))
+                        foundIndexes.Add(i);
+                }
+                if (foundIndexes.Count > 0)
+                {
+                    for (int i = 0; i < foundIndexes.Count; i++)
+                    {
+                        int j = Mathf.Abs(foundIndexes[i] - BubbleManager.Instance.MeltText.text.Length);
+                        BubbleManager.Instance.MeltText.GetComponent<CurrencyJuice>().TextShaker(j, new Vector3(0, 1, 0), 25, 3, 1.5f);
+                    }
+                }
+            }
+        }
     }
     public float Mithrils { 
         get => mithrils;
-        set { mithrils = value; BubbleManager.Instance.MithrilText.text = Mathf.RoundToInt(value).ToString(); }
+        set 
+        {
+            bool change = false;
+            bool minoring = false;
+            string prevtext = BubbleManager.Instance.MithrilText.text;
+            if (Mathf.RoundToInt(mithrils) != Mathf.RoundToInt(value)) change = true;
+            if (Mathf.RoundToInt(mithrils) > Mathf.RoundToInt(value)) minoring = true;
+            mithrils = value; 
+            BubbleManager.Instance.MithrilText.text = Mathf.RoundToInt(value).ToString();
+            if (change)
+            {
+                ShakeManager.Instance.ObjectShaker(GameObject.Find("MithrilHolder").transform, new Vector3(1, 0, 0), 10, 3, 2);
+                if (minoring) StartCoroutine(Redening(BubbleManager.Instance.MithrilText, MiBC));
+                int maxlength = Mathf.Max(BubbleManager.Instance.MithrilText.text.Length, prevtext.Length);
+                var foundIndexes = new List<int>();
+                for (int i = 0; i < maxlength; i++)
+                {
+                    if (i >= prevtext.Length || (i < BubbleManager.Instance.MithrilText.text.Length && prevtext[i] != BubbleManager.Instance.MithrilText.text[i]))
+                        foundIndexes.Add(i);
+                }
+                if (foundIndexes.Count > 0)
+                {
+                    for (int i = 0; i < foundIndexes.Count; i++)
+                    {
+                        int j = Mathf.Abs(foundIndexes[i] - BubbleManager.Instance.MithrilText.text.Length);
+                        BubbleManager.Instance.MithrilText.GetComponent<CurrencyJuice>().TextShaker(j, new Vector3(0, 1, 0), 25, 3, 1.5f);
+                    }
+                }
+            }
+        }
+    }
+
+    IEnumerator Redening(TMP_Text text, Color precolor)
+    {
+        text.color = new Color(215, 0, 0);
+        yield return new WaitForSeconds(1);
+        text.color = precolor;
     }
 
     public DataLists Data;
@@ -105,6 +204,9 @@ public class GameManager : MonoBehaviour
         //UpgradeManager.Instance.CalculateUpgradePrice("None");
         Debug.Log("Test");
         HeroesManager.INSTANCE.SpawnHero("SMITH");
+        PBC = BubbleManager.Instance.PopText.color;
+        MeBC = BubbleManager.Instance.MeltText.color;
+        MiBC = BubbleManager.Instance.MithrilText.color;
     }
 
     #endregion

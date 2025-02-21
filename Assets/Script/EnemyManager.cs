@@ -9,6 +9,7 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager INSTANCE;
 
     public float lineLength;
+    public float VlineLength;
     public float[] steps;
     public List<GameObject> enemiesPrefab;
     public float dtEnemySpawn = 1;
@@ -89,7 +90,10 @@ public class EnemyManager : MonoBehaviour
                 
                 GameObject prefab = enemiesPrefab[Random.Range(0, maxIdx)];
                 GameObject enemyGo = Instantiate(prefab, transform);
-                enemyGo.transform.position = new Vector3(Random.Range(-lineLength, lineLength), 1.5f, transform.position.z);
+                int a = Random.Range(0, 3);
+                if(a == 0) enemyGo.transform.position = new Vector3(Random.Range(-lineLength, lineLength), 1.5f, transform.position.z);
+                else if(a == 1) enemyGo.transform.position = new Vector3(-lineLength, 1.5f, Random.Range(transform.position.z, transform.position.z - VlineLength));
+                else enemyGo.transform.position = new Vector3(lineLength, 1.5f, Random.Range(transform.position.z, transform.position.z - VlineLength));
                 enemiesCounter++;
             }
         }
