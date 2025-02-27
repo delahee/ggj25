@@ -2785,9 +2785,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6008603833620391122, guid: add543f01f2ef4242bf2796e91da7b9e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008603833620391122, guid: add543f01f2ef4242bf2796e91da7b9e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 19446d98cb368104e88b27ba7e80ee45, type: 2}
+    - target: {fileID: 6008603833620391122, guid: add543f01f2ef4242bf2796e91da7b9e, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa028368e44e95e4f815e0a381c10d83, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2801,6 +2809,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1336700956}
     m_Modifications:
+    - target: {fileID: 8069432882385614812, guid: 86f6e6d05337e984f9e2e3db125e48db, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069432882385614812, guid: 86f6e6d05337e984f9e2e3db125e48db, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4718d80fb85799d4b9a3a36240cbde51, type: 2}
     - target: {fileID: 8429786341941499401, guid: 86f6e6d05337e984f9e2e3db125e48db, type: 3}
       propertyPath: m_Name
       value: B_Lounge
@@ -2860,12 +2876,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3253249400891440153, guid: 97de9e8a4789216448e7873927e902e6, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3253249400891440153, guid: 97de9e8a4789216448e7873927e902e6, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 19446d98cb368104e88b27ba7e80ee45, type: 2}
+    - target: {fileID: 3253249400891440153, guid: 97de9e8a4789216448e7873927e902e6, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d43042e6899ef146bbc2e1f9cbf4486, type: 2}
     - target: {fileID: 8430671182932763452, guid: 97de9e8a4789216448e7873927e902e6, type: 3}
       propertyPath: m_Name
       value: B_Mithril_Factory
@@ -3432,12 +3452,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5667151464263080956, guid: ae8e8353c06895041b946d11a5a8b6f7, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5667151464263080956, guid: ae8e8353c06895041b946d11a5a8b6f7, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 19446d98cb368104e88b27ba7e80ee45, type: 2}
+    - target: {fileID: 5667151464263080956, guid: ae8e8353c06895041b946d11a5a8b6f7, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: b8009bfb575ad4c4da278706b2e71ef6, type: 2}
     - target: {fileID: 6171400759911119401, guid: ae8e8353c06895041b946d11a5a8b6f7, type: 3}
       propertyPath: m_Name
       value: B_Iron_Mine
@@ -3516,6 +3540,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1336700956}
     m_Modifications:
     - target: {fileID: 5205290053860028549, guid: bac967cf16708614d95f7428ce414c09, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205290053860028549, guid: bac967cf16708614d95f7428ce414c09, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 709c146a969dda240b58f243ffd871d0, type: 2}
@@ -3523,6 +3551,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 19446d98cb368104e88b27ba7e80ee45, type: 2}
+    - target: {fileID: 5205290053860028549, guid: bac967cf16708614d95f7428ce414c09, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: fabe84f10de5bbd4cbdc52d2f2cc4301, type: 2}
     - target: {fileID: 5997699356329562448, guid: bac967cf16708614d95f7428ce414c09, type: 3}
       propertyPath: m_Name
       value: B_Barrack
