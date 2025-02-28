@@ -421,22 +421,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8373938532402021851
-Transform:
+--- !u!224 &8373938532402021851
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118977952671748850}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.17212, y: 285.4749, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4958242354445613717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 38.17212, y: 350}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4002299721463343013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +460,9 @@ MonoBehaviour:
   EquipPrice: {fileID: 1435134548287919682}
   VolcanoPrice: {fileID: 5015347281740408234}
   EcoPrice: {fileID: 890304753383793961}
+  equipPriceVar: 10
+  volcanoPriceVar: 10
+  ecoPriceVar: 10
   selectionGO: {fileID: 0}
   SelectionPrefab: {fileID: 5370837037328106112, guid: 20cb45f2e45d74f4eb8797ba4ea248c9, type: 3}
 --- !u!1 &2161969558350504163
