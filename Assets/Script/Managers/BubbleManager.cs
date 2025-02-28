@@ -61,6 +61,14 @@ public class BubbleManager : MonoBehaviour
     float meltAutoRate = 0f;
     float mithrilAutoRate = 0f;
 
+    int POPframecount = 1;
+    int MELTframecount = 1;
+    int MITHRILframecount = 1;
+
+    public List<GameObject> PopList = new List<GameObject>();
+    public List<GameObject> MeltList = new List<GameObject>();
+    public List<GameObject> MithrilList = new List<GameObject>();
+
     public float PopAutoRate
     {
         get => Instance.popAutoRate;
@@ -83,7 +91,51 @@ public class BubbleManager : MonoBehaviour
     {
         PopRoutine();
         GameManager.Instance.State = State.Playing;
-        InvokeRepeating(nameof(AutoRoutine), 1f, 1f);
+        //InvokeRepeating(nameof(AutoRoutine), 1f, 1f);
+    }
+
+    private void FixedUpdate()
+    {
+
+        if (popAutoRate > 0)
+        {
+            POPframecount += 1;
+            if (POPframecount > 60 * popAutoRate)
+            {
+                POPframecount = 1;
+                if (PopList.Count > 0)
+                {
+                    GameObject go = PopList[Random.Range(0, PopList.Count)];
+                    go.GetComponentInChildren<Button>().onClick.Invoke();
+                }
+            }
+        }
+        if (meltAutoRate > 0)
+        {
+            MELTframecount += 1;
+            if (MELTframecount > 60 * meltAutoRate)
+            {
+                MELTframecount = 1;
+                if (MeltList.Count > 0)
+                {
+                    GameObject go = MeltList[Random.Range(0, MeltList.Count)];
+                    go.GetComponentInChildren<Button>().onClick.Invoke();
+                }
+            }
+        }
+        if (mithrilAutoRate > 0)
+        {
+            MITHRILframecount += 1;
+            if (MITHRILframecount > 60 * mithrilAutoRate)
+            {
+                MITHRILframecount = 1;
+                if (MithrilList.Count > 0)
+                {
+                    GameObject go = MithrilList[Random.Range(0, MithrilList.Count)];
+                    go.GetComponentInChildren<Button>().onClick.Invoke();
+                }
+            }
+        }
     }
 
     public void PopRoutine() 
@@ -100,12 +152,14 @@ public class BubbleManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(PopClick);
         Invoke(nameof(PopRoutine), (PopRate != 0) ? 1 / PopRate : 1f);
+        PopList.Add(go);
     }
 
     void PopClick()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Explode");
         GameManager.Instance.Pops += PopValue;
+        LavaSlider.Instance.addValue(PopValue);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Pops_Gain");
     }
 
@@ -118,12 +172,14 @@ public class BubbleManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(MeltClick);
         Invoke(nameof(MeltRoutine), (MeltRate != 0) ? 1 / MeltRate : 1f);
+        MeltList.Add(go);
     }
 
     void MeltClick()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Explode");
         GameManager.Instance.Melts += MeltValue;
+        LavaSlider.Instance.addValue(MeltValue * 2);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Melts_Gain");
     }
 
@@ -136,21 +192,23 @@ public class BubbleManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Spawn");
         go.GetComponentInChildren<Button>().onClick.AddListener(MithrilClick);
         Invoke(nameof(MithrilRoutine), (MithrilRate != 0) ? 1 / MithrilRate : 1f);
+        MithrilList.Add(go);
     }
 
     void MithrilClick()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Explode");
         GameManager.Instance.Mithrils += MithrilValue;
+        LavaSlider.Instance.addValue(MithrilValue * 4);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Mithril_Gain");
     }
 
-    void AutoRoutine()
+    /*void AutoRoutine()
     {
         GameManager.Instance.Pops += PopAutoRate * PopValue;
         GameManager.Instance.Melts += MeltAutoRate * MeltValue;
         GameManager.Instance.Mithrils += MithrilAutoRate * MithrilValue;
-    }
+    }*/
 
     public void CalculateAutoRate(int imps)
     {

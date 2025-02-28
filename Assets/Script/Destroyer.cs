@@ -21,4 +21,11 @@ public class Destroyer : MonoBehaviour
     {
         GetComponent<Animator>().Play(anim);
     }
+
+    private void OnDestroy()
+    {
+        BubbleManager.Instance.PopList.Remove(this.transform.parent.gameObject);
+        BubbleManager.Instance.MeltList.Remove(this.transform.parent.gameObject);
+        BubbleManager.Instance.MithrilList.Remove(this.transform.parent.gameObject);
+    }
 }
