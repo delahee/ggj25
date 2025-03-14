@@ -9,7 +9,7 @@ public class Economy : ScriptableObject
     public string desc;
     public string fx;
     public bool isUnique;
-    public DependsOnEco dependence;
+    public List<string> dependence = new List<string>();
     public GameObject buildingPrefab;
     public float popCost;
     public float meltCost;
@@ -18,7 +18,7 @@ public class Economy : ScriptableObject
     public string EffectMethodName;
 }
 
-public enum DependsOnEco
+public enum Depends
 {
     NONE,
     Imps,

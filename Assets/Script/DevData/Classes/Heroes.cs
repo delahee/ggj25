@@ -7,7 +7,7 @@ public class Heroes : ScriptableObject
     public string id;
     public bool isPlayable;
     public bool isCommander;
-    public string name;
+    public string heroName;
     public string desc;
     public string fx;
     public int AtkDmgBasis;

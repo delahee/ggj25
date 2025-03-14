@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor;
@@ -54,6 +55,16 @@ public class Upgrade : MonoBehaviour
         MeltCost = meltCost;
         MithrilCost = mithrilCost;
         Method = method;
+        if (MeltCost > 0)
+        {
+            if (!dependence.Depends.Contains("Iron Mine"))
+                dependence.Depends.Add("Iron Mine");
+        }
+        if(MithrilCost > 0)
+        {
+            if (!dependence.Depends.Contains("Mithril Factory"))
+                dependence.Depends.Add("Mithril Factory");
+        }
 
         if (type == UpgradeType.Equipment)
             EquipType = equipType;
@@ -236,19 +247,54 @@ public class Upgrade : MonoBehaviour
 
 public class UpgradeDependence
 {
-    public DependsOnEquip DependsOnEquip;
-    public DependsOnScience DependsOnScience;
-    public DependsOnEco DependsOnEco;
+    public List<string> Depends;
+    //public List<DependsOnScience> DependsOnScience;
+    //public List<DependsOnEco> DependsOnEco;
 
-    public string CheckDependence()
+    public List<string> CheckDependence()
     {
-        if(DependsOnEquip != DependsOnEquip.NONE)
-            return DependsOnEquip.ToString();
-        if (DependsOnScience != DependsOnScience.NONE)
-            return DependsOnScience.ToString();
-        if (DependsOnEco != DependsOnEco.NONE)
-            return DependsOnEco.ToString();
-        return "";
+        /* if(DependsOnEquip.Count != 0) 
+         {
+             List<string> dependences = new List<string>();
+             foreach(DependsOnEquip a in DependsOnEquip)
+             {
+                 dependences.Add(a.ToString());
+             }
+
+             return dependences;
+         }
+             //return DependsOnEquip.ToString();
+         if (DependsOnScience.Count != 0) 
+         {
+             List<string> dependences = new List<string>();
+             foreach (DependsOnScience a in DependsOnScience)
+             {
+                 dependences.Add(a.ToString());
+             }
+             return dependences;
+         }
+             //return DependsOnScience.ToString();
+         if (DependsOnEco.Count != 0) 
+         {
+             List<string> dependences = new List<string>();
+             foreach (DependsOnEco a in DependsOnEco)
+             {
+                 dependences.Add(a.ToString());
+             }
+             return dependences;
+         }*/
+        /*if (Depends.Count != 0)
+        {
+            List<string> dependences = new List<string>();
+            foreach (string a in Depends)
+            {
+                dependences.Add(a.Name);
+            }
+
+            return dependences;
+        }*/
+        //return DependsOnEco.ToString();
+        return Depends;
     }
 }
 

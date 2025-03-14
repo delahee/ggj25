@@ -16,8 +16,10 @@ MonoBehaviour:
   desc: Come on these lads were boring we replaced them with trustful demons
   fx: Imps now also pop mithril.
   isUnique: 1
-  dependence: 3
+  dependence:
+  - Mithril Factory
   buildingPrefab: {fileID: 0}
   popCost: 0
   meltCost: 0
   mithrilCost: 0
+  EffectMethodName: 

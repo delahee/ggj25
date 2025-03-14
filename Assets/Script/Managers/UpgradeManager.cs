@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -30,6 +31,7 @@ public class UpgradeManager : MonoBehaviour
 
         instance = this;
 
+        UniqueUpgrades.Clear();
         PopulateUpgrades();
     }
 
@@ -44,7 +46,7 @@ public class UpgradeManager : MonoBehaviour
     public int volcanoPriceVar = 10;
     public int ecoPriceVar = 10;
 
-
+    
     public void CalculateUpgradePrice(string F)
     {
         if(F == "Volcano")
@@ -204,9 +206,18 @@ public class UpgradeManager : MonoBehaviour
         foreach (var s in GameManager.Instance.Data.SciencesUpgrades) 
         { 
             UpgradeDependence dep = new UpgradeDependence();
-            dep.DependsOnScience = s.dependence;
+            dep.Depends = s.dependence;
 
-            if (dep.CheckDependence() != "" && !UniqueUpgrades.Contains(dep.CheckDependence()))
+            List<string> deps = dep.CheckDependence();
+            bool contains = true;
+            if (deps.Count > 0)
+            {
+                foreach (string depsi in deps)
+                {
+                    if (!UniqueUpgrades.Contains(depsi)) contains = false;
+                }
+            }
+            if ((deps.Count != 0 && !contains) || UniqueUpgrades.Contains(s.scienceName))
                 continue;
 
             volcanoUpgrades.Add(new Upgrade(
@@ -227,9 +238,18 @@ public class UpgradeManager : MonoBehaviour
         foreach(var e in GameManager.Instance.Data.EconomyUpgrades)
         {
             UpgradeDependence dep = new UpgradeDependence();
-            dep.DependsOnEco = e.dependence;
+            dep.Depends = e.dependence;
 
-            if (dep.CheckDependence() != "" && !UniqueUpgrades.Contains(dep.CheckDependence()))
+            List<string> deps = dep.CheckDependence();
+            bool contains = true;
+            if (deps.Count > 0)
+            {
+                foreach (string depsi in deps)
+                {
+                    if (!UniqueUpgrades.Contains(depsi)) contains = false;
+                }
+            }
+            if ((deps.Count != 0 && !contains) || UniqueUpgrades.Contains(e.ecoName))
                 continue;
 
             ecoUpgrades.Add(new Upgrade(
@@ -251,10 +271,23 @@ public class UpgradeManager : MonoBehaviour
         {
             UpgradeDependence dep = new UpgradeDependence();
             //dep.DependsOnEco = e.dependence;
-
-            /*if (dep.CheckDependence() != "" && !UniqueUpgrades.Contains(dep.CheckDependence()))
-                continue;*/
-
+           /* List<string> deps = dep.CheckDependence();
+            bool contains = true;
+            if (deps.Count > 0) 
+            {
+                foreach (string depsi in deps)
+                {
+                    if (!UniqueUpgrades.Contains(depsi)) contains = false;
+                }
+            }
+            if (deps.Count != 0 && !contains && !UniqueUpgrades.Contains(e.name))
+            {                
+                continue;
+            }*/
+            if (UniqueUpgrades.Contains(e.heroName))
+            {
+                continue;
+            }
             heroUpgrades.Add(new Upgrade(
                 e.id,
                 UpgradeType.Hero,
@@ -376,7 +409,12 @@ public class UpgradeManager : MonoBehaviour
        
     public void SelectUpgrade(int index)
     {
-        selection[index].DoUpgrade();
+        if (selection[index].IsUnique) 
+        {
+            UniqueUpgrades.Add(selection[index].Name);
+            Debug.Log("UNIQUE ADDED");
+        }
+        selection[index].DoUpgrade();  
         if (!UpgradeType.Hero.Equals(selection[index].Type))
         {
             GameManager.Instance.Pops -= selection[index].PopCost;
@@ -390,6 +428,7 @@ public class UpgradeManager : MonoBehaviour
         }
         selection.Clear();
         Time.timeScale = 1.0f;
+        PopulateUpgrades();
     }
     #endregion
 }

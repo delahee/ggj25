@@ -16,7 +16,9 @@ MonoBehaviour:
   desc: how the h. do you pronounce that? anyway it just works.
   fx: Bubbles give double pops.
   isUnique: 0
-  dependence: 0
+  dependence:
+  - {fileID: 0}
+  - {fileID: 0}
   buildingPrefab: {fileID: 0}
   popCost: 0
   meltCost: 50

@@ -5,6 +5,28 @@ using TMPro;
 using System.Globalization;
 using static UnityEngine.GraphicsBuffer;
 
+/*struct CorTxt
+{
+    public Transform transform;
+    public int instances;
+    public Vector3 initPos;
+
+    public CorTxt(Transform Vtransform, int Vinstances, Vector3 InitPos = new Vector3())
+    {
+        this.transform = Vtransform;
+        this.instances = Vinstances;
+        this.initPos = InitPos;
+    }
+    public void Add()
+    {
+        instances += 1;
+    }
+    public void Sub()
+    {
+        instances -= 1;
+        if (instances < 0) instances = 0;
+    }
+}*/
 public class CurrencyJuice : MonoBehaviour
 {
     public TMP_Text Currency;

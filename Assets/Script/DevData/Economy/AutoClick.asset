@@ -16,7 +16,8 @@ MonoBehaviour:
   desc: Recruit a new Imp to assist you in molten bubble popping.
   fx: Pops one bubble every 2s.
   isUnique: 0
-  dependence: 1
+  dependence:
+  - {fileID: 0}
   buildingPrefab: {fileID: 0}
   popCost: 0
   meltCost: 0

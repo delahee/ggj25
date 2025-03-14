@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -7,7 +8,7 @@ public class Science : ScriptableObject
     public string desc;
     public string fx;
     public bool isUnique;
-    public DependsOnScience dependence;
+    public List<string> dependence = new List<string>();
     public GameObject prefab;
     public float popCost;
     public float meltCost;

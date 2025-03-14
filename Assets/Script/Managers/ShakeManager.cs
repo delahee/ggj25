@@ -1,12 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
+struct CorObject
+{
+    public Transform transform;
+    public int instances;
+    public Vector3 initPos;
+
+    public CorObject(Transform Vtransform, int Vinstances, Vector3 InitPos = new Vector3())
+    {
+        this.transform = Vtransform;
+        this.instances = Vinstances;
+        this.initPos = InitPos;
+    }
+    public void Add()
+    {
+        instances += 1;
+    }
+    public void Sub()
+    {
+        instances -= 1;
+        if (instances < 0) instances = 0;
+    }
+}
+
 public class ShakeManager : MonoBehaviour
 {
-
+    private List<CorObject> CorObjList = new List<CorObject>();
     private static ShakeManager instance;
     public static ShakeManager Instance
     {
@@ -39,7 +63,23 @@ public class ShakeManager : MonoBehaviour
     }
     IEnumerator ObjectShakerR(Transform Target, Vector3 Direction, float Amplitude = 0f, int Frequency = 1, float Loss = 1f, bool Rotational = false, bool Fragmented = false)
     {
-        Vector3 InitialCoordinates = Target.position;
+        CorObject obj = new CorObject(Target, 1, Target.position);
+        if (CorObjList.Count > 0)
+        {
+            for (int i = 0; i < CorObjList.Count; i++)
+            {
+                if (CorObjList[i].transform == Target)
+                {
+                    CorObjList[i].Add();
+                    obj = CorObjList[i];
+                }
+            }
+        }
+        else 
+        {
+            obj = new CorObject(Target, 1, Target.position);
+            CorObjList.Add(obj);
+        }      
         Target.Translate(Direction * Amplitude);
         bool Rotationfollow = true;
         bool Fragmentfollow = true;
@@ -75,11 +115,38 @@ public class ShakeManager : MonoBehaviour
             {
                 Direction = -Direction;
             }
-            Target.position = InitialCoordinates;
+            Target.position = obj.initPos;
             Amplitude = Amplitude/Loss;
             Target.Translate(Direction * Amplitude);
             for(int j = Frequency; j>0;j--) yield return new WaitForFixedUpdate();
         }
-        Target.position = InitialCoordinates;
+
+        if (CorObjList.Count > 0)
+        {
+            for (int i = 0; i < CorObjList.Count; i++)
+            {
+                if (CorObjList[i].transform == Target)
+                {
+                    CorObjList[i].Add();
+                }
+            }
+        }
+        if (CorObjList.Count > 0)
+        {
+            for (int i = 0; i < CorObjList.Count; i++)
+            {
+                if (CorObjList[i].transform == Target)
+                {
+                    CorObjList[i].Sub();
+                    Target.position = CorObjList[i].initPos;
+                }
+            }
+        }
+        else
+        {
+            Target.position = obj.initPos;
+            Debug.Log("COROBJ NOT FOUND");
+        }
+        //Target.position = InitialCoordinates;
     }
 }
