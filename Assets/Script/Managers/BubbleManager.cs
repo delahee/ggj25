@@ -61,6 +61,8 @@ public class BubbleManager : MonoBehaviour
     float meltAutoRate = 0f;
     float mithrilAutoRate = 0f;
 
+    public static float impmultiplier = 1;
+
     int POPframecount = 1;
     int MELTframecount = 1;
     int MITHRILframecount = 1;
@@ -100,39 +102,39 @@ public class BubbleManager : MonoBehaviour
         if (popAutoRate > 0)
         {
             POPframecount += 1;
-            if (POPframecount > 60 * popAutoRate)
-            {
-                POPframecount = 1;
+            if (POPframecount > 60 / popAutoRate)
+            {               
                 if (PopList.Count > 0)
                 {
                     GameObject go = PopList[Random.Range(0, PopList.Count)];
                     go.GetComponentInChildren<Button>().onClick.Invoke();
+                    POPframecount = 1;
                 }
             }
         }
         if (meltAutoRate > 0)
         {
             MELTframecount += 1;
-            if (MELTframecount > 60 * meltAutoRate)
+            if (MELTframecount > 120 / meltAutoRate)
             {
-                MELTframecount = 1;
                 if (MeltList.Count > 0)
                 {
                     GameObject go = MeltList[Random.Range(0, MeltList.Count)];
                     go.GetComponentInChildren<Button>().onClick.Invoke();
+                    MELTframecount = 1;
                 }
             }
         }
         if (mithrilAutoRate > 0)
         {
             MITHRILframecount += 1;
-            if (MITHRILframecount > 60 * mithrilAutoRate)
-            {
-                MITHRILframecount = 1;
+            if (MITHRILframecount > 180 / mithrilAutoRate)
+            {         
                 if (MithrilList.Count > 0)
                 {
                     GameObject go = MithrilList[Random.Range(0, MithrilList.Count)];
                     go.GetComponentInChildren<Button>().onClick.Invoke();
+                    MITHRILframecount = 1;
                 }
             }
         }
@@ -222,13 +224,13 @@ public class BubbleManager : MonoBehaviour
     {
         if(imps <= 0) return;
 
-        PopAutoRate = imps * PopValue;
-        if (UpgradeManager.Instance.UniqueUpgrades.Contains("Beholder"))
-            MeltAutoRate = imps * MeltValue;
+        PopAutoRate = imps /** PopValue*/;
+        if (UpgradeManager.Instance.UniqueUpgrades.Contains("Beholder sub-assistant"))
+            MeltAutoRate = imps /** MeltValue*/;
         else
             MeltAutoRate = 0;
-        if (UpgradeManager.Instance.UniqueUpgrades.Contains("AutomatedElves"))
-            MithrilAutoRate = imps * MithrilValue;
+        if (UpgradeManager.Instance.UniqueUpgrades.Contains("Elven sub-assistants"))
+            MithrilAutoRate = imps/* * MithrilValue*/;
         else
             MithrilAutoRate = 0;
     }

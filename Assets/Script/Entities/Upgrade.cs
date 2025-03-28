@@ -157,7 +157,7 @@ public class Upgrade : MonoBehaviour
 
     void ImpSpeed()
     {
-        UpgradeManager.Imps *= 2;
+        BubbleManager.impmultiplier *= 2;
     }
 
     void IronMine()

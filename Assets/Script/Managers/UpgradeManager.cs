@@ -217,7 +217,7 @@ public class UpgradeManager : MonoBehaviour
                     if (!UniqueUpgrades.Contains(depsi)) contains = false;
                 }
             }
-            if ((deps.Count != 0 && !contains) || UniqueUpgrades.Contains(s.scienceName))
+            if (!contains || UniqueUpgrades.Contains(s.scienceName))
                 continue;
 
             volcanoUpgrades.Add(new Upgrade(
@@ -249,7 +249,7 @@ public class UpgradeManager : MonoBehaviour
                     if (!UniqueUpgrades.Contains(depsi)) contains = false;
                 }
             }
-            if ((deps.Count != 0 && !contains) || UniqueUpgrades.Contains(e.ecoName))
+            if (!contains || UniqueUpgrades.Contains(e.ecoName))
                 continue;
 
             ecoUpgrades.Add(new Upgrade(
@@ -265,6 +265,7 @@ public class UpgradeManager : MonoBehaviour
                 e.meltCost,
                 e.mithrilCost
                 ));
+            if (e.ecoName == "Iron Mine") Debug.Log("populated");
         }
 
         foreach (var e in GameManager.Instance.Data.HeroesUpgrades)
