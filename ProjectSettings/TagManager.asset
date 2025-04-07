@@ -6,6 +6,11 @@ TagManager:
   tags:
   - upgradeDesc
   - Skip
+  - MithrilFactory
+  - Foundry
+  - IronMine
+  - Barrack
+  - Lounge
   layers:
   - Default
   - TransparentFX

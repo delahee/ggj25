@@ -16,8 +16,9 @@ MonoBehaviour:
   desc: A very boring factory to dig mithril and get it in the lava column.
   fx: Builds the Mithril Factory
   isUnique: 1
-  dependence: 2
-  buildingPrefab: {fileID: 0}
+  dependence:
+  - Iron Mine
+  buildingPrefab: {fileID: 8430671182932763452, guid: 97de9e8a4789216448e7873927e902e6, type: 3}
   popCost: 0
   meltCost: 100
   mithrilCost: 0

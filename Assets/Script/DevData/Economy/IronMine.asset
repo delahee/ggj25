@@ -16,8 +16,8 @@ MonoBehaviour:
   desc: A mine to harvest iron and add it to the lava.
   fx: Builds the Iron Mine
   isUnique: 1
-  dependence: 0
-  buildingPrefab: {fileID: 0}
+  dependence: []
+  buildingPrefab: {fileID: 6171400759911119401, guid: ae8e8353c06895041b946d11a5a8b6f7, type: 3}
   popCost: 0
   meltCost: 0
   mithrilCost: 0

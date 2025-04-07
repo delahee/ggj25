@@ -165,6 +165,8 @@ public class Upgrade : MonoBehaviour
         BubbleManager.MeltRate = 1f;
         BubbleManager.MeltValue = 1f;
         BubbleManager.Instance.MeltRoutine();
+        GameObject IronMine = GameObject.FindGameObjectsWithTag("IronMine")[0];
+        IronMine.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     void MithrilFactory()
@@ -172,6 +174,9 @@ public class Upgrade : MonoBehaviour
         BubbleManager.MithrilRate = 1f;
         BubbleManager.MithrilValue = 1f;
         BubbleManager.Instance.MithrilRoutine();
+        GameObject MithrilFactory = GameObject.FindGameObjectsWithTag("MithrilFactory")[0];
+        MithrilFactory.transform.GetChild(0).gameObject.SetActive(true);
+        MithrilFactory.transform.GetChild(1).gameObject.SetActive(true);
     }
 
     void Sustainer()
