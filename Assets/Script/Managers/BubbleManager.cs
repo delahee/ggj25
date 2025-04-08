@@ -107,6 +107,7 @@ public class BubbleManager : MonoBehaviour
                 if (PopList.Count > 0)
                 {
                     GameObject go = PopList[Random.Range(0, PopList.Count)];
+                    go.GetComponentInChildren<Destroyer>().manual = false;
                     go.GetComponentInChildren<Button>().onClick.Invoke();
                     POPframecount = 1;
                 }
@@ -120,6 +121,7 @@ public class BubbleManager : MonoBehaviour
                 if (MeltList.Count > 0)
                 {
                     GameObject go = MeltList[Random.Range(0, MeltList.Count)];
+                    go.GetComponentInChildren<Destroyer>().manual = false;
                     go.GetComponentInChildren<Button>().onClick.Invoke();
                     MELTframecount = 1;
                 }
@@ -133,6 +135,7 @@ public class BubbleManager : MonoBehaviour
                 if (MithrilList.Count > 0)
                 {
                     GameObject go = MithrilList[Random.Range(0, MithrilList.Count)];
+                    go.GetComponentInChildren<Destroyer>().manual = false;
                     go.GetComponentInChildren<Button>().onClick.Invoke();
                     MITHRILframecount = 1;
                 }
@@ -156,11 +159,10 @@ public class BubbleManager : MonoBehaviour
         Invoke(nameof(PopRoutine), (PopRate != 0) ? 1 / PopRate : 1f);
         PopList.Add(go);
     }
-
     void PopClick()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Volcano/Bubble_Explode");
-        GameManager.Instance.Pops += PopValue;
+        GameManager.Instance.Pops += PopValue;      
         LavaSlider.Instance.addValue(PopValue);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Currency/Currency_Pops_Gain");
     }

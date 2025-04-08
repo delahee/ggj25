@@ -29,6 +29,8 @@ public class Upgrade : MonoBehaviour
     public static float boostHeroRegen      = 0;
     public static int   turretShot          = 0;
     public static int   additionnalHeroSlot = 0;
+    public static int multipop = 0;
+    public static bool domultipop = false;
 
 
     public Upgrade(string name, UpgradeType type)
@@ -222,6 +224,12 @@ public class Upgrade : MonoBehaviour
     {
         //TODO Emile : Heroes regen 20% faster
         boostHeroRegen += .2f;
+    }
+
+    void MorningTraining()
+    {
+        //Popping a bubble also pops +1 nearest bubble
+        multipop += 1;
     }
 
     void Nova()
