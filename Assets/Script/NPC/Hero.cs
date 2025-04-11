@@ -106,6 +106,7 @@ public class Hero : MonoBehaviour, IHit
         if (dir.magnitude > 0.01f)
             spr.flipX = dir.x < 0;
         Vector3 move = Vector3.MoveTowards(transform.position, into, speed * Time.deltaTime);
+        move.y = 0f;
         transform.position = move;
     }
 

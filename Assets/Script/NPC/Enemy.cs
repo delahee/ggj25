@@ -89,6 +89,7 @@ public class Enemy : MonoBehaviour, IHit
         if (door == null) return;
         
         Vector3 pos = door.transform.position;
+        pos.y = 0f;
         if (target)        
             pos = target.transform.position;
 
@@ -128,7 +129,8 @@ public class Enemy : MonoBehaviour, IHit
         {
             Vector3 dir = target.transform.position - transform.position;
             dir.y = 0;
-            target.Push(dir.normalized * pushForce);
+            //target.Push(dir.normalized * pushForce);
+            //if (target.transform.position.z < door.transform.position.z) target.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, door.transform.position.z);
             Instantiate(atkFX, target.transform.position, target.transform.rotation);
             target.OnHit(dmg);
         }
