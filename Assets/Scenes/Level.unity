@@ -11573,6 +11573,7 @@ MonoBehaviour:
   matbase: {fileID: 2100000, guid: 11308feed8cac4840aee54c0ed60128c, type: 2}
   matlight: {fileID: 2100000, guid: 221d7a7a20058d943b0c59365a6853a7, type: 2}
   matdark: {fileID: 2100000, guid: a1b6a9e7c0ea1f448b1593531ac34050, type: 2}
+  targety: -4.45
 --- !u!1 &1161595755
 GameObject:
   m_ObjectHideFlags: 0

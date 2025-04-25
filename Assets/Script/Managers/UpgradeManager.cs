@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -430,6 +431,20 @@ public class UpgradeManager : MonoBehaviour
         selection.Clear();
         Time.timeScale = 1.0f;
         PopulateUpgrades();
+    }
+
+    IEnumerator buyingcinematic()
+    {
+        // Zoom on magma + darkening except magma + UI moves on the side + light screenshake
+
+        //  Sudden dezoom + UI back + Erruption + potential light screenshake
+
+        // Cards come one after the other from the magma and turn
+
+        // Wait for selection
+
+        // Darkening removed
+        yield return new WaitForEndOfFrame();
     }
     #endregion
 }
