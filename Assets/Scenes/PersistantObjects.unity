@@ -1504,6 +1504,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 122.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2667718262860097673, guid: 66084bcf98b00406686de78584b17261, type: 3}
+      propertyPath: Lavastream
+      value: 
+      objectReference: {fileID: 7642088728641326773, guid: 28439b07d542061439122383a151bf98, type: 3}
     - target: {fileID: 4006584507719179935, guid: 66084bcf98b00406686de78584b17261, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1

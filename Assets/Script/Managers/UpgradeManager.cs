@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -33,6 +34,7 @@ public class UpgradeManager : MonoBehaviour
         instance = this;
 
         UniqueUpgrades.Clear();
+        Darkening = GameObject.Find("Darkening").GetComponent<SpriteRenderer>();
         PopulateUpgrades();
     }
 
@@ -47,6 +49,10 @@ public class UpgradeManager : MonoBehaviour
     public int volcanoPriceVar = 10;
     public int ecoPriceVar = 10;
 
+    public SpriteRenderer Darkening;
+    public GameObject Lavastream;
+
+    bool selectionongoing = false;
     
     public void CalculateUpgradePrice(string F)
     {
@@ -187,6 +193,13 @@ public class UpgradeManager : MonoBehaviour
                     buttons[i].interactable = false;
                 }
             }
+        }
+
+        else if(selectionongoing)
+        {
+            Equipment.interactable = false;
+            Volcano.interactable = false;
+            Economy.interactable = false;
         }
         else
             CalculateUpgradePrice("None");
@@ -355,16 +368,89 @@ public class UpgradeManager : MonoBehaviour
             }
         }
     }
+
+    IEnumerator PopSelection()
+    {
+        selectionGO = Instantiate(SelectionPrefab, transform.parent);
+        HellButton[] buttons = selectionGO.GetComponentsInChildren<HellButton>();
+        PriceUpdater[] priceTag = selectionGO.GetComponentsInChildren<PriceUpdater>();
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if (buttons[i].tag == "Skip")
+            {
+                buttons[i].onClick.AddListener(() =>
+                {
+                    /*HellButton[]*/
+                    buttons = selectionGO.GetComponentsInChildren<HellButton>();
+                    for (int j = 0; j < buttons.Length; j++)
+                    {
+                        buttons[j].onClick.RemoveAllListeners();
+                    }
+                    selection.Clear();
+                    Destroy(selectionGO);
+                    Time.timeScale = 1.0f;
+                    StartCoroutine(buyingcinematic_end());
+
+                }); buttons[i].gameObject.SetActive(false);
+
+            }
+            else
+            {
+                buttons[i].GetComponentInChildren<TMP_Text>().text = selection[i].Name;
+                buttons[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<TMP_Text>().text = selection[i].Effect;
+                int index = i;
+                buttons[i].onClick.AddListener(() => SelectUpgrade(index));
+                priceTag[i].price.text = priceTag[i].PriceFormatter(selection[i].PopCost, selection[i].MeltCost, selection[i].MithrilCost);
+
+                if (selection[i].PopCost > GameManager.Instance.Pops ||
+                    selection[i].MeltCost > GameManager.Instance.Melts ||
+                    selection[i].MithrilCost > GameManager.Instance.Mithrils)
+                {
+                    priceTag[i].price.color = Color.red;
+                    buttons[i].interactable = false;
+                }
+                buttons[i].transform.Rotate(new Vector3(0, 90));
+                buttons[i].transform.localScale = new Vector3(0, 0, 0);
+            }
+        }
+
+        for (int d = 0; d < 60; d++)
+        {
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                if (buttons[i].tag == "Skip" && d == 59)
+                {
+                    buttons[i].gameObject.SetActive(true);
+                }
+                else if(buttons[i].tag != "Skip" && d == 59)
+                {
+                    buttons[i].transform.rotation = Quaternion.identity;
+                    buttons[i].transform.localScale = new Vector3(4, 4, 4);
+                }
+                else if(buttons[i].tag != "Skip")
+                {
+                    buttons[i].transform.Rotate(new Vector3(0, -1.5f));
+                    if(buttons[i].transform.localScale.x < 4 ) buttons[i].transform.localScale = new Vector3((3.0f * 4.0f*d)/60.0f, (3.0f * 4.0f * d)/60.0f, (3.0f * 4.0f * d)/60.0f);
+                    if(buttons[i].transform.localScale.x > 4 ) buttons[i].transform.localScale = new Vector3(4, 4, 4);
+                }            
+            }
+            yield return new WaitForFixedUpdate();
+        }
+        yield return new WaitForEndOfFrame();
+    }
     #endregion
 
-    #region UI utils
+        #region UI utils
 
     public GameObject SelectionPrefab;
 
     public void UpgradeButton(string type)
     {
+
         //TODO pause game
-        switch (type)
+        selectionongoing = true;
+        StartCoroutine(buyingcinematic(type));
+        /*switch (type)
         {
             case "equip":
                 GameManager.Instance.Pops = GameManager.Instance.Pops - equipPriceVar;
@@ -406,7 +492,7 @@ public class UpgradeManager : MonoBehaviour
                 CalculateUpgradePrice("Equipment");
                 break;
         }
-        PopulateSelection();
+        PopulateSelection();*/
     }
        
     public void SelectUpgrade(int index)
@@ -429,21 +515,144 @@ public class UpgradeManager : MonoBehaviour
             buttons[i].onClick.RemoveAllListeners();
         }
         selection.Clear();
-        Time.timeScale = 1.0f;
         PopulateUpgrades();
+        StartCoroutine(buyingcinematic_end());
     }
 
-    IEnumerator buyingcinematic()
+    Vector3 CameraTransform;
+    float CameraSize;
+    Color DarkColor;
+
+    IEnumerator buyingcinematic(string type)
     {
+        Equipment.interactable = false;
+        Volcano.interactable = false;
+        Economy.interactable = false;
+
         // Zoom on magma + darkening except magma + UI moves on the side + light screenshake
+        GameObject Camera = GameObject.Find("Main Camera");
+        CameraTransform = Camera.transform.position;
+        CameraSize = Camera.GetComponent<Camera>().orthographicSize;
+        DarkColor = Darkening.color;
+        int Duration = 90;
+        for (int i = 0; i < Duration; i++)
+        {
+            Camera.GetComponent<Camera>().orthographicSize -= 0.05f;
+            if (i == 0) Camera.transform.Translate(new Vector3(0.3f, 0, 0));
+            if (i%4 ==2) Camera.transform.Translate(new Vector3(-0.6f, 0, 0));
+            else if (i % 4 == 0) Camera.transform.Translate(new Vector3(0.6f, 0, 0));
+            Camera.transform.Translate(new Vector3(0, -0.1f, 0));
+            Darkening.color = new Color(DarkColor.r, DarkColor.g, DarkColor.b, ((float)i/1.5f) / (float)Duration);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        StartCoroutine(lavaStream());
 
         //  Sudden dezoom + UI back + Erruption + potential light screenshake
 
+        for (int i = 9; i >= 0; i--)
+        {
+            Camera.GetComponent<Camera>().orthographicSize += 0.45f;         
+            Camera.transform.Translate(new Vector3(0, 1f, 0));
+            //Darkening.color = new Color(DarkColor.r, DarkColor.g, DarkColor.b, 150 * (i / 9));
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        Camera.transform.position = CameraTransform;
+        Camera.GetComponent<Camera>().orthographicSize = CameraSize;
+
+
+        for (int i = 0; i < 90; i++)
+        {
+            yield return new WaitForFixedUpdate();
+        }
+
         // Cards come one after the other from the magma and turn
 
-        // Wait for selection
+        switch (type)
+        {
+            case "equip":
+                GameManager.Instance.Pops = GameManager.Instance.Pops - equipPriceVar;
+                equipmentUpgrades.Shuffle();
+                selection.Add(equipmentUpgrades[0]);
+                selection.Add(equipmentUpgrades[1]);
+                selection.Add(equipmentUpgrades[2]);
+                EquipmentLevel++;
+                CalculateUpgradePrice("Equipment");
+                break;
+
+            case "volcano":
+                GameManager.Instance.Pops = GameManager.Instance.Pops - volcanoPriceVar;
+                volcanoUpgrades.Shuffle();
+                selection.Add(volcanoUpgrades[0]);
+                selection.Add(volcanoUpgrades[1]);
+                selection.Add(volcanoUpgrades[2]);
+                VolcanoLevel++;
+                CalculateUpgradePrice("Volcano");
+                break;
+
+            case "eco":
+                GameManager.Instance.Pops = GameManager.Instance.Pops - ecoPriceVar;
+                ecoUpgrades.Shuffle();
+                selection.Add(ecoUpgrades[0]);
+                selection.Add(ecoUpgrades[1]);
+                selection.Add(ecoUpgrades[2]);
+                EcoLevel++;
+                CalculateUpgradePrice("Economy");
+                break;
+
+            case "hero":
+                GameManager.Instance.Pops = GameManager.Instance.Pops - equipPriceVar;
+                heroUpgrades.Shuffle();
+                selection.Add(heroUpgrades[0]);
+                selection.Add(heroUpgrades[1]);
+                selection.Add(heroUpgrades[2]);
+                EquipmentLevel++;
+                CalculateUpgradePrice("Equipment");
+                break;
+        }
+        //PopulateSelection();
+        StartCoroutine(PopSelection());
+        // Allow selection
+
+        yield return new WaitForEndOfFrame();
+    }
+
+    IEnumerator buyingcinematic_end()
+    {
+        // Zoom on magma + darkening except magma + UI moves on the side + light screenshake
+        GameObject Camera = GameObject.Find("Main Camera");
 
         // Darkening removed
+
+        for (int i = 9; i >= 0; i--)
+        {
+            Darkening.color = new Color(DarkColor.r, DarkColor.g, DarkColor.b,(i / 9.0f));
+
+            yield return new WaitForFixedUpdate();
+        }
+        Darkening.color = DarkColor;
+        Time.timeScale = 1.0f;
+        selectionongoing = false;
+        yield return new WaitForEndOfFrame();
+    }
+
+    IEnumerator lavaStream()
+    {
+        int duration = 180;
+        // 14.3
+        for(int i = 0; i<duration; i++)
+        {
+            if (i % 13 == 12) 
+            { 
+                GameObject lava = Instantiate(Lavastream, new Vector3(-0.08f, 5, -12f), Quaternion.identity);
+                lava.transform.Rotate(new Vector3(90, 0, 0));
+                //lava.transform.Translate(new Vector3(Mathf.Cos((float)i / 10.0f),0,0));
+            }
+            yield return new WaitForFixedUpdate();
+        }
         yield return new WaitForEndOfFrame();
     }
     #endregion
